@@ -1,0 +1,10 @@
+<image class='imges'  bindtap='getsite'mode='widthFix' src='https://static.klpfood.com/1557207982633.jpg'> </image>
+
+<view class='kd'>
+<view  class='bnk'> <navigator hover-class="none" url="/pages/shopregister/index" >
+  <view class='kftxts'><text class='te'>开店</text> </view>
+</navigator></view>
+<view  class='bnk'><navigator hover-class="none" url="/pages/shopregister/register/index">
+  <view class='kftxts'><text class='te'>品友</text> </view>
+</navigator></view>
+</view>

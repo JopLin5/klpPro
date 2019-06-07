@@ -1,0 +1,259 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  background: #fff;
+  display: block;
+  height: 90rpx;
+}
+
+.header view {
+  display: inline-block;
+  width: 33.33%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.sumbtn {
+  width: 90%;
+  height: 94rpx;
+  line-height: 94rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+  background: #de7c21;
+  margin: 0 auto;
+}
+
+.price {
+  text-align: center;
+  height: 200rpx;
+  line-height: 200rpx;
+}
+
+.num {
+  font-size: 80rpx;
+}
+
+.tx {
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f2f2f2;
+  color: #333;
+  font-size: 28rpx;
+  padding: 0 40rpx;
+  font-weight: bold;
+}
+
+.txlist {
+  margin-top: 80rpx;
+}
+
+.lie {
+  height: 75rpx;
+  padding: 30rpx 40rpx;
+  border-top: 2rpx solid #ebebeb;
+  position: relative;
+  overflow: hidden;
+}
+
+.tiptxt {
+  color: #333;
+  font-size: 32rpx;
+}
+
+.data {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 88rpx;
+}
+
+.sum {
+  position: absolute;
+  top: 50rpx;
+  right: 40rpx;
+  color: #fd7a40;
+  font-size: 36rpx;
+}
+
+.log2 {
+  position: absolute;
+  top: 90rpx;
+  right: 40rpx;
+  color: #fd7a40;
+  font-size: 30rpx;
+}
+
+.typeicon {
+  width: 110rpx;
+  height: 110rpx;
+  float: left;
+  border-radius: 50%;
+}
+
+.tuilie {
+  padding-left: 20rpx;
+  padding-top: 30rpx;
+  position: relative;
+  height: 150rpx;
+  border-bottom: 8rpx solid #ebebeb;
+  background: #fff;
+}
+
+.tuilie:last-child {
+  border-bottom: none;
+}
+
+.mid {
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 12rpx;
+}
+
+.shopname {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.gray {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.btns {
+  background: #ffb21a;
+  font-size: 28rpx;
+  color: #fff;
+  position: absolute;
+  right: 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 174rpx;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.shz {
+  background: #a0a0a0;
+  font-size: 28rpx;
+  color: #fff;
+  position: absolute;
+  right: 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 174rpx;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.yzc {
+  background: #de7c21;
+  font-size: 28rpx;
+  color: #fff;
+  position: absolute;
+  right: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 174rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.header view.cur {
+  border-bottom: 8rpx solid #de7c21;
+  color: #de7c21;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.txt {
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 50%;
+  display: none;
+}
+
+.status {
+  float: right;
+  font-size: 28rpx;
+  color: #fe4342;
+}
+
+.status2 {
+  float: right;
+  font-size: 28rpx;
+  color: #ff9b00;
+}
+
+.statusname {
+  font-size: 32rpx;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.grays {
+  float: right;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.tgjl {
+  background: #fff;
+  height: 100rpx;
+  padding: 20rpx;
+  border-bottom: 8rpx solid #ebebeb;
+}
+
+.tgjl:last-child {
+  border-bottom: none;
+}
+
+.tgjl view {
+  line-height: 50rpx;
+}
+
+.log {
+  float: right;
+  font-size: 28rpx;
+  color: #fe4342;
+}
+
+.fix {
+  position: fixed;
+}
+
+.rowline {
+  width: 100%;
+  height: 1rpx;
+  background: #c0c0c0;
+}
+
+.mt10 {
+  margin-top: 20rpx;
+}
+
+.site {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  line-height: 28rpx;
+  font-size: 28rpx;
+}
+.tip{
+  width:90%;
+  margin: 20rpx auto;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  border: 1px solid #D5D5D5;
+  color: #de7c21;
+}

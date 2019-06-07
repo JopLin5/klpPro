@@ -1,0 +1,34 @@
+
+<view class="address-list">
+	<view class="item"  data-manage="{{manage}}" wx:for="{{addressObjects}}" data-id="{{item.address_id}}" wx:key="">
+		<!-- first row -->
+    <view  bindtap='selectAddr' data-id="{{item.address_id}}">
+		<view class="header">
+			<text style="width:100px" class="realname">姓名:{{item.consignee}}</text>
+			<text  class="mobile">电话:{{item.mobile}}</text>
+		</view>
+		<!-- second row -->
+		<view class="summary">{{item.address}}</view>
+    </view>
+		<!-- third row -->
+		<view class="footer">
+			<!-- is default switch -->
+			<view class="set-default" wx:if="{{manage}}" data-index="{{index}}" bindtap="setDefault">
+				<!-- circle or success type -->
+				<icon type="{{item.is_default == 1 ? 'success_circle' : 'circle'}}"/>
+				<text>默认地址</text>
+			</view>
+       <view class="set-default" wx:else><text style='color:#de7c21' >{{item.is_default == 1 ? '默认地址' : ''}}</text> </view>
+			<!-- edit and delete button -->
+			<view class="operation" wx:if="{{manage}}">
+				<view class="container" data-index="{{index}}" bindtap="edit"><image src="../../../images/icon_edit.png" /><text>编辑</text></view>
+				<view class="container" data-index="{{index}}" bindtap="del"><image src="../../../images/icon_delete.png" /><text>删除</text></view>
+        
+			</view>
+		</view>
+	</view>
+</view>
+<view class='address_op' >
+<button bindtap="manage" data-manage='{{manage}}'  class="touming address-left border-left border-right ">{{manage?'关闭管理':'管理'}}</button>
+<button bindtap="add"  class="touming address-right border-right ">添加</button>
+</view>

@@ -1,0 +1,28 @@
+<view class="parent">
+    <view class="order-item" wx:for="{{result.goods_list}}" wx:for-item="mapping" wx:key="" class="carts-item {{index==0?'first':''}}" bindtap="details" data-id="{{item.order_id}}">
+    <view>
+      <!-- 缩略图 -->
+      <image class="carts-image" src="{{mapping.original_img}}" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+      <!-- 商品标题 -->
+      <text class="carts-title">{{mapping.goods_name}}</text>
+      <view class="carts-subtitle">
+        <!-- 价格 -->
+        <text>{{mapping.spec_key_name}}</text>
+      </view>
+    </view>
+    <view class="carts-right">
+      <text class="carts-price">￥{{mapping.goods_price}}</text>
+      <text class="carts-num">x{{mapping.goods_num}}</text>
+    </view>
+  </view>
+<view class='class-line'></view>
+  <view class="view-price">
+    <view class="view-price1">
+      <text class="text-price1">推广奖励合计:</text>
+      <text class="text-red">￥{{money}}</text>
+    </view>
+  </view>
+  
+</view>

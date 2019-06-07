@@ -1,0 +1,27 @@
+
+<view class='list'>
+  <block wx:for='{{list}}' wx:key='id' wx:for-index="idx" wx:for-item="item">
+  <view class="list_item">
+      <view bindtap='goto' data-index='{{item.id}}'>
+      <view class='img' >
+        <image src="{{item.cover?item.cover:'/images/avantar.png'}}"  mode="scaleToFill"/>
+      </view>
+      <view class='info'>
+        <view class='title'> <text style="font-weight:bold;">{{item.goods_name}}</text></view>
+        <view class='price'><text style='color:red'>{{item.close}}</text> </view>
+        
+        <view  class='price'><text>开始时间：{{item.start_line}}</text></view>
+         <view  class='price'><text>截止时间：{{item.dead_line}}</text><text class='gray'>{{item.view_time}}浏览次数</text></view>
+      </view>
+       </view>
+      <view class='clear'></view>
+  </view>
+  </block>
+    <view class="class_item class_item_end" wx:if="{{empty&&goods_list.length>0}}">
+  ---换页看看---
+</view>
+  <view wx:if="{{(empty&&list.length==0)}}" class="view-empty">
+  <text class="hint">还没参与活动</text>
+</view>
+
+</view>

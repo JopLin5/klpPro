@@ -1,0 +1,191 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+button::after {
+  border-radius: 0;
+  border: none;
+}
+
+page {
+  background: #eee;
+}
+
+.navigator-hover {
+  font-size: 10rpx;
+}
+
+.shop1 {
+  display: block;
+  margin: 0 auto;
+  width: 88%;
+  margin-top:114rpx;
+
+}
+.shop2 {
+  display: block;
+  margin: 0 auto;
+  width: 88%;
+  margin-top:30rpx;
+}
+.shop3 {
+  display: block;
+  margin: 0 auto;
+  width: 88%;
+  margin-top:30rpx;
+}
+.box1 {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+}
+.green1{
+  background-color: #d97e23;
+}
+.green2{
+  background-color: #22703c;
+}
+.green3{
+  background-color: #1e2b57;
+}
+.tip{
+  color: white;
+}
+.login {
+  color: #fff;
+  background: #de7c21;
+  line-height: 28rpx;
+  font-size: 26rpx;
+  margin-top: 180rpx;
+  width: 113%;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  height: 250rpx;
+  background: #de7c21;
+}
+
+.rg {
+  float: right;
+  margin-left: 400rpx;
+  width: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin-left: 220rpx;
+  border-radius: 50%;
+}
+
+.login-btn {
+width:128rpx;
+height:128rpx;
+margin:20rpx;
+padding-top:30rpx;
+border-radius:50%;
+margin-left:316rpx;
+font-size:28rpx;
+
+}
+
+.userinfo-nickname {
+  color: #fff;
+  margin-left: 225rpx;
+  margin-top: 36rpx;
+}
+
+/*menu list*/
+
+.tableviewcell {
+  padding: 15rpx 40rpx;
+  border-bottom: 1rpx solid #ddd;
+  color: #666;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+/*icon*/
+
+.tableviewcell image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/*text*/
+
+.tableviewcell text {
+  font-size: 16px;
+  margin-left: 14rpx;
+}
+
+/*order*/
+
+.order-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  margin: 20rpx 0;
+  padding: 20rpx 0;
+}
+
+.order {
+  width: 33.3%;
+  text-align: center;
+}
+
+.order image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.order text {
+  display: block;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.wx-view_log_button {
+  display: flex;
+  align-items: flex-end;
+  width: 90%;
+  align-self: center;
+  flex: 0 1 auto;
+  order: 1;
+  flex-wrap: nowrap;
+  align-content: flex-end;
+  justify-content: center;
+}
+
+.img_account {
+  width: 60rpx;
+  height: 60rpx;
+  border: none;
+  border-radius: 60rpx;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.user-wx-btn {
+position:absolute;
+color:#fff;
+background:#de7c21;
+line-height:28rpx;
+font-size:26rpx;
+margin-top:184rpx;
+width:28%;
+margin-left:-542rpx;
+}

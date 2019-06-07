@@ -1,0 +1,4 @@
+.de{
+    padding:5rpx;
+     width: 98%;
+}
