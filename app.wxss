@@ -237,6 +237,7 @@ page{
   height: 2rpx;
   line-height: 2rpx;
   background: #eee;
+  margin-top: 10rpx;
 }
 
 .class-small {

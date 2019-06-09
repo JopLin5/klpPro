@@ -201,11 +201,11 @@ button::after {
 
 .pre-people navigator {
   display: inline-block;
-  width: 644rpx;
-  height: 34rpx;
-  line-height: 34rpx;
+  width: 375rpx;
+  /* height: 34rpx; */
+  line-height: 40rpx;
   vertical-align: middle;
-  margin-left: 10rpx;
+  margin-left: 20rpx;
   background-color: #fff;
 }
 
@@ -352,24 +352,23 @@ button::after {
   flex-direction: row-reverse;
   justify-content: flex-end; */
   margin-left: 20rpxl;
-
 }
 
 .header {
   display: flex;
   flex-direction: row;
-  /* justify-content: flex-end; */
-  /* display: table; */
+  /* justify-content: flex-end; *//* display: table; */
   position: fixed;
   height: 80rpx;
   width: 100%;
   /* bottom: 0; */
-  top: 46rpx;
+  /* top: 46rpx; */
   z-index: 1000;
 }
 
 .footer {
-  display: table;
+  display: flex;
+  justify-content: row-reverse;
   position: fixed;
   height: 80rpx;
   width: 100%;
@@ -378,12 +377,26 @@ button::after {
   z-index: 1000;
 }
 
+.rightbtn {
+  display: flex;
+  justify-content: flex-end; /* 右对齐 */
+  position: fixed;
+  height: 80rpx;
+  width: 100%;
+  bottom: 0;
+  /* top: 46rpx; */
+  right: 0;
+  z-index: 1000;
+}
+
 .kficon {
-  width: 54rpx;
-  height: 54rpx;
+  width: 72rpx;
+  height: 72rpx;
   display: inline-block;
   vertical-align: middle;
 }
+
+
 
 .kf {
   width: 20%;
@@ -537,7 +550,7 @@ page .wx-swiper-dot-active::before {
   text-align: left;
   font-size: 32rpx;
   color: #333;
-  background: #fff;
+  background: #e8e8e8;
   padding-top: 10rpx;
   margin-bottom: 300rpx;
   line-height: 32rpx;
@@ -571,7 +584,7 @@ page .wx-swiper-dot-active::before {
   line-height: 45rpx;
   height: 50rpx;
   font-size: 35rpx;
-  color: #D03E3F;
+  color: #d03e3f;
   display: table-cell;
 }
 
@@ -740,7 +753,7 @@ page .wx-swiper-dot-active::before {
 
 .float_icon {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   position: fixed;
   /* display: block; */
   text-align: center;
@@ -960,6 +973,8 @@ page .wx-swiper-dot-active::before {
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0;
   display: block;
+  margin-left: 20rpx;
+  margin-right: 20rpx
 }
 
 .fshare::after {
@@ -975,7 +990,7 @@ page .wx-swiper-dot-active::before {
 }
 
 .class-tip .ttip {
-  font-size: 15px;
+  font-size: 16px;
   padding: 0 8rpx;
   color: #fff;
   display: inline-block;
@@ -995,7 +1010,7 @@ page .wx-swiper-dot-active::before {
   display: inline-block;
   font-size: 26rpx;
   vertical-align: middle;
-  height: 34rpx;
+  /* height: 34rpx; */
 }
 
 .scoll {
@@ -1005,8 +1020,8 @@ page .wx-swiper-dot-active::before {
 }
 
 .people {
-  height: 30rpx;
-  width: 30rpx;
+  height: 40rpx;
+  width: 40rpx;
   display: inline-block;
   margin-right: 10rpx;
 }
@@ -1087,7 +1102,7 @@ button::after {
   height: 55rpx;
   width: auto;
   line-height: 45rpx;
-  font-size: 38rpx;
+  font-size: 40rpx;
   display: table-cell;
   white-space: nowrap;
 }
@@ -1108,8 +1123,9 @@ button::after {
   width: 100%;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
+  /* padding-left: 10rpx;
+  padding-right: 10rpx; */
+  padding: 10rpx;
 }
 
 .common-intro .price {

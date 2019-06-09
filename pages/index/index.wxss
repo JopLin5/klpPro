@@ -119,7 +119,7 @@ scroll-view {
   height: 50rpx;
   line-height: 50rpx;
   font-size: 28rpx;
-  color: #fffffff1;
+  color: #fff;
   display: inline-block;
   /* font-weight: bold; */
   margin-left: 10rpx;

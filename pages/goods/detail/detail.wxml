@@ -1,5 +1,5 @@
-<view style="height:{{galleryHeight}}px;background-color:#000;" hidden='{{loaded}}'>
-  <view style="background-color:#000;background:url('{{src}}') no-repeat center center;background-size:contain;background-clip:content-box;height:100%;"></view>
+<view style="height:{{galleryHeight}}px;background-color:#e8e8e8;" hidden='{{loaded}}'>
+  <view style="background-color:#e8e8e8;background:url('{{src}}') no-repeat center center;background-size:contain;background-clip:content-box;height:100%;"></view>
 </view>
 <import src="../../../wxParse/wxParse.wxml" />
 <view class='row_tip' style='top:{{statusBarHeight}}px'>
@@ -27,7 +27,7 @@
               <view style="background-color:#000;background:url('{{item._imge}}') no-repeat center center;background-size:contain;background-clip:content-box;height:100%;"></view>
             </view>
           </view>
-          <view class="slide-image" style='height:{{galleryHeight}}px;background-color:#000' wx:else>
+          <view class="slide-image" style='height:{{galleryHeight}}px;background-color:#e8e8e8'  wx:else>
             <view style="background-color:#000;background:url('{{item._imge}}') no-repeat center center;background-size:contain;background-clip:content-box;height:100%;">
             </view>
           </view>
@@ -36,7 +36,6 @@
         <!-- 商品信息 -->
         <view>
           <view id='tip' class="common-intro">
-
             <!-- 商品名称 -->
             <view class='shopname'>
               <text class="text " style='font-weight:bold;' selectable="{{true}}">{{goods.goods_name}}</text>
@@ -45,7 +44,6 @@
             <view class='shoptext'>
               <text class='text text-red'>￥{{goods.shop_price}} {{goods.custom_unit}}</text>
             </view>
-
             <block wx:if="{{goods.prom_type==1}}">
               <view class='shopname'>
                 <text class="text color" space='ensp' selectable="{{true}}">下单截止 | <text style='font-weight:normal'>{{goods.dead_date}}</text></text>
@@ -57,7 +55,6 @@
                 <text class="text color" space='ensp' selectable="{{true}}">自提时间 | {{goods.take_time}}</text>
               </view>
             </block>
-
           </view>
         </view>
         <view class="class-line"></view>
@@ -67,7 +64,7 @@
         <view class="class-line"></view>
         <!-- 分类 -->
         <view class='people_tip text' style='padding-left:10rpx;'>
-        <text space='emsp' class='gbb'>商品类别</text>  {{goods.cat_name}}</view>
+          <text space='emsp' class='gbb'>商品类别</text> {{goods.cat_name}}</view>
         <view class="class-line"></view>
         <!-- 下单 -->
         <view class='pre-people'>
@@ -80,19 +77,12 @@
             </scroll-view>
           </navigator>
         </view>
+
+
         <view class="class-line"></view>
-        <!-- 店铺logo -->
+        <!-- 商品详情 -->
         <view class='mid'>
           <view class='midimg'>
-            <view class='tuishop'>
-              <image class='imgg' bindtap='onGotoshop' data-shopId='{{goods.store_id}}' src="{{the_goods.store.store_logo?the_goods.store.store_logo:'../../../images/avantar.png'}}"></image>
-            </view>
-            <view class='txt plll'>
-              <view bindtap='onGotoshop' data-shopId='{{the_goods.store_id}}' class='typename' style='color:black'> {{the_goods.store.store_name}}
-              </view>
-              <view class='enter_num'> {{the_goods.store.num}}进店</view>
-            </view>
-
             <view class='txt pl' style='width:156rpx'>
               <view class='enter_num {{goods.msg?"border":""}}'>{{goods.msg.title}}</view>
               <view class='enter_num {{goods.msg?"border":""}}'>{{goods.msg.content}}</view>
@@ -105,86 +95,25 @@
               <navigator wx:if="{{goods.tip.msg}}" url="/pages/profile/profile?id={{goods.tip.user_id}}">
                 <image src="{{goods.tip.head.length>1?goods.tip.head:'../../../images/avantar.png'}}" class='avantar'></image>
               </navigator>
-
             </view>
           </view>
-          <view class='ppp'>
-            <view class="detail">
-              <block wx:if="{{goods.goods_id==the_goods.goods_id}}" wx:for="{{mynodes}}" wx:key="{{index}}" wx:for-item="item">
-                <template is="wxParse0" data="{{item,id:curr_id}}" />
-              </block>
-              <view class="class_item class_item_end" style="height:200rpx;line-height:130rpx; ">
-                ·左右看看·
-              </view>
+        </view>
+        <view class="class-line"></view>
+        <view class='ppp'>
+          <view class="detail">
+            <view style="height:60rpx; line-height:60rpx; text-align:center; color:#a9a9a9;">
+              ·商品详情·
+            </view>
+            <block wx:if="{{goods.goods_id==the_goods.goods_id}}" wx:for="{{mynodes}}" wx:key="{{index}}" wx:for-item="item">
+              <template is="wxParse0" data="{{item,id:curr_id}}" />
+            </block>
+            <view class="class_item class_item_end" style="height:200rpx;line-height:130rpx; ">
+              ·左右看看·
             </view>
           </view>
         </view>
       </scroll-view>
     </view>
-  </view>
-</view>
-
-
-<!-- 品友 -->
-<view class='dhf'>
-  <navigator class='dhs pr' style='margin-left:24rpx;' url="/pages/shopregister/register/index">
-    <view class='kftxts'>品友</view>
-  </navigator>
-</view>
-<!--右下角按钮--->
-<view class='float_icon right bottom'>
-  <view class='分享按钮'>
-    <!-- 分享按钮 -->
-    <button catchtap='pre_share' hover-class="none" hidden='{{!userShareInfo.user_id==0}}' class='fshare' wx:if="{{userShareInfo.user_id==0}}">
-      <image class='kficon' src='../../../images/share.png'></image>
-    </button>
-    <!-- 搜索按钮 -->
-    <button open-type='share' hover-class="none" class='fshare' hidden='{{userShareInfo.user_id==0}}' else:if>
-      <image class='kficon' src='../../../images/share.png'></image>
-    </button>
-  </view>
-
-  <!-- 返回按钮 -->
-  <view bindtap='back' class='back mtt4'>
-    <image class='kficon' src='/images/back2.png'></image>
-  </view>
-
-  <view catchtap="gotolist" class='back mtt4'>
-    <image class='kficon' src='/images/search3.png'></image>
-  </view>
-
-  <view class='tiptip  mtt4'>
-    <!--促销信息-->
-    <block wx:if="{{the_goods.prom_type==1}}">
-      <view bindtap='totip' class="text color">预订折购</view>
-    </block>
-  </view>
-  <!-- 收藏按钮 -->
-  <view class="class-collect mtt4">
-    <button class='fshare' hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCollect' data-id="{{the_goods.goods_id}}" data-ctype="{{the_goods.is_collect}}">
-      <image class='immg' src="{{the_goods.is_collect>0?'../../../images/coll_s.png':'../../../images/coll.png'}}"></image>
-    </button>
-  </view>
-  <!-- 客服按钮 -->
-  <view class="contat mtt4" bindtap='gotokefu' data-store_name='{{the_goods.store.store_name}}'>
-    <image src='/images/tab_icon_customer_service@3x1.png' class='kficon'></image>
-    <!-- <view class='icon_tip'>客服</view> -->
-  </view>
-  <!-- 购物车按钮 -->
-  <view class=" cart mtt4">
-    <image src='/images/nav_shoppingcar.png' class='kficon' bindtap="gotoCart"></image>
-  </view>
-</view>
-
-<!-- 红包 -->
-<view class='goods_name' bindtap='totip'>{{the_goods.goods_name}}</view>
-<view class='text-price-red ' bindtap='totip'>
-  <text class='text-price-red-price'>{{the_goods.shop_price}} {{the_goods.custom_unit}}</text>
-</view>
-<!-- 浏览 -->
-<view class="class-tip" bindtap='totip'>
-  <view class='row'>
-    <view class='ttip'>{{the_goods.click_count}}浏览</view>
   </view>
 </view>
 
@@ -224,7 +153,16 @@
 </view>
 <!--弹窗规格赛选结束-->
 
-<view class='header'>
+
+<!-- 品友 -->
+<view class='dhf'>
+  <navigator class='dhs pr' style='margin-left:24rpx;' url="/pages/shopregister/register/index">
+    <view class='kftxts'>品友</view>
+  </navigator>
+</view>
+
+
+<view class='header' style="top:{{statusBarHeight}}px">
   <!-- 返回按钮 -->
   <view bindtap='back' class='ofback'>
     <image class='kficon' src='/images/back2.png'></image>
@@ -240,32 +178,52 @@
       </view>
     </view>
   </view>
+  <!-- 收藏店铺 -->
 </view>
 
-<!-- 底部按钮 -->
-<view class='footer'>
-  <!-- 店铺logo -->
-  <view class='typeicon ' bindtap='onGotoshop' data-shopId='{{the_goods.store_id}}'>
-    <view class='shoppp'>
-      <image class='imgg' lazy-load="true" src="{{the_goods.store.store_logo?the_goods.store.store_logo:'../../../images/avantar.png'}}"></image>
-      <view class='txt'>
-        <view class='typename'> {{the_goods.store.store_name}}
-        </view>
-        <view class='shoptip'> {{the_goods.store.num}}进店</view>
-      </view>
-    </view>
-  </view>
-  <!-- 立即购买 -->
-  <view class='all_btn'>
-    <button class='btn buy' hover-class="none" open-type='getUserInfo' bindgetuserinfo='showModal'>
-      <view class='buynow'>立即购买</view>
-    </button>
-    <!-- 加入购物车 -->
-    <button class='btn addcart' hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCart'>
-      <view class='buynow'>加入购物车</view>
-    </button>
+<!-- 商品名称 -->
+<view class='goods_name' bindtap='totip'>{{the_goods.goods_name}}</view>
+<view class='text-price-red ' bindtap='totip'>
+  <text class='text-price-red-price'>{{the_goods.shop_price}} {{the_goods.custom_unit}}</text>
+</view>
+<!-- 浏览 -->
+<view class="class-tip" bindtap='totip'>
+  <view class='row'>
+    <view class='ttip'>{{the_goods.click_count}}浏览</view>
   </view>
 </view>
+
+<view class='footer'>
+  <!-- 左边三按钮客服按钮 -->
+  <!-- <view> -->
+  <button class="fshare" bindtap='gotokefu' data-store_name='{{the_goods.store.store_name}}'>
+    <image class='kficon' src='/images/tab_icon_customer_service@3x1.png'></image>
+  </button>
+  <!-- 购物车按钮 -->
+  <button class="fshare">
+    <image class='kficon' src='/images/nav_shoppingcar.png' bindtap="gotoCart"></image>
+  </button>
+  <!-- 收藏按钮 -->
+  <button class='fshare' hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCollect' data-id="{{the_goods.goods_id}}" data-ctype="{{the_goods.is_collect}}">
+    <image class='kficon' src="{{the_goods.is_collect>0?'../../../images/coll_s.png':'../../../images/coll.png'}}"></image>
+  </button>
+</view>
+<!-- </view> -->
+<!-- 右三个按钮 立即购买 -->
+<view class='rightbtn'>
+  <button class='fshare' hover-class="none" open-type='getUserInfo' bindgetuserinfo='showModal'>
+    <image class='kficon' src='../../../images/buynow.png'></image>
+  </button>
+  <!-- 加入购物车 -->
+  <button class='fshare' hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCart'>
+    <image class='kficon' src='../../../images/addcart.png'></image>
+  </button>
+  <!-- 分享按钮 -->
+  <button class='fshare' catchtap='pre_share' hover-class="none" hidden='{{!userShareInfo.user_id==0}}' wx:if="{{userShareInfo.user_id==0}}">
+    <image class='kficon' src='../../../images/share.png'></image>
+  </button>
+</view>
+
 
 <!-- 分享弹窗 -->
 <view class='boot'></view>
