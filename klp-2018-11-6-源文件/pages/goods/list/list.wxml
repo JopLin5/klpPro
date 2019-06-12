@@ -1,0 +1,184 @@
+<!-- 遮罩 -->
+<view class='tuitip'  hidden='{{cats[active].name?false:true}}'>
+  <view class='icon_tip'> {{cats[active].name}}</view>
+</view>
+
+<view class='search fix' wx:if='{{typeshow}}'>
+  <view class='searchtxt'>
+    <!-- <image class="ttop" mode='widthFix' src='/images/bg.png'></image> -->
+    <image src='/images/SearchIcon@3x.png' class=" icons"></image>
+    <input placeholder='请输入关键字' value='{{keyWord}}' disabled="true" bindinput="onchage" bindtap="listenerPhoneInput"></input>
+    <image wx:if="{{keyWord}}" src='/images/edit.png' class="delicon" bindtap='del'></image>
+  </view>
+  <view class='lie1'>
+    <label class='find' bindtap="listenerPhoneInput">搜索</label>
+  </view>
+</view>
+
+<view wx:if='{{typeshow}}' catchtouchmove="preventD" style='position:fixed;width:100%;height:100%;z-index:9;background:#fff;'>
+  <view class='ht100'>
+    <view class='search'>
+      <view class='searchtxt'>
+        <image src='/images/SearchIcon@3x.png' class="icons"></image>
+        <input placeholder='请输入关键字' value='{{keyWord}}' bindinput="onchage"></input>
+        <image wx:if="{{keyWord}}" src='/images/edit.png' class="delicon" bindtap='del'></image>
+      </view>
+      <view class='lie1'>
+        <label class='find' bindtap="search">搜索</label>
+      </view>
+    </view>
+    <view class="class-line"></view>
+    <view class='header'>
+      <view class="type view {{_num==0 ? 'cur':'curf'}}" bindtap="tabb" data-num="0">
+        优 选 食 材
+      </view>
+      <view class="type view {{_num==1 ? 'cur':'curf'}}" bindtap="tabb" data-num="1">
+        休 闲 美 食
+      </view>
+      <view class="type view {{_num==2 ? 'cur':'curf'}}" bindtap="tabb" data-num="2">
+        功 能 食 品
+      </view>
+      <view class="class-line"></view>
+    </view>
+    <view class="class-line"></view>
+    <swiper id='swiper_cat' style='height:{{height}};margin-top:{{totalTopHeight}}px"' bindchange="tabb" current='{{_num}}'>
+      <swiper-item>
+        <scroll-view scroll-y="true" class='w20'>
+          <view class="fllie {{mset.mi.state==type.id?'active':''}}" wx:for="{{mset.mi.cat}}" wx:key="index" wx:for-item="type" data-key='{{type.id}}' data-class='1' data-index="{{index}}" bindtap="selecttype" data-name="{{type.name}}">{{type.name}}</view>
+        </scroll-view>
+        <scroll-view scroll-y="true" class="nav_right">
+          <!--如果有数据，才遍历项-->
+          <block wx:for="{{mset.mi.two.optoins}}" wx:key="id" wx:for-item="next">
+            <view class="classtwo  {{mset.mi.two.state==next.id?'active':''}} " data-one="{{next.parent_id}}" data-class='2' data-key="{{next.id}}" bindtap="selecttype">{{next.name}}</view>
+            <view wx:for="{{next.options}}" wx:key="id" class="nav_right_items {{( mset.mi.two.state==next.id&&mset.mi.two.three_state==item.id)?'active':''}} " data-one="{{next.parent_id}}" data-tkey="{{next.id}}" data-key="{{item.id}}" data-class='3' bindtap="selecttype">
+              <text>{{item.name}}</text>
+            </view>
+            <block wx:if="{{next.options.length%3==2}}">
+              <view class="nav_right_items">
+                <text></text>
+              </view>
+            </block>
+
+            <block wx:if="{{next.options.length%3==1}}">
+              <view class="nav_right_items">
+                <text></text>
+              </view>
+              <view class="nav_right_items">
+                <text></text>
+              </view>
+            </block>
+          </block>
+        </scroll-view>
+      </swiper-item>
+
+      <swiper-item>
+        <scroll-view scroll-y="true" class='w20'>
+          <view class="fllie {{mset.food.state==type.id?'active':''}}" wx:for="{{mset.food.cat}}" wx:key="index" wx:for-item="type" data-key='{{type.id}}' data-index="{{index}}" data-class='1' bindtap="selecttype" data-name="{{type.name}}">{{type.name}}</view>
+        </scroll-view>
+        <scroll-view scroll-y="true" class="nav_right">
+          <!--如果有数据，才遍历项-->
+          <block wx:for="{{mset.food.two.optoins}}" wx:key="id" wx:for-item="next">
+            <view class="classtwo  {{mset.food.two.state==next.id?'active':''}} " data-one="{{next.parent_id}}" data-class='2' data-key="{{next.id}}" bindtap="selecttype">{{next.name}}</view>
+            <view wx:for="{{next.options}}" wx:key="id" class="nav_right_items {{( mset.food.two.state==next.id&&mset.food.two.three_state==item.id)?'active':''}} " data-tkey="{{next.id}}" data-one="{{next.parent_id}}" data-key="{{item.id}}" data-class='3' bindtap="selecttype">
+              <text>{{item.name}}</text>
+            </view>
+
+            <block wx:if="{{next.options.length%3==2}}">
+              <view class="nav_right_items">
+                <text></text>
+              </view>
+            </block>
+
+            <block wx:if="{{next.options.length%3==1}}">
+              <view class="nav_right_items">
+                <text></text>
+              </view>
+              <view class="nav_right_items">
+                <text></text>
+              </view>
+            </block>
+          </block>
+
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y="true" class='w20'>
+          <view class="fllie {{mset.rest.state==type.id?'active':''}}" wx:for="{{mset.rest.cat}}" wx:key="index" wx:for-item="type" data-key='{{type.id}}' data-class='1' data-index="{{index}}" bindtap="selecttype" data-name="{{type.name}}">{{type.name}}</view>
+        </scroll-view>
+        <scroll-view scroll-y="true" class="nav_right">
+          <!--如果有数据，才遍历项-->
+          <block wx:for="{{mset.rest.two.optoins}}" wx:key="id" wx:for-item="next">
+            <view class="classtwo  {{mset.rest.two.state==next.id?'active':''}} " data-one="{{next.parent_id}}" data-class='2' data-key="{{next.id}}" bindtap="selecttype">{{next.name}}</view>
+            <view wx:for="{{next.options}}" wx:key="id" class="nav_right_items {{( mset.rest.two.state==next.id&&mset.rest.two.three_state==item.id)?'active':''}} " data-one="{{next.parent_id}}" data-tkey="{{next.id}}" data-key="{{item.id}}" data-class='3' bindtap="selecttype">
+              <text>{{item.name}}</text>
+            </view>
+
+            <block wx:if="{{next.options.length%3==2}}">
+              <view class="nav_right_items">
+                <text></text>
+              </view>
+            </block>
+
+            <block wx:if="{{next.options.length%3==1}}">
+              <view class="nav_right_items">
+                <text></text>
+              </view>
+              <view class="nav_right_items">
+                <text></text>
+              </view>
+            </block>
+          </block>
+
+        </scroll-view>
+
+      </swiper-item>
+
+    </swiper>
+    <view id='cat_2' class='line23'>
+      <view class='border-left btn border-right ' bindtap='sure'>筛选</view>
+      <view class=' btn border-right ' bindtap='showt'>返回</view>
+    </view>
+  </view>
+</view>
+
+<swiper style='height:1460rpx' current='{{active}}' bindchange="changePage">
+  <block wx:for="{{cats}}" wx:key='index' wx:for-item="cat">
+    <swiper-item>
+
+      <view wx:if="{{(goods_list[index].empty&&goods_list[index].list.length==0)}}" class="view-empty">
+        <text class="hint">没有搜到此分类的商品</text>
+      </view>
+
+      <scroll-view scroll-y='true' lower-threshold="30" bindscroll="loadImages" wx:else>
+        <!-- for -->
+        <view class='nav' wx:for="{{goods_list[index]['list']}}" wx:for-index="idx" wx:key="goods_id" bindtap="showDetail" data-index="{{index}}" data-goods-id="{{item.goods_id}}" data-idx='{{idx}}' data-goods-src="{{item.original_img}}">
+          <view class='tuan' wx:if="{{item.prom_type==1}}">团</view>
+          <image src="{{item.original_img}}" class='img' mode='aspectFill' lazy-load="true" />
+          <view class='videbg' wx:if="{{item.type==1}}">
+            <view class='videoflag'></view>
+          </view>
+
+          <view class='infobg'></view>
+          <view class='goods_list_info'>
+            <view class='goods_list_name'>
+              <text class='goods_list_tt'>{{item.goods_name}}</text>
+            </view>
+
+            <view class='goods_list_txt'>
+              <view class='goods_list_price'>
+              <view class='goods_list_price_text'>￥{{item.shop_price}}</view>
+              <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
+            </view>
+            </view>
+          </view>
+
+        </view>
+        <!-- end -->
+        <view class="class_item class_item_end" style='margin-bottom:160rpx;' wx:if="{{goods_list[active].empty&&goods_list[active]['list'].length>0}}">
+          ·左右看看·
+        </view>
+      </scroll-view>
+
+    </swiper-item>
+  </block>
+</swiper>

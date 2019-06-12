@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "推广邀请与推广奖励",
+   "enablePullDownRefresh":true,
+  "usingComponents": {
+    "wxc-avatar": "../../../dist/packages/@minui/wxc-avatar/dist/index"
+  }
+    
+}

@@ -1,0 +1,24 @@
+<!--推广经理-->
+<view class='txt'>你正在注册口吕品田食超级品友，请填写下列信息</view>
+<image class='imges'mode='widthFix' src='http://static.klpfood.com/20190126192406.png'> </image>
+<view class='list'>
+ <view class='userinfo'>
+  <view class='avantar'>
+    <open-data  type="userAvatarUrl"></open-data>
+  </view>
+  <open-data class='name' type="userNickName"></open-data>
+  </view>
+<view class='lie'>
+ <view class='typname'><text space='emsp'>姓 名：</text></view> <input style='float: left;width: 79%;' placeholder='请输入姓名'focus="{{focus}}" cursor-spacing='20' value='' bindinput="userNameInput"></input>
+</view>
+<!-- <view class='lie'>
+<view class='typname'>证件号：</view> <input style='float: left;width: 79%;' placeholder='请输入身份证号码' value='' bindinput="userIdcardInput" cursor-spacing='20' name="idcard" ></input>
+</view> -->
+<view class='lie'>
+ <view class='typname'>手机号：</view> <input style='float: left;width:79%;' placeholder='请输入手机号' cursor-spacing='20' value='' bindinput="userPhoneInput" name="phone"></input>
+</view> 
+
+</view>
+<view class='btn'>
+    <button class='submit' open-type="getUserInfo" bindgetuserinfo='submit'>提交</button>
+</view>

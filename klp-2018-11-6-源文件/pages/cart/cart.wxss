@@ -1,0 +1,570 @@
+@import "../../goods_list.wxss";
+
+.header {
+  top: 0;
+  background: #fff;
+  display: block;
+  height: 68rpx;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 2rpx solid #eee;
+}
+
+navigator {
+  height: none;
+  width: none;
+}
+
+.view-empty {
+  width: 750rpx;
+  height: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-empty image {
+  width: 169rpx;
+  height: 215rpx;
+}
+
+.hint {
+  padding-top: 3rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.btn {
+  font-size: 29rpx;
+  color: #eee;
+  background: #de7c21;
+  margin-top: 100rpx;
+  border-radius: 50rpx;
+  padding: 20rpx 100rpx 20rpx 100rpx;
+}
+
+/*整体列表*/
+
+.carts-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/*每行单元格*/
+
+.carts-item-title {
+  display: table;
+  margin-bottom: 21rpx;
+}
+
+.container:last-child {
+  border-bottom: none;
+}
+
+.carts-item-title .text {
+  display: inline;
+  font-size: 25rpx;
+  color: #000;
+  padding-left: 10rpx;
+  font-weight: bold;
+}
+
+/*每行单元格*/
+
+.carts-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 170rpx;
+  /*width属性解决标题文字太短而缩略图偏移*/
+  width: 97%;
+  margin-left: 5rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+/*左部图片*/
+
+.carts-image {
+  width: 150rpx;
+  height: 150rpx;
+  box-sizing: border-box;
+}
+
+/*右部描述*/
+
+.carts-text {
+  margin-left: 15rpx;
+  width: 274rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carts-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 240rpx;
+}
+
+/*右上部分标题*/
+
+.carts-title {
+  font-size: 28rpx;
+  color: #444;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 14px;
+  height: 18px;
+  font-weight: bold;
+}
+
+.carts-key-name {
+  font-size: 22rpx;
+  color: #999;
+  vertical-align: text-bottom;
+}
+
+/*右下部分价格与数量*/
+
+.carts-subtitle {
+  font-size: 25rpx;
+  color: darkgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*价格*/
+
+.carts-price {
+  color: red;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/*商品加减按钮*/
+
+/*stepper容器*/
+
+.stepper {
+  border: 1px solid #ccc;
+  width: 80px;
+  height: 23px;
+  margin: 0 auto;
+}
+
+/*加号与减号*/
+
+.stepper text {
+  width: 19px;
+  line-height: 23px;
+  text-align: center;
+  float: left;
+}
+
+/*数值*/
+
+.stepper input {
+  color: black;
+  float: left;
+  margin: 0 auto;
+  width: 40px;
+  height: 23px;
+  text-align: center;
+  font-size: 12px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  margin-top: 0rpx;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+/*复选框样式*/
+
+.carts-list icon {
+  margin-top: 60rpx;
+  margin-right: 10rpx;
+  color: red;
+}
+
+/*底部按钮*/
+
+.carts-footer {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  border-top: 1rpx solid #eee;
+  background: white;
+  z-index: 10000;
+  box-sizing: content-box;
+}
+
+/*复选框*/
+
+.carts-footer icon {
+  margin-left: 14rpx;
+}
+
+/*全选字样*/
+
+.carts-footer text {
+  margin-left: 8rpx;
+}
+
+/*立即结算按钮*/
+
+.carts-footer .button {
+  line-height: 90rpx;
+  text-align: center;
+  width: 220rpx;
+  height: 90rpx;
+  background-color: #d03e3f;
+  color: white;
+  font-size: 36rpx;
+}
+
+.carts-footer-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.carts-footer-left text {
+}
+
+.logo {
+  border-radius: 50%;
+}
+
+.text-price {
+  font-size: 27rpx;
+  color: #999;
+  background-image: url('http://static.klpfood.com/delete.png');
+  background-size: 160% 100%;
+  text-decoration-line: line-through;
+  margin-top: -13rpx;
+}
+
+.text-red {
+  font-size: 27rpx;
+  color: red;
+  width: 136rpx;
+  text-align: right;
+  margin-right: 20rpx;
+}
+
+.image-delete {
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.cart_t {
+  position: absolute;
+  right: 223rpx;
+}
+
+.red {
+  color: red;
+}
+
+.size24 {
+  font-size: 24rpx;
+}
+
+.mp {
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  height: 100%;
+}
+
+ .scroll-view_H {
+  display: flex;
+  color: #fff;
+  height: 200rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.sale {
+  overflow: hidden;
+  height: 25px;
+  line-height: 28px;
+  text-align: center;
+  color: #999;
+  background: #f2f2f2;
+}
+
+ .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 33.333333333333333333%;
+  text-align: center;
+}
+
+ .names {
+  font-size: 21rpx;
+  color: #333;
+  line-height: 21rpx;
+  height: 46rpx;
+  font-weight: bold;
+}
+
+ .names1 {
+  font-size: 21rpx;
+  color: #333;
+  line-height: 21rpx;
+  height: 46rpx;
+}
+
+ .avantar {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+ .flicon {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+}
+
+ .flicon1 {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.main_color {
+  color: #de7c21;
+}
+
+ .navv {
+  position: relative;
+  width: 375rpx;
+  height: 615rpx;
+  float: left;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; /* Firefox */
+  border-right: 2rpx solid #4c3929;
+  border-bottom: 2rpx solid #4c3929;
+  background-color: #4c3929;
+  z-index: 100;
+  border-radius: 10rpx;
+}
+
+ .navv:nth-of-type(odd) {
+  border-left: 2rpx solid #4c3929;
+}
+
+ .default {
+  height: 340rpx;
+  overflow: hidden;
+}
+
+ .img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+}
+
+ .name {
+  width: 100%;
+  padding-left: 10rpx;
+  vertical-align: center;
+  line-height: 30rpx;
+}
+
+ .txt {
+  display: table;
+  width: 100%;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+
+ .name .tt {
+  display: inline-block;
+  background-color: red;
+  color: #fff800;
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 5rpx;
+  padding: 5rpx;
+  font-weight: bold;
+}
+
+ .gray {
+  display: table-cell;
+  font-size: 26rpx;
+  color: #fff;
+}
+
+ .price {
+  display: table-cell;
+}
+
+.center {
+  width: 100%;
+  text-align: center;
+  margin-top: 44%;
+}
+
+.midimg {
+  overflow: hidden;
+  height: 100rpx;
+  background: #fff;
+  padding-left: 16rpx;
+  overflow: hidden;
+  height: 100rpx;
+  background: #fff;
+  padding-left: 16rpx;
+}
+
+.vertical_line {
+  display: inline-block;
+  width: 2rpx;
+  line-height: 10rpx;
+  background-color: #de7c21;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.border-right {
+  border-right: 1px solid #fff;
+}
+
+.header view {
+  display: inline-block;
+  width: 33.33%;
+  height: 68rpx;
+  line-height: 63rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.header view.cur {
+  border-bottom: 8rpx solid #de7c21;
+  color: #de7c21;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.tab-content {
+  margin-top: 68rpx;
+}
+
+.dhr {
+  bottom: 135rpx;
+  left: 0;
+}
+
+.dhf {
+  bottom: 135rpx;
+  right: 0;
+}
+
+.arrow {
+  width: 20rpx;
+  height: 35rpx;
+  background-size: 100% 100%;
+  margin-top: 10rpx;
+}
+
+.myicon {
+  width: 30rpx;
+  height: 35rpx;
+  background-size: 100% 100%;
+  margin-top: 10rpx;
+}
+
+.info {
+  position: absolute;
+  bottom: -1rpx;
+  height: 147rpx;
+  width: 100%;
+}
+
+.cartlogo {
+  width: 37rpx;
+  height: 37rpx;
+  border-radius: 50%;
+  border: 1rpx solid white;
+  vertical-align: bottom;
+}
+
+.logo {
+  display: inline-block;
+  width: 37.5rpx;
+  height: 37.5rpx;
+  border-radius: 50%;
+  border: 1rpx solid white;
+  vertical-align: text-bottom;
+}
+
+.shop {
+  display: inline-block;
+  margin-top: 10rpx;
+  line-height: 42rpx;
+  margin-left: 10rpx;
+  width: 100%;
+}
+
+.shopname {
+  display: inline-block;
+  color: white;
+  margin-left: 5rpx;
+  vertical-align: text-bottom;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.price_text {
+  color: white;
+  line-height: 30rpx;
+  background-color: red;
+  font-size: 30rpx;
+  border-radius: 5rpx;
+  display: inline-block;
+  padding: 5rpx;
+}
+
+.dhr {
+  bottom: 135rpx;
+  left: 0;
+}
+
+.dhf {
+  bottom: 135rpx;
+  right: 0;
+}
+
+.NavBar-holder {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}

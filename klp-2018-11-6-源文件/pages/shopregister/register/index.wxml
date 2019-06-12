@@ -1,0 +1,28 @@
+<image class='imges' mode='widthFix' src='https://static.klpfood.com/12asas2.jpg'> </image>
+<view class='list'>
+  <view class='userinfo'>
+    <view class='avantar'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <open-data class='name' type="userNickName"></open-data>
+  </view>
+  <view class='lie'>
+    <view class='typname'>
+      <text space='emsp'>昵 称：</text>
+    </view>
+    <input style='float: left;width: 54%;' placeholder='昵称' cursor-spacing='20' value='{{name}}' bindfocus='' disabled="disabled"></input>
+    <button open-type='getUserInfo' bindgetuserinfo='userinfo' class='autobtn'>点击自动填充</button>
+  </view>
+  <view class='lie'>
+    <view class='typname'>手机号：</view>
+    <input style='float: left;width:54%;' bindfocus='' placeholder='手机号码（接收验证码）' cursor-spacing='20' value='{{phone}}' disabled="disabled" name="phone"></input>
+    <button open-type='getPhoneNumber' bindgetphonenumber='phone' class='autobtn'>点击自动填充</button>
+  </view>
+</view>
+
+<view class='btn'>
+  <button class='submit' open-type="getUserInfo" bindgetuserinfo='submit'>提交</button>
+</view>
+<view class='btn'>
+  <button class='submit' open-type="share">邀请好友成为品友</button>
+</view>

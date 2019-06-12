@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "商品详情",
-  "navigationStyle": "custom",
-   "usingComponents":{
-     "model":"/components/model/model"
-   }
-}

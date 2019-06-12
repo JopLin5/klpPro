@@ -1,0 +1,135 @@
+  <view class="NavBar-holder bdomage" style="height:{{statusBarHeight/4*3}}px"></view>
+<view class='tuitip' catchtap="gotolist" style='top:{{statusBarHeight}}px'>
+  <view  class='seach'>
+  <image src='/images/search3.png'></image>
+   <view class='lin'>|</view>
+</view>
+  <view class='icon_tip' wx:if="{{_num==0}}">优 选 食 材</view>
+  <view class='icon_tip' wx:if="{{_num==1}}">休 闲 美 食</view>
+  <view class='icon_tip' wx:if="{{_num==2}}">功 能 食 品</view>
+  <!-- <view class='icon_tip' wx:if="{{_num==3}}">品 尝 接 龙</view>
+  <view class='icon_tip' wx:if="{{_num==4}}">美 食 专 栏</view> -->
+</view>
+
+<swiper style="height:{{screenHeight}}px;margin-top:{{statusBarHeight/4*3}}px" class="tab-content" current="{{_num}}" duration="300" bindchange="tabb">
+  <swiper-item>
+    <!-- for -->
+    <scroll-view scroll-y='true' scroll-with-animation="{{true}}" class='scoll' bindscroll="loadImages">
+     
+      <view wx:for="{{goods_list_left}}" wx:key="index" data-list='0' class=" nav one lst_goods" bindtap="showDetail" data-index="{{index}}" data-cat4='{{item.cat4}}' data-id="{{item.goods_id}}" data-from='0' data-src="{{item.original_img}}">
+        <view class='tuan' wx:if="{{item.prom_type==1}}">团</view>
+        <image src="{{item.original_img}}" class='img' mode='aspectFill' lazy-load="true" />
+        <view class='videbg' wx:if="{{item.type==1}}">
+          <view class='videoflag'></view>
+        </view>
+        <view class='infobg'></view>
+        <view class='goods_list_info'>
+          <view class='goods_list_name'>
+            <text class='goods_list_tt'>{{item.goods_name}}</text>
+          </view>
+
+          <view class='goods_list_txt'>
+            <view class='goods_list_price'>
+              <view class='goods_list_price_text'>￥{{item.shop_price}}</view>
+              <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
+            </view>
+             
+          </view>
+          <!-- <view class='goods_list_shop'>
+            <image class='goods_list_logo' mode='aspectFill' src='{{item.store_logo}}'></image>
+            <view class='goods_list_shopname'>{{item.store_name}}</view>
+           
+          </view> -->
+        </view>
+
+      </view>
+      <view style="width:100%;background:none" class="class_item class_item_end" wx-if="{{empty_left}}">
+        ·左右看看·
+      </view>
+    </scroll-view>
+
+  </swiper-item>
+  <swiper-item>
+    <!-- for -->
+    <scroll-view scroll-y='true'class='scoll' scroll-with-animation="{{true}}" bindscroll="loadImages" >
+   
+      <view wx:for="{{goods_list_right}}" wx:key="index" data-list='1'  data-from='0' class=" nav one" bindtap="showDetail" data-index="{{index}}" data-cat4='{{item.cat4}}' data-id="{{item.goods_id}}" data-src="{{item.original_img}}">
+
+        <view class='tuan' wx:if="{{item.prom_type==1}}">团</view>
+        <image src="{{item.original_img}}" class='img' mode='aspectFill' mode='aspectFill' lazy-load="true" />
+        <view class='videbg' wx:if="{{item.type==1}}">
+          <view class='videoflag'></view>
+        </view>
+
+        <view class='infobg'></view>
+        <view class='goods_list_info'>
+          <view class='goods_list_name'>
+            <text class='goods_list_tt'>{{item.goods_name}}</text>
+          </view>
+
+          <view class='goods_list_txt'>
+             <view class='goods_list_price'>
+              <view class='goods_list_price_text'>￥{{item.shop_price}}</view>
+              <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
+            </view>
+
+          </view>
+          <!-- <view class='goods_list_shop'>
+            <image class='goods_list_logo' mode='aspectFill' src='{{item.store_logo}}'></image>
+            <view class='goods_list_shopname'>{{item.store_name}}</view>
+            <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
+          </view> -->
+        </view>
+      </view>
+      <view style="width:100%;background:none" class="class_item class_item_end" wx-if="{{empty_right}}">
+        ·左右看看·
+      </view>
+    </scroll-view>
+
+  </swiper-item>
+  <swiper-item>
+    <!-- for -->
+    <scroll-view scroll-y='true' class='scoll' scroll-with-animation="{{true}}" bindscroll="loadImages" >
+      <view wx:for="{{goods_list_three}}" wx:for-index="index" wx:key="goods_id" data-list='2'data-from='0'  class=" nav one" bindtap="showDetail" data-index="{{index}}" data-cat4='{{item.cat4}}' data-id="{{item.goods_id}}" data-prom_type="{{item.prom_type}}" data-src="{{item.original_img}}">
+        <view class='tuan' wx:if="{{item.prom_type==1}}">团</view>
+        <image src="{{item.original_img}}" class='img' mode='aspectFill' mode='aspectFill' lazy-load="true" />
+        <view class='videbg' wx:if="{{item.type==1}}">
+          <view class='videoflag'></view>
+        </view>
+
+        <view class='infobg'></view>
+
+        <view class='goods_list_info'>
+          <view class='goods_list_name'>
+            <text class='goods_list_tt'>{{item.goods_name}}</text>
+          </view>
+
+          <view class='goods_list_txt'>
+            <view class='goods_list_price'>
+              <view class='goods_list_price_text'>￥{{item.shop_price}}</view>
+              <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
+            </view>
+          </view>
+          <!-- <view class='goods_list_shop'>
+            <image class='goods_list_logo' mode='aspectFill' src='{{item.store_logo}}'></image>
+            <view class='goods_list_shopname'>{{item.store_name}}</view>
+            <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
+          </view> -->
+        </view>
+      </view>
+      <view style="width:100%;background:none" class="class_item class_item_end" wx-if="{{empty_three}}">
+        ·左右看看·
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+ 
+<view>
+</view>
+
+
+<view class='dhf'>
+  <navigator class='dhs ' style='margin-left:24rpx;' url="/pages/shopregister/register/index">
+    <view class='kftxts'>品友</view>
+  </navigator>
+</view>

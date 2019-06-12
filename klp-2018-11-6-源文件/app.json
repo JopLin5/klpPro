@@ -1,0 +1,98 @@
+{
+  "pages": [
+    "pages/index/index",
+		"pages/start/start",
+    "pages/collection/index",
+    "pages/goods/list/list",
+    "pages/init/error/net_error/index",
+    "pages/init/login/login",
+    "pages/init/reset/reset",
+    "pages/kefu/index",
+    "pages/address/list/list",
+    "pages/address/add/add",
+    "pages/address/select/index",
+    "pages/address/edit/index",
+    "pages/cart/cart",
+    "pages/goods/search/list",
+    "pages/goods/detail/detail",
+    "pages/goods/detail/person/index",
+    "pages/register/index",
+    "pages/myspread/index",
+    "pages/myspread/goods/index",
+    "pages/myspread/info/index",
+    "pages/myspread/shop/index",
+    "pages/myspread/admin/index",
+    "pages/myspread/admin/info/index",
+    "pages/myspread/manager/index",
+    "pages/myspread/em/index",
+    "pages/profile/profile",
+    "pages/withdraw/index",
+    "pages/shopdetail/index",
+    "pages/order/checkout/checkout",
+    "pages/order/buynow/checkout",
+    "pages/order/list/list",
+    "pages/order/details/index",
+    "pages/order/orderpay/payment",
+    "pages/order/kuaidi/index",
+    "pages/member/index/index",
+    "pages/shopdetail/About",
+    "pages/shopdetail/money/index",
+    "pages/shopdetail/withdraw/index",
+    "pages/shopregister/index",
+    "pages/shopregister/yinsi/money",
+    "pages/shopregister/register/index",
+    "pages/member/play/play",
+    "pages/member/business/play",
+    "pages/member/superMan/play"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#de7c21",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "口吕品田食",
+    "backgroundColor": "#de7c21",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#666666",
+    "selectedColor": "#de7c21",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "position": "bottom",
+        "text": "首页",
+        "iconPath": "/images/tab/nav_home.png",
+        "selectedIconPath": "/images/tab/nav_home_select.png"
+      },
+      {
+        "pagePath": "pages/collection/index",
+        "position": "bottom",
+        "text": "收藏",
+        "iconPath": "/images/tab/colle.png",
+        "selectedIconPath": "/images/tab/colle_s.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "position": "bottom",
+        "iconPath": "/images/tab/nav_shoppingcar.png",
+        "selectedIconPath": "/images/tab/nav_shoppingcar_select.png"
+      },
+      {
+        "pagePath": "pages/member/index/index",
+        "text": "我的",
+        "position": "bottom",
+        "iconPath": "/images/tab/nav_personal.png",
+        "selectedIconPath": "/images/tab/nav_personal_select.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 10000
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

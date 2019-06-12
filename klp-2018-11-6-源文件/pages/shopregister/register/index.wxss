@@ -1,0 +1,118 @@
+.typeicon {
+  width: 248rpx;
+  height: 248rpx;
+  border-radius: 50%;
+}
+
+.logo {
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+page {
+  background: #f1f1f1;
+}
+
+.txt {
+  font-size: 28rpx;
+  color: #888;
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.lie input {
+  float: left;
+  display: inline-block;
+  line-height: 88rpx;
+  height: 88rpx;
+}
+
+.typname {
+  width: 20%;
+  float: left;
+}
+
+.lie {
+  overflow: hidden;
+  background: #fff;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  margin-left: 40rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.list {
+  margin-top: 40rpx;
+  background: #fff;
+}
+
+.blue {
+  font-size: 28rpx;
+  color: #4a90e2;
+  text-align: center;
+  margin-top: 3rem;
+  text-decoration: underline;
+}
+
+.submit {
+  width: 90%;
+  height: 94rpx;
+  line-height: 94rpx;
+  color: #fff;
+  background: #de7c21;
+  text-align: center;
+  font-size: 36rpx;
+  margin: 0 auto;
+  border-radius: 0;
+}
+
+.btn {
+  text-align: center;
+  margin-top: 60rpx;
+}
+
+.tip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #d5d5d5;
+  box-sizing: content-box;
+  margin-top: 20rpx;
+  color: #de7c21;
+}
+
+.imges {
+  width: 100%;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.avantar {
+  display: inline-block;
+  width: 110rpx;
+  height: 110rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.name {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.autobtn {
+  display: block;
+  font-size: 26rpx;
+  padding-left: 0;
+  padding-right: 0;
+  color: #fff;
+  background-color: #d03e3f;
+  line-height: 88rpx;
+  height: 88rpx;
+  border-radius:0;
+}

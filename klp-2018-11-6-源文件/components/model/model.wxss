@@ -1,0 +1,33 @@
+.modal-mask{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+/*遮罩内容*/
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  background-color: #fff;
+  text-align: center;
+}
+/*中间内容*/
+.main-content{
+  flex: 1;
+  height: 100%;
+  font-size:36rpx;
+  overflow-y: hidden; 
+  line-height: 100rpx; /* 内容高度最高80vh 以免内容太多溢出*/
+}
+/*底部按钮*/
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+}

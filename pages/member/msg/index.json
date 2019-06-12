@@ -1,9 +1,0 @@
-{
-    "navigationBarBackgroundColor":"#de7c21",
-    "enablePullDownRefresh": true,
-      "navigationBarTitleText": "通知",
-      "navigationBarTextStyle": "white",
-      "usingComponents": {
-        "wxc-list": "../../../dist/packages/@minui/wxc-list/dist/index"
-      }
-}
