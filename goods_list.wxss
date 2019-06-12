@@ -1,0 +1,108 @@
+.goods_list_info {
+  position: absolute;
+  bottom: -1rpx;
+  height: 95rpx;
+  width: 100%;
+  /* border-radius: 0 0 18rpx 18rpx; */
+  /* background: rgba(206, 205, 205, 0.2);   */
+	/* 实现背景半透明化 */
+}
+
+.goods_list_name {
+  width: 100%;
+  padding-left: 10rpx;
+  vertical-align: center;
+  line-height: 30rpx;
+}
+
+.goods_list_price {
+  font-size: 30rpx;
+  color: red;
+  position: relative;
+}
+
+.goods_list_txt {
+  display: table;
+  width: 100%;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+
+.goods_list_tt {
+  /* display: inline-block; */
+  background-color: red;
+  color: #fff800;
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 20rpx;
+  padding: 5rpx;
+  font-weight: bold;
+  /* text-shadow: 0px 0px 8px #ff0000; */
+	/* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
+}
+
+.goods_list_shop {
+  display: inline-block;
+  margin-top: 10rpx;
+  line-height: 42rpx;
+  margin-left: 10rpx;
+  width: 100%;
+} 
+
+.goods_list_price_text {
+  color: #fff;
+  line-height: 40rpx;
+  background-color: red;
+  font-size: 30rpx;
+  display: inline-block;
+  /* padding: 5rpx; */
+  /* text-shadow: 0px 0px 8px #ff0000; */
+	/* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
+}
+
+.goods_list_shopname { 
+  display: inline-block;
+  color: white;
+  margin-left: 5rpx;
+  vertical-align: text-bottom;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.goods_list_logo {
+  display: inline-block;
+  width: 37rpx;
+  height: 37rpx;
+  border: 1rpx solid white;
+  vertical-align: bottom;
+}
+
+.goods_list_shopname {
+  display: inline-block;
+  color: white;
+  margin-left: 5rpx;
+  vertical-align: text-bottom;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.goods_list_liulan {
+  display: inline-block;
+  position: absolute;
+  font-size: 26rpx;
+  height: 40rpx;
+  line-height: 36rpx;
+  margin-right: 13rpx;
+  color: rgb(22, 22, 22);
+  bottom: 0;
+  right: 10rpx;
+  /* text-shadow: 0px 0px 8px #FAF700; */
+	/* text-shadow: 0 0 10px #FFFB18, 0 0 20px #FFFB18, 0 0 30px #FFFB18, 0 0 40px #FFFB18, 0 0 70px #FFFB18, 0 0 80px #FFFB18; */
+  background: rgb(255, 248, 0);
+}
+
+.goods_list_liulan:after {
+  content: '';
+  display: table;
+  clear: both;
+}

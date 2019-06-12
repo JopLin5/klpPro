@@ -1,0 +1,296 @@
+<view class="class-tab">
+    <text bindtap="tabClick" data-index="0" class="{{tab==0?'text-select':'text-normal'}}">全部</text>
+    <text bindtap="tabClick" data-index="1" class="{{tab==1?'text-select':'text-normal'}}">待收货</text>
+    <text bindtap="tabClick" data-index="2" class="{{tab==2?'text-select':'text-normal'}}">待付款</text>
+    <text bindtap="tabClick" data-index="3" class="{{tab==3?'text-select':'text-normal'}}">待发货</text>
+    <text bindtap="tabClick" data-index="4" class="{{tab==4?'text-select':'text-normal'}}">已完成</text>
+  </view>
+  <swiper  current="{{tab}}" duration="300" bindchange="tabClick" style="height:{{winHeight}}px;width:100%;overflow-y:auto;">
+    <swiper-item class='swi'style="overflow-y:auto">
+    <view id='tt0'>
+      <view class="order-item" wx:for="{{all_orders}}" wx:key="order_id">
+
+        <view class="view-title">
+          <image src="/images/order_icon.png"></image>
+          <text>订单号:{{item.order_id}}</text>
+        </view>
+        <view wx:for="{{item.goods_list}}" wx:for-item="mapping" wx:key="" class="carts-item {{index==0?'first':''}}" bindtap="details" data-id="{{item.order_id}}">
+          <view>
+            <!-- 缩略图 -->
+            <image class="carts-image" src="{{mapping.image}}" mode="aspectFill" />
+          </view>
+          <view class="carts-text">
+            <!-- 商品标题 -->
+            <text class="carts-title">{{mapping.goods_name}}</text>
+            <view class="carts-subtitle">
+              <!-- 价格 -->
+              <text>{{mapping.spec_key_name}}</text>
+            </view>
+          </view>
+          <view class="carts-right">
+            <text class="carts-price">￥{{mapping.goods_price}}</text>
+            <text class="carts-num">x{{mapping.goods_num}}</text>
+          </view>
+        </view>
+        <view class="order-footer" style='margin-right:28rpx'>
+          <text></text>
+          <text>实付款：</text>
+          <text style="color:red">￥{{item.order_amount}}</text>
+        </view>
+
+        <view wx:if="{{item.pay_status == 0 && item.order_status == 1}}" class="order-footer touming" style='border-bottom: 8rpx  solid #eee;'>
+          <text class="btn-pay touming" bindtap="cancel" data-index="{{index}}">取消订单</text>
+          <text wx:if="{{item.pay_status =='0' && item.order_status == '1'}}" class="btn-pay touming" data-index="{{index}}" bindtap="pay">立即付款</text>
+        </view>
+
+        <view wx:elif="{{item.shipping_status ==0 && item.pay_status == 1}}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">等待发货</text>
+        </view>
+        <view wx:elif="{{item.pay_status == 1 && item.order_status == 1 && item.shipping_status == 1 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-pay" data-index="{{index}}" bindtap="allconfirm">收货确认</text>
+        </view>
+
+        <view wx:elif="{{item.order_status ==3 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">已取消</text>
+        </view>
+
+        <view wx:else class="order-footer touming" style='border-bottom:8rpx solid #eee;'>
+          <text class="btn-cancel">已完成</text>
+        </view>
+      </view>
+       <view class="class_item class_item_end" wx:if="{{all_orders_empty&&all_orders.length>4}}" >
+    ---换页看看---
+  </view>
+  </view>
+    </swiper-item>
+    <swiper-item class='swi'style="overflow-y:auto">
+     <view id='tt1'>
+      <view class="order-item" wx:for="{{receive_orders}}" wx:key="order_id">
+
+        <view class="view-title">
+          <image src="/images/order_icon.png"></image>
+          <text>订单号:{{item.order_id}}</text>
+        </view>
+        <view wx:for="{{item.goods_list}}" wx:for-item="mapping" wx:key="" class="carts-item {{index==0?'first':''}}" bindtap="details" data-id="{{item.order_id}}">
+          <view>
+            <!-- 缩略图 -->
+            <image class="carts-image" src="{{mapping.image}}" mode="aspectFill" />
+          </view>
+          <view class="carts-text">
+            <!-- 商品标题 -->
+            <text class="carts-title">{{mapping.goods_name}}</text>
+            <view class="carts-subtitle">
+              <!-- 价格 -->
+              <text>{{mapping.spec_key_name}}</text>
+            </view>
+          </view>
+          <view class="carts-right">
+            <text class="carts-price">￥{{mapping.goods_price}}</text>
+            <text class="carts-num">x{{mapping.goods_num}}</text>
+          </view>
+        </view>
+        <view class="order-footer" style='margin-right:28rpx'>
+          <text></text>
+          <text>实付款：</text>
+          <text style="color:red">￥{{item.order_amount}}</text>
+        </view>
+
+        <view wx:if="{{item.pay_status == 0 && item.order_status == 1}}" class="order-footer touming" style='border-bottom: 8rpx  solid #eee;'>
+          <text class="btn-pay" bindtap="cancel" data-index="{{index}}">取消订单</text>
+          <text wx:if="{{item.pay_status =='0' && item.order_status == '1'}}" class="btn-pay touming" data-index="{{index}}" bindtap="pay">立即付款</text>
+        </view>
+
+        <view wx:elif="{{item.shipping_status ==0 && item.pay_status == 1}}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">等待发货</text>
+        </view>
+        <view wx:elif="{{item.pay_status == 1 && item.order_status == 1 && item.shipping_status == 1 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-pay" data-index="{{index}}" bindtap="confirm">收货确认</text>
+        </view>
+
+        <view wx:elif="{{item.order_status ==3 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">已取消</text>
+        </view>
+
+        <view wx:else class="order-footer touming" style='border-bottom:8rpx solid #eee;'>
+          <text class="btn-cancel">已完成</text>
+        </view>
+      </view>
+          <view class="class_item class_item_end" wx:if="{{receive_orders_empty&&receive_orders.length>4}}" >
+    ---换页看看---
+  </view>
+   </view>
+    </swiper-item>
+    <swiper-item class='swi' style="overflow-y:auto">
+     <view id='tt2'>
+      <view class="order-item" wx:for="{{pay_orders}}" wx:key="order_id">
+
+        <view class="view-title">
+          <image src="/images/order_icon.png"></image>
+          <text>订单号:{{item.order_id}}</text>
+        </view>
+        <view wx:for="{{item.goods_list}}" wx:for-item="mapping" wx:key="" class="carts-item {{index==0?'first':''}}" bindtap="details" data-id="{{item.order_id}}">
+          <view>
+            <!-- 缩略图 -->
+            <image class="carts-image" src="{{mapping.image}}" mode="aspectFill" />
+          </view>
+          <view class="carts-text">
+            <!-- 商品标题 -->
+            <text class="carts-title">{{mapping.goods_name}}</text>
+            <view class="carts-subtitle">
+              <!-- 价格 -->
+              <text>{{mapping.spec_key_name}}</text>
+            </view>
+          </view>
+          <view class="carts-right">
+            <text class="carts-price">￥{{mapping.goods_price}}</text>
+            <text class="carts-num">x{{mapping.goods_num}}</text>
+          </view>
+        </view>
+        <view class="order-footer" style='margin-right:28rpx'>
+          <text></text>
+          <text>实付款：</text>
+          <text style="color:red">￥{{item.order_amount}}</text>
+        </view>
+
+        <view wx:if="{{item.pay_status == 0 && item.order_status == 1}}" class="order-footer touming" style='border-bottom: 8rpx  solid #eee;'>
+          <text class="btn-pay" bindtap="cancelpay" data-index="{{index}}">取消订单</text>
+          <text wx:if="{{item.pay_status =='0' && item.order_status == '1'}}" class="btn-pay touming" data-index="{{index}}" bindtap="waitpay">立即付款</text>
+        </view>
+
+        <view wx:elif="{{item.shipping_status ==0 && item.pay_status == 1}}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">等待发货</text>
+        </view>
+        <view wx:elif="{{item.pay_status == 1 && item.order_status == 1 && item.shipping_status == 1 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-pay" data-index="{{index}}" bindtap="confirm">收货确认</text>
+        </view>
+
+        <view wx:elif="{{item.order_status ==3 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">已取消</text>
+        </view>
+
+        <view wx:else class="order-footer touming" style='border-bottom:8rpx solid #eee;'>
+          <text class="btn-cancel">已完成</text>
+        </view>
+      </view>
+         <view class="class_item class_item_end" wx:if="{{pay_orders_empty&&pay_orders.length>4}}" >
+    --换页看看---
+  </view>
+   </view >
+    </swiper-item>
+    <swiper-item class='swi'style="overflow-y:auto">
+     <view id='tt3'>
+      <view class="order-item" wx:for="{{send_orders}}" wx:key="order_id">
+
+        <view class="view-title">
+          <image src="/images/order_icon.png"></image>
+          <text>订单号:{{item.order_id}}</text>
+        </view>
+        <view wx:for="{{item.goods_list}}" wx:for-item="mapping" wx:key="" class="carts-item {{index==0?'first':''}}" bindtap="details" data-id="{{item.order_id}}">
+          <view>
+            <!-- 缩略图 -->
+            <image class="carts-image" src="{{mapping.image}}" mode="aspectFill" />
+          </view>
+          <view class="carts-text">
+            <!-- 商品标题 -->
+            <text class="carts-title">{{mapping.goods_name}}</text>
+            <view class="carts-subtitle">
+              <!-- 价格 -->
+              <text>{{mapping.spec_key_name}}</text>
+            </view>
+          </view>
+          <view class="carts-right">
+            <text class="carts-price">￥{{mapping.goods_price}}</text>
+            <text class="carts-num">x{{mapping.goods_num}}</text>
+          </view>
+        </view>
+        <view class="order-footer" style='margin-right:28rpx'>
+          <text></text>
+          <text>实付款：</text>
+          <text style="color:red">￥{{item.order_amount}}</text>
+        </view>
+
+        <view wx:if="{{item.pay_status == 0 && item.order_status == 1}}" class="order-footer touming" style='border-bottom: 8rpx  solid #eee;'>
+          <text class="btn-pay touming" bindtap="cancel" data-index="{{index}}">取消订单</text>
+          <text wx:if="{{item.pay_status =='0' && item.order_status == '1'}}" class="btn-pay touming" data-index="{{index}}" bindtap="pay">立即付款</text>
+        </view>
+
+        <view wx:elif="{{item.shipping_status ==0 && item.pay_status == 1}}" class="order-footer" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">等待发货</text>
+        </view>
+        <view wx:elif="{{item.pay_status == 1 && item.order_status == 1 && item.shipping_status == 1 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-pay" data-index="{{index}}" bindtap="confirm">收货确认</text>
+        </view>
+
+        <view wx:elif="{{item.order_status ==3 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">已取消</text>
+        </view>
+
+        <view wx:else class="order-footer touming" style='border-bottom:8rpx solid #eee;'>
+          <text class="btn-cancel">已完成</text>
+        </view>
+      </view>
+          <view style="width:100%" class="class_item class_item_end" wx-if="{{send_orders_empty&&send_orders.length>4}}">
+
+      ---换页看看---
+    </view>
+     </view>
+    </swiper-item>
+    <swiper-item class='swi'style="overflow-y:auto">
+     <view id='tt4'>
+      <view class="order-item" wx:for="{{finish_orders}}" wx:key="order_id">
+
+        <view class="view-title">
+          <image src="/images/order_icon.png"></image>
+          <text>订单号:{{item.order_id}}</text>
+        </view>
+        <view wx:for="{{item.goods_list}}" wx:for-item="mapping" wx:key="" class="carts-item {{index==0?'first':''}}" bindtap="details" data-id="{{item.order_id}}">
+          <view>
+            <!-- 缩略图 -->
+            <image class="carts-image" src="{{mapping.image}}" mode="aspectFill" />
+          </view>
+          <view class="carts-text">
+            <!-- 商品标题 -->
+            <text class="carts-title">{{mapping.goods_name}}</text>
+            <view class="carts-subtitle">
+              <!-- 价格 -->
+              <text>{{mapping.spec_key_name}}</text>
+            </view>
+          </view>
+          <view class="carts-right">
+            <text class="carts-price">￥{{mapping.goods_price}}</text>
+            <text class="carts-num">x{{mapping.goods_num}}</text>
+          </view>
+        </view>
+        <view class="order-footer" style='margin-right:28rpx'>
+          <text></text>
+          <text>实付款：</text>
+          <text style="color:red">￥{{item.order_amount}}</text>
+        </view>
+
+        <view wx:if="{{item.pay_status == 0 && item.order_status == 1}}" class="order-footer" style='border-bottom: 8rpx  solid #eee;'>
+          <text class="btn-pay touming" bindtap="cancel" data-index="{{index}}">取消订单</text>
+          <text wx:if="{{item.pay_status =='0' && item.order_status == '1'}}" class="btn-pay touming" data-index="{{index}}" bindtap="pay">立即付款</text>
+        </view>
+
+        <view wx:elif="{{item.shipping_status ==0 && item.pay_status == 1}}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">等待发货</text>
+        </view>
+        <view wx:elif="{{item.pay_status == 1 && item.order_status == 1 && item.shipping_status == 1 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-pay" data-index="{{index}}" bindtap="confirm">收货确认</text>
+        </view>
+
+        <view wx:elif="{{item.order_status ==3 }}" class="order-footer touming" style='border-bottom: 8rpx solid #eee;'>
+          <text class="btn-cancel">已取消</text>
+        </view>
+
+        <view wx:else class="order-footer touming" style='border-bottom:8rpx solid #eee;'>
+          <text class="btn-cancel">已完成</text>
+        </view>
+      </view>
+     <view style="width:100%" class="class_item class_item_end" wx-if="{{finish_orders_empty&&finish_orders.length>4}}">
+
+      ---换页看看---
+    </view>
+    </view>
+    </swiper-item>
+  </swiper>

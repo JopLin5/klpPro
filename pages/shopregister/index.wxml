@@ -1,0 +1,86 @@
+<view class='top'>
+ <image class='image' bindtap='getsite'mode='widthFix'src='https://static.klpfood.com/1557207982631.jpg'></image>
+</view>
+<view>
+  <view class='form'>
+  <view class='userinfo'>
+  <view class='avantar'>
+    <open-data  type="userAvatarUrl"></open-data>
+  </view>
+
+  <open-data class='name' type="userNickName"></open-data>
+  </view>
+    <form bindsubmit="formdata" bindreset="formReset">
+      <view class='view'>企业名称：</view>
+      <view class='view1'>
+        <input type='text' bindinput="bindKeyInput" bindblur='changge' name="company_name"></input>
+      </view>
+      <view class='view'>营业执照上的：统一社会信用代码</view>
+      <view class='view1'>
+        <input type='text' name="business_licence_number"></input>
+      </view>
+      <view class='view'>营业执照(或副本)照片：</view>
+      <view class='img'>
+        <image mode='aspectFit' wx:if="{{!tempFilePaths.business_licence_cert}}" bindtap='img_item' id='1' data-name='business_licence_cert' src='/images/upload.png'></image>
+        <image mode='aspectFit' wx:else bindtap='img_item' id='1' data-name='business_licence_cert' src='{{tempFilePaths.business_licence_cert}}'></image>
+      </view>
+      <view class='view'>法定代表人姓名：</view>
+      <view class='view1'>
+        <input type='text' name="legal_person"></input>
+      </view>
+      <view class='view'>法定代表人身份证正面：</view>
+      <view class='img'>
+        <image mode='aspectFit' wx:if="{{!tempFilePaths.legal_identity_cert}}" bindtap='img_item' id='2' data-name='legal_identity_cert' src='/images/upload.png'></image>
+        <image mode='aspectFit' wx:else bindtap='img_item' id='2' data-name='legal_identity_cert' src='{{tempFilePaths.legal_identity_cert}}'></image>
+      </view>
+        <view class='view'>身份证号码：</view>
+      <view class='view1'>
+        <input type='text' name="legal_identity"></input>
+      </view>
+      <view class='view'>法定代表人身份证反面：</view>
+      <view class='img'>
+        <image mode='aspectFit' wx:if="{{!tempFilePaths.legal_identity_cert_f}}" bindtap='img_item' id='3' data-name='legal_identity_cert_f' src='/images/upload.png'></image>
+        <image mode='aspectFit' wx:else bindtap='img_item' id='3' data-name='legal_identity_cert_f' src="{{tempFilePaths.legal_identity_cert_f}}"></image>
+      </view>
+      <view class='view'>食品经营许可证照片：</view>
+      <view class='img'>
+        <image mode='aspectFit' wx:if="{{!tempFilePaths.food_licence_cert}}" bindtap='img_item' id='4' data-name='food_licence_cert' src='/images/upload.png'></image>
+        <image mode='aspectFit' wx:else bindtap='img_item' id='4' data-name='food_licence_cert' src="{{tempFilePaths.food_licence_cert}}"></image>
+      </view>
+        <view class='view'>商标(选填)：</view>
+      <view class='img'>
+        <image mode='aspectFit' wx:if="{{!tempFilePaths.trademark}}" bindtap='img_item' id='4' data-name='trademark' src='/images/upload.png'></image>
+        <image mode='aspectFit' wx:else bindtap='img_item' id='4' data-name='food_licence_cert' src="{{tempFilePaths.trademark}}"></image>
+      </view>
+      <view class='view'>登录用手机号：</view>
+      <view class='view1'>
+        <input type='number' bindinput='bindmobileInput' name="store_person_mobile"></input>
+      </view>
+      <view class='view'>登录密码：</view>
+      <view class='view1'>
+        <input type='text'  bindinput='is_letter_or_num'maxlength="6" placeholder="长度为6位，必须包含数字、字母至少一种" name="password" password></input>
+      </view>
+      <view class='view'>确认密码：</view>
+      <view class='view1'>
+        <input type='text'  maxlength="6" placeholder="确认密码" name="password1" password></input>
+      </view>
+      <view class='view'>店铺名：</view>
+      <view class='view1'>
+        <input type='text' bindinput='bindStoreNameInput' name="shop_name" maxlength="7"></input>
+      </view>
+      <view class=' flex'>验证码：
+        <input placeholder='请输入图中验证码' bindinput='bindvertify' name='vertify' value=''></input>
+        <image class='yzmtx' src='{{url}}' bindtap='changge' mode="aspectFill"></image>
+      </view>
+
+      <view class='xiahuaxian'></view>
+      <progress percent="{{percent}}" wx:if="{{in_percent}}" show-info />
+  
+         <view class='tip' bindtap='getsite'>
+          <image mode='widthFix' src='https://static.klpfood.com/051401.jpg'></image>
+           <image mode='widthFix' src='https://static.klpfood.com/1557207982630.jpg'></image>
+        </view>
+            <button formType="submit" open-type="getUserInfo" bindgetuserinfo='getUserInfo'>提交审核</button>
+    </form>
+  </view>
+</view>

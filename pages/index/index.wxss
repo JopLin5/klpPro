@@ -1,0 +1,169 @@
+@import "../../goods_list.wxss";
+
+page {
+  background-color: #fff;
+}
+
+.container{
+  display: flex;
+  justify-content:center;
+	position: relative; 
+}
+
+
+swiper {
+  display: block;
+  width: 100%;
+}
+
+swiper-item {
+  display: block;
+  height: auto;
+	/* top: 5vh; */
+}
+
+scroll-view {
+  height: 100%;
+}
+
+.img {
+  max-width: 100%;
+  min-height: 100%;
+  display: block;
+  /* position: absolute; */
+  border-radius: 18rpx;
+  /* margin: 2%； */
+  /* padding: 1%;
+  margin: 1%; */
+}
+
+/*选项卡那一整栏*/
+
+.pinConDet .tabBox {
+  white-space: nowrap;
+  background: white;
+  height: 60rpx;
+}
+
+/*选项卡单个选项*/
+
+.pinConDet .tab-item {
+  font-size: 14px;
+  display: inline-block;
+  width: 18%;
+  margin-left: 1%;
+  background: white;
+  border-radius: 10rpx;
+  margin-top: 2px;
+  height: 26px;
+  line-height: 25px;
+  text-align: center;
+}
+
+/*选项卡选中*/
+
+.pinConDet .active {
+  background: #D8D8D8;
+  color: #D03E3F;
+  font-weight: bold;
+}
+
+/*选项卡对应的页面内容*/
+
+.tab-content swiper-item view {
+  /* font-size: 15px; */
+}
+
+.tab-content swiper-item {
+  background: rgb(237, 238, 236);
+}
+
+/**************************************************/
+
+/*隐藏滚动条*/
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.scoll {
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.dhr {
+  bottom: 135rpx;
+  left: 0;
+}
+
+.dhf {
+  top: 186rpx;
+  right: 0;
+}
+
+.tuitip {
+  position: fixed;
+  display: inline-flex;
+  z-index: 50;
+  /* width: 345rpx; */
+  left: 24%;
+  transform: translateX(-140rpx);
+  -webkit-transform: translateX(-140rpx);
+  -moz-transform: translateX(-140rpx);
+  color: gray;
+  background: rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+  /* border-bottom-left-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  border-top-right-radius: 20rpx; */
+  /* background-color: #d8d8d8; */
+  border: 2rpx solid rgb(238, 233, 233);
+}
+
+.icon_tip {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #fff;
+  display: inline-block;
+  /* font-weight: bold; */
+  margin-left: 10rpx;
+}
+
+.seach {
+  display: inline-flex;
+  line-height: 50rpx;
+  z-index: 1000;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.lin {
+  display: inline-block;
+  line-height: 50rpx;
+  height: 50rpx;
+  padding: 0 8rpx;
+  font-size: 30rpx;
+}
+
+.seach image {
+  width: 45rpx;
+  height: 45rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 7rpx;
+  margin-top: 7rpx;
+}
+
+.searchtip {
+  width: 45rpx;
+  height: 45rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10rpx;
+  margin-top: 7rpx;
+}

@@ -1,0 +1,113 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+image {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.table {
+  display: flex;
+  width: 100%;
+}
+
+.cell {
+  display: table-cell;
+  line-height: 150rpx;
+  height: 150rpx;
+  margin-left: 20rpx;
+}
+
+.item-image {
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 25rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  border: 1px solid #fff;
+}
+
+.sale {
+  overflow: hidden;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  background: #eee;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.saletxt {
+  overflow: hidden;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.zi {
+  font-size: 28rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #999;
+  padding-left: 20rpx;
+}
+
+.btng {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  background: #de7c21;
+  color: #fff;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+
+.btnn {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  border: 1px solid #999;
+}
+.lie input {
+  float: left;
+  display: inline-block;
+  line-height: 88rpx;
+  height: 88rpx;
+}
+
+.typname {
+  width: 20%;
+  float: left;
+}
+
+.lie {
+  overflow: hidden;
+  background: #fff;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  margin: 0 40rpx;
+  border-bottom: 1px solid #ebebeb;
+  width: 100%;
+}
+
+.list {
+  margin-top: 40rpx;
+  background: #fff;
+}

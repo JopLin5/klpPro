@@ -1,0 +1,28 @@
+<scroll-view scroll-y='{{true}}' style='height:1114rpx;' bindscrolltolower='scroll'>
+  <block wx:for="{{shops}}" wx:key='index' wx:for-index="idx">
+    <view class='tuilie'>
+      <navigator url='/pages/profile/profile?from=4&id={{item.parent_id}}'>
+        <image src="{{item.head_pic.length>2?item.head_pic:'/images/avantar.png'}}" bindtap='onGotoshop' data-shopid='{{item.store_id}}' class='typeicon'></image>
+        <view class='mid'>
+          <view class='shopname' bindtap='onGotoshop' data-shopid='{{item.store_id}}'>{{item.name}}</view>
+          <view class='gray'>
+            <text>{{item.addtime}}</text>
+          </view>
+        </view>
+      </navigator>
+      <view class='yzc wt94 touming' data-id="{{item.id}}" data-index="{{idx}}" bindtap='off'>
+        注销
+      </view>
+    </view>
+  </block>
+
+  <view class="class_item class_item_end" wx:if="{{empty&&shops.length>4}}">
+    ---换页看看---
+  </view>
+  <view  class="hint " wx:if="{{shops.length==0}}">
+    暂无
+  </view>
+</scroll-view>
+<view class='line23'>
+  <button class='border-left btn border-right touming' open-type='share'>邀请品友</button>
+</view>

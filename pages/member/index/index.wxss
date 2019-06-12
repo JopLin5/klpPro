@@ -1,0 +1,314 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+button::after {
+  border-radius: 0;
+  border: none;
+}
+
+.navigator-hover {
+  font-size: 10rpx;
+}
+
+.shop1 {
+  display: block;
+  margin: 0 auto;
+  width: 88%;
+  margin-top: 114rpx;
+}
+
+.shop2 {
+  display: block;
+  margin: 0 auto;
+  width: 88%;
+  margin-top: 30rpx;
+}
+
+.shop3 {
+  display: block;
+  margin: 0 auto;
+  width: 88%;
+  margin-top: 30rpx;
+}
+.box0 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-left:35rpx;
+}
+.box1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+}
+
+.green1 {
+  background-color: #d97e23;
+}
+
+.green2 {
+  background-color: #22703c;
+}
+
+.green3 {
+  background-color: #1e2b57;
+}
+
+.tip {
+  color: white;
+}
+
+.login {
+  background: none;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  display: table-row;
+  position: absolute;
+  bottom: 0px;
+  padding-left:14px;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  height: 200rpx;
+}
+
+.rg {
+  float: right;
+  margin-left: 400rpx;
+  width: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.login-btn {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding-top: 28rpx;
+}
+
+.userinfo-nickname {
+  color: black;
+  font-size: 45rpx;
+  display: table-row;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  top: 0;
+  padding-left: 14px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.info_dis {
+  display: table;
+  height: 128rpx;
+  width: 620rpx;
+  position: relative;
+}
+
+/*menu list*/
+
+.tableviewcell {
+  padding: 15rpx 40rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.border {
+  border-top: 8rpx solid #eee;
+}
+
+/*icon*/
+
+.tableviewcell image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/*text*/
+
+.tableviewcell text {
+  font-size: 32rpx;
+  margin-left: 31rpx;
+}
+
+/*order*/
+
+.order-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  margin: 20rpx 0;
+  padding: 20rpx 0;
+}
+
+.order {
+  width: 33.3%;
+  text-align: center;
+}
+
+.order image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.order text {
+  display: block;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.wx-view_log_button {
+  display: flex;
+  align-items: flex-end;
+  width: 90%;
+  align-self: center;
+  flex: 0 1 auto;
+  order: 1;
+  flex-wrap: nowrap;
+  align-content: flex-end;
+  justify-content: center;
+}
+
+.img_account {
+  width: 60rpx;
+  height: 60rpx;
+  border: none;
+  border-radius: 60rpx;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.user-wx-btn {
+  visibility: hidden;
+  color: #fff;
+  background: #de7c21;
+  line-height: 28rpx;
+  font-size: 26rpx;
+  display: table-cell;
+  text-align: center;
+  width: 33.33%;
+}
+
+.line {
+  overflow: hidden;
+  bottom: 0rpx;
+  position: fixed;
+  display: inline-block;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  right: 0;
+  margin: auto;
+}
+
+.border-right {
+  border-right: 1px solid #fff;
+}
+
+.border-left {
+  border-left: 1px solid #fff;
+}
+
+.btn {
+  float: left;
+  width: 49.4%;
+  background: #de7c21;
+  color: #fff;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 10rpx;
+}
+
+.kd {
+  display:flex;
+  justify-content: space-between;
+  height: 100rpx;
+  margin-bottom: 100rpx;
+  margin-top: 6rpx;
+  margin-left: 116rpx;
+  margin-right:35rpx;
+}
+
+.bnk {
+  display: table-cell;
+  width: 100rpx;
+}
+
+.play {
+  display: table-cell;
+}
+
+.te {
+  display: flex;
+  width: 100rpx;
+  height: 100rpx;
+  justify-content: center;
+  align-items: center; /*垂直居中*/
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #fff;
+  background-color: #d03e3f;
+  text-align: center;
+  font-size: 30rpx;
+  /* border-radius: 10rpx; */
+}
+button{
+  padding-left:0;
+  padding-right:0;
+  line-height:normal;
+  border-radius: 0;
+}
+.fl {
+  padding-left: 50rpx;
+}
+
+.sl {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.NavBar-holder {
+  position: fixed;
+  top: 0;
+}
+
+.dhr {
+  bottom:200rpx;
+  left: 0;
+}
+
+.dhf {
+  bottom: 200rpx;
+  right: 0;
+}
+.bd{
+  width:100%;
+  z-index: 1000;
+  background-color: #fff;
+   background-image:none;
+}
