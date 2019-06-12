@@ -1,5 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-abnor": "../../../../dist/packages/@minui/wxc-abnor/dist/index"
-  }
-}

@@ -1,3 +1,0 @@
-<wxc-abnor
-    type="REQUEST_ERROR"
-    bind:abnortap="onAbnorTap"></wxc-abnor>

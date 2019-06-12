@@ -1,6 +1,0 @@
-<import src="../../../wxParse/wxParse.wxml" />
-<view class='de'>
-    <block wx:for="{{content}}" wx:key="{{index}}" wx:for-item="item">
-              <template is="wxParse0" data="{{item,id:curr_id}}" />
-            </block>
-</view>

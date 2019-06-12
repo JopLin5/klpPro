@@ -1,1 +1,0 @@
-<van-steps steps="{{ steps }}" active="{{ active }}" direction="vertical" active-color="#de7c21" />

@@ -1,3 +1,0 @@
-  <block wx:for="{{list}}" wx:key="">
-  <wxc-list arrow="{{false}}"  icon='notice' title="{{item.content}}"></wxc-list>
-  </block>

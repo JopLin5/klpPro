@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "快递详情",
-  "usingComponents": {
-    "van-steps": "../../../dist/steps/index"
-  }
-}
