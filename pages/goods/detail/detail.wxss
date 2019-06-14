@@ -132,7 +132,7 @@ button::after {
 .typeicon {
   display: table-cell;
   vertical-align: middle;
-  margin-left: 1%;
+  margin-left: 3%;
 }
 
 .shoppp {
@@ -146,12 +146,13 @@ button::after {
 }
 
 .imgg {
-  width: 70rpx;
-  height: 70rpx;
+  width: 65rpx;
+  height: 65rpx;
   border-radius: 50%;
   border: 2rpx solid #fff;
-  margin-left: 2rpx;
+  /* margin-left: 2rpx; */
   vertical-align: middle;
+	margin: 5rpx;
 }
 
 .tuishop {
@@ -217,6 +218,8 @@ button::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+	height: 78rpx;
+	margin-left: 5rpx;
 }
 
 .midimg .txt {
@@ -265,7 +268,7 @@ button::after {
 
 .typename {
   color: #fff;
-  font-size: 30rpx;
+  font-size: 14px;
   font-weight: bold;
   display: block;
   overflow: hidden;
@@ -391,14 +394,14 @@ button::after {
 }
 
 .kficon {
-  width: 80rpx;
-  height: 80rpx;
+  width: 70rpx;
+  height: 70rpx;
   display: inline-block;
   vertical-align: middle;
 }
 .kficonbuy {
-  width: 100rpx;
-  height: 100rpx;
+  width: 138rpx;
+  height: 128rpx;
   display: inline-block;
   vertical-align: middle;
 }
@@ -479,8 +482,8 @@ button::after {
 }
 
 .fshare2 {
-  top: 288rpx;
-  right: 10rpx;
+  top: 280rpx;
+  right: 20rpx;
   position: fixed;
 	z-index: 100;
 }
@@ -818,8 +821,8 @@ page .wx-swiper-dot-active::before {
   display: inline-block;
   z-index: 100;
   position: fixed;
-  bottom: 35rpx;
-	left: 20rpx;
+  bottom: 38rpx;
+	left: 22rpx;
   /* right: 20rpx; */
 }
 
@@ -848,20 +851,24 @@ page .wx-swiper-dot-active::before {
 .text-price-red {
   z-index: 50;
   display: block;
-  margin-top: 14rpx;
+  /* margin-top: 14rpx; */
   position: fixed;
-  bottom: 110rpx;
+  bottom: 126rpx;
   left: 20rpx;
+
 }
 
 .text-price-red-price {
-  font-size: 40rpx;
-  color: #fff800;
-  /* background-color: red; */
-  font-weight: bold;
-  height: 52rpx;
-  line-height: 52rpx;
-	text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F;
+  font-size: 19px;
+  color: #FFFFFF;
+  background-color: #D03E3F;
+  /* font-weight: bold; */
+  /* height: 52rpx; */
+  /* line-height: 52rpx; */
+	/* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
+	padding-left: 10rpx;
+  padding-right: 13rpx;
+	padding-bottom: 6rpx;
 }
 
 .shopname {
@@ -927,8 +934,9 @@ page .wx-swiper-dot-active::before {
 .shoptip {
   display: inline-block;
   color: #fff;
-  font-size: 26rpx;
+  font-size: 12px;
   width: 206rpx;
+	margin-left: 2rpx;
 }
 
 .border {
@@ -987,13 +995,14 @@ page .wx-swiper-dot-active::before {
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0;
   display: block;
-  margin-left: 20rpx;
+  margin-left: 35rpx;
   /* margin-right: 20rpx; */
 }
 
 .fastbuynow{
-  bottom: 20rpx;
-	margin-left: 20rpx;
+  bottom: 65rpx;
+	margin-left: 40rpx;
+	height: 180rpx;
 }
 
 .fshare::after {
@@ -1009,12 +1018,17 @@ page .wx-swiper-dot-active::before {
 }
 
 .class-tip .ttip {
-  font-size: 16px;
-  padding: 0 8rpx;
-  color: #000;
+  font-size: 12px;
+  /* padding: 0 10rpx; */
+  color: #2F2F2F;
   display: inline-block;
-  /* background: rgba(255, 248, 0,1); */
-	text-shadow: 0 0 10px #FFFB18, 0 0 20px #FFFB18, 0 0 30px #FFFB18, 0 0 40px #FFFB18, 0 0 70px #FFFB18, 0 0 80px #FFFB18;
+  background: #FFFB18;
+	/* text-shadow: 0 0 10px #FFFB18, 0 0 20px #FFFB18, 0 0 30px #FFFB18, 0 0 40px #FFFB18, 0 0 70px #FFFB18, 0 0 80px #FFFB18; */
+	padding-left: 16rpx;
+	padding-right: 16rpx;
+	padding-top: 3rpx;
+	padding-bottom: 6rpx;
+	/* font-weight: bold; */
 }
 
 .pre-people {
@@ -1198,19 +1212,22 @@ button::after {
 
 .goods_name {
   display: inline-block;
-  font-weight: bold;
+  /* font-weight: bold; */
   position: fixed;
   color: #fff800;
-  /* background-color: red; */
+  background-color: #D03E3F;
   text-indent: 4rpx;
-  height: 70rpx;
-  line-height: 52rpx;
+  /* height: 70rpx; */
+  /* line-height: 66rpx; */
   width: auto;
-  left: 25rpx;
-  bottom: 158rpx;
-  z-index: 50;
-  font-size: 40rpx;
-	text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F;
+  left: 20rpx;
+  bottom: 175rpx;
+  z-index: 25;
+  font-size: 18px;
+	/* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
+	padding-left: 10rpx;
+  padding-right: 13rpx;
+	padding-top: 6rpx;
 }
 
 .one-scene {
@@ -1240,12 +1257,12 @@ button::after {
   justify-content: flex-end;
   position: fixed;
   width: 100%;
-  bottom: 180rpx;
-  right: 10rpx;
+  bottom: 230rpx;
+  right: 2rpx;
   z-index: 1000;
 }
 
 .buyimg{
-	width: 180rpx;
-  height: 180rpx;
+	width: 190rpx;
+  height: 177rpx;
 }
