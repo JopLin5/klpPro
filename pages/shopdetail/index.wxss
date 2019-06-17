@@ -1,10 +1,11 @@
 @import "../../goods_list.wxss";
+
 ::-webkit-scrollbar {
   display: none;
 }
 
 page {
-  background-color: #4c3929;
+  background-color: #EEEEEE;
 }
 
 scroll-view {
@@ -12,8 +13,8 @@ scroll-view {
 }
 
 .typeicon {
-  width: 90rpx;
-  height: 90rpx;
+  width: 70rpx;
+  height: 70rpx;
   background-size: 100% 100%;
   float: left;
   border-radius: 50%;
@@ -21,8 +22,8 @@ scroll-view {
 }
 
 .typename {
-  color: #fff;
-  font-size: 15px;
+  color: #303132;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -35,7 +36,7 @@ scroll-view {
 }
 
 .all {
-  color: #fff;
+  color: #8e8e93;
   font-size: 12px;
 }
 
@@ -46,45 +47,51 @@ scroll-view {
 }
 
 .fl {
-  height: 105rpx;
+  height: 80rpx;
   position: relative;
-  width: 66%;
+  width: 50%;
   margin-left: 20rpx;
 }
 
-.about-right-info {
+/* .about-right-info {
   display: flex;
   flex-direction: row-reverse;
-}
+} */
 
 .about-right-info-tel {
-  width: 360rpx;
+  width: 55%;
   text-align: right;
-  padding-right: 20rpx;
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: row;
 }
 
-.about-info-tel-title {
+.about-right-info-tel image {
+  width: 63rpx;
+  height: 63rpx;
+  text-align: right;
+	margin-left: 30rpx;
+  /* padding-right: 20rpx; */
+}
+
+/* .about-info-tel-title {
   display: inline-block;
   font-size: 30rpx;
   line-height: 50rpx;
   vertical-align: middle;
-}
+} */
 
-.kefu {
-  width: 50rpx;
-  height: 50rpx;
+/* .kefu {
   margin-right: 20px;
   vertical-align: middle;
   display: inline-block;
 }
 
 .about-right-info-fav {
-  width: 50rpx;
-  height: 50rpx;
   display: inline-block;
   vertical-align: middle;
   margin-left: 20rpx;
-}
+} */
 
 .NavBar-holder {
   position: fixed;
@@ -93,15 +100,16 @@ scroll-view {
 }
 
 .mr {
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  top: 0; */
   width: 100%;
   display: flex; /*Flex布局*/
   display: -webkit-flex; /* Safari */
   align-items: center; /*指定垂直居中*/
   justify-content: space-between;
   flex-flow: row nowrap;
-  background: rgba(0, 0, 0, 0.15);
+  /* background: rgba(0, 0, 0, 0.15); */
+  background-color: #fff;
   z-index: 100;
 }
 
@@ -133,10 +141,9 @@ scroll-view {
   margin-top: 50px;
 }
 
-
 .img {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   display: block;
   position: absolute;
 }
@@ -182,7 +189,7 @@ scroll-view {
 }
 
 .mrr {
-  margin-left: 111rpx;
+  margin-left: 95rpx;
 }
 
 .kn {
@@ -213,15 +220,6 @@ scroll-view {
   margin-top: -66.8rpx;
 }
 
-
-
-
-
-
-
-
-
-
 .dhr {
   bottom: 135rpx;
   left: 0;
@@ -231,6 +229,18 @@ scroll-view {
   bottom: 135rpx;
   right: 0;
 }
+
+.goodshow{
+  width: 100%;
+  display: flex; /*Flex布局*/
+  display: -webkit-flex; /* Safari */
+  align-items: center; /*指定垂直居中*/
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  /* background: rgba(0, 0, 0, 0.15); */
+  background-color: #fff;
+  z-index: 100;
+} 
 
 .swiper {
   position: relative;
