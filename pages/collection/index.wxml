@@ -6,8 +6,10 @@
     收藏的店铺
   </view>
 </view>
+
 <swiper class="tab-content" current="{{active}}" duration="300" bindchange="onChange" style="height:{{winHeight+200}}px;">
   <swiper-item style=' background-color:#eee;'>
+
     <!-- for -->
     <scroll-view wx:if="{{goods_list.length>0}}" scroll-with-animation="{{true}}" bindscroll="colletion_scroll" class='mp' scroll-y="true">
       <view class='nav' wx:for="{{goods_list}}" data-from='1' wx:key="goods_id" data-last_id='{{item.collect_id}}' bindtap="showDetail" data-index="{{index}}" data-id="{{item.goods_id}}">
@@ -17,6 +19,8 @@
           <view class='videoflag'></view>
         </view>
         <view class='infobg'></view>
+
+        <!-- 店铺 -->
         <view class='goods_list_info'>
           <view class='goods_list_name'>
             <text class='goods_list_tt'>{{item.goods_name}}</text>
@@ -29,6 +33,7 @@
             </view>
           </view>
         </view>
+
       </view>
       <view class="class_item class_item_end" wx:if="{{col_empty&&goods_list.length>0}}">
         ·就这么多·
@@ -36,14 +41,15 @@
     </scroll-view>
 
     <view class='center' wx:else>
-      <text class="hint " wx:if="{{col_empty}}">购物车是空的哟\n╮(╯▽╰)╭</text>
+      <text class="hint " wx:if="{{col_empty}}">还没收藏的商品哟\n╮(╯▽╰)╭</text>
     </view>
 
   </swiper-item>
+
   <swiper-item>
     <view class='new'>
-      <view wx:if="{{entries.length>0}}">
-        <scroll-view scroll-y='true' lower-threshold="30">
+      <!-- <view wx:if="{{entries.length>0}}"> -->
+        <scroll-view wx:if="{{entries.length>0}}" scroll-y='true' lower-threshold="30">
           <view wx:for="{{entries}}" wx:for-item="store" class="search scroll-view_H {{index>0?'line':''}}">
             <view class="item" data-id="{{store.store_id}}" data-collect_id="{{store.collect_id}}" data-from='1' bindtap='detail'>
               <view class="commo_ver_blank_20"></view>
@@ -63,14 +69,11 @@
           <view class="class_item class_item_end" wx:if="{{entries.length>4}}"> ·就这么多·</view>
           <view class='ppp' style='height:1px'></view>
         </scroll-view>
-      </view>
+      <!-- </view> -->
 
       <view class='center' wx:else>
         <text class="hint " wx:if="{{empty}}">暂无</text>
       </view>
     </view>
   </swiper-item>
-
-
-
 </swiper>
