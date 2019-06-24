@@ -1,7 +1,7 @@
 @import "../../../dist/Swiper.wxss";
 
 image {
-  border-radius: 0;
+  border-radius: 4rpx;
 }
 
 .back {
@@ -53,9 +53,27 @@ button::after {
 }
 
 .gbb {
-  /* background-color: #fff800; */
-  color: #000;
+  background-color: #D03E3F;
+  color: #fff;
   font-weight: bold;
+  padding-left: 24rpx;
+  /* padding-right: 20rpx； */
+  padding-top: 5rpx;
+  padding-bottom: 8rpx;
+}
+.gbb2{
+ margin-left: 40rpx; 
+ font-weight: normal;
+} 
+.gbb3{
+ margin-left: 3.5%; 
+ color: #D03E3F;
+ vertical-align: 15rpx;
+} 
+.goodsimg{
+  width: 145rpx;
+  height: 45rpx;
+  margin-top: 5rpx;
 }
 
 .slide-image {
@@ -203,12 +221,13 @@ button::after {
 }
 
 .pre-people navigator {
-  display: inline-block;
-  width: 375rpx;
+  /* display: inline-block; */
+  display: inherit;
+  /* width: 375rpx; */
   /* height: 34rpx; */
-  line-height: 40rpx;
-  vertical-align: middle;
-  margin-left: 20rpx;
+  /* line-height: 40rpx; */
+  /* vertical-align: middle; */
+  margin-left: 26rpx;
   background-color: #fff;
 }
 
@@ -1035,17 +1054,21 @@ page .wx-swiper-dot-active::before {
   display: inline-block;
   margin-left: 10rpx;
   width: 100%;
-  height: 34rpx;
+  height: 60rpx;
   line-height: 34rpx;
   vertical-align: middle;
+  margin-top: 10rpx;
 }
 
 .people_tip {
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 26rpx;
+  margin-right: 10rpx;
   vertical-align: middle;
-  /* height: 34rpx; */
-}
+  height: 60rpx;
+  margin-top: 10rpx;
+  }
+
 
 .scoll {
   white-space: nowrap;
@@ -1057,7 +1080,7 @@ page .wx-swiper-dot-active::before {
   height: 40rpx;
   width: 40rpx;
   display: inline-block;
-  margin-right: 10rpx;
+  margin-right: 15rpx;
 }
 
 button {

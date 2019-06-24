@@ -24,7 +24,7 @@
           <!-- 产品信息 -->
           <view class='goods_list_txt'>
             <view class='goods_list_price'>
-              <view class='goods_list_price_text'>￥{{item.shop_price}}/{{item.custom_unit}}</view>
+              <view class='goods_list_price_text'>￥{{item.shop_price}}</view>
               <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
             </view>
           </view>

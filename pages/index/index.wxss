@@ -31,7 +31,7 @@ scroll-view {
   min-height: 100%;
   display: block;
   /* position: absolute; */
-  border-radius: 18rpx;
+  border-radius: 10rpx;
   /* margin: 2%； */
   /* padding: 1%;
   margin: 1%; */
@@ -109,7 +109,7 @@ scroll-view {
   display: inline-flex;
   z-index: 50;
   /* width: 345rpx; */
-  left: 24%;
+  left: 22%;
   transform: translateX(-140rpx);
   -webkit-transform: translateX(-140rpx);
   -moz-transform: translateX(-140rpx);
@@ -121,7 +121,7 @@ scroll-view {
   border-bottom-right-radius: 20rpx;
   border-top-right-radius: 20rpx; */
   /* background-color: #d8d8d8; */
-  border: 2rpx solid rgb(238, 233, 233);
+  /* border: 2rpx solid rgb(238, 233, 233); */
 }
 
 .icon_tip {
@@ -136,10 +136,10 @@ scroll-view {
 
 .seach {
   display: inline-flex;
-  line-height: 50rpx;
+  /* line-height: 50rpx; */
   z-index: 1000;
-  width: 50rpx;
-  height: 50rpx;
+  width: 70rpx;
+  /* height: 50rpx; */
 }
 
 .lin {
@@ -151,12 +151,12 @@ scroll-view {
 }
 
 .seach image {
-  width: 45rpx;
-  height: 45rpx;
+  width: 70rpx;
+  height: 70rpx;
   display: inline-block;
   vertical-align: middle;
-  margin-left: 7rpx;
-  margin-top: 7rpx;
+  /* margin-left: 7rpx; */
+  /* margin-top: 7rpx; */
 }
 
 .searchtip {

@@ -16,18 +16,70 @@
   <view class="about-right-info-tel">
     <!-- <text class="about-info-tel-title">店铺客服</text> -->
     <!--收藏店铺-->
-    <image class="about-right-info-fav" data-index='{{index}}' bindtap="addCollect" data-id="{{the_store.store_id}}" src="{{the_store.is_collect>0?'../../images/n_coll_s.png':'../../images/n_coll_s.png'}}"></image>
+    <image class="about-right-info-fav" data-index='{{index}}' bindtap="addCollect" data-id="{{the_store.store_id}}" src="{{the_store.is_collect>0?'../../images/collect_n.png':'../../images/collect.png'}}"></image>
     <!--客服-->
-    <image class="kefu" bindtap='gotokefu' src="/images/tab_icon_customer_service@3x1.png"></image>
+    <image class="kefu" bindtap='gotokefu' src="/images/Servicer.png"></image>
     <!--购物车-->
-    <image class='shopcar' src='/images/nav_shoppingcar_n.png' bindtap="gotoCart"></image>
+    <image class='shopcar' src='/images/shopcar.png' bindtap="gotoCart"></image>
     <!--分享-->
     <image class='share' catchtap='pre_share' hover-class="none" src='/images/share.png'></image>
     <!-- </view> -->
   </view>
 </view>
+<!-- 
+<view class="list">
+  <view class="item" wx:for="{{goods_list[store.store_id].goods_list}}" data-store_id="{{store.store_id}}" wx:key="goods_id" bindtap="showDetail" data-index="{{index}}" data-id="{{item.goods_id}}" data-src="{{item.original_img}}">
+    <view class="goosimg">
+      <image src="{{item.original_img}}"></image>
+    </view>
+    <view class="desc">
+      <view class="title">{{item.goods_name}}</view>
+      <view class="descbox">
+        <view class="count">
+          <view class="desc-browse">浏览{{item.click_count}}浏览</view>
+          <view class="desc-perce">￥{{item.shop_price}}</view>
+        </view>
+        <view class="add">
+          <image src="../images/icon/add.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view> -->
+
 <!-- 商品展示 -->
 <swiper style='height:{{height}};' class='swiper' bindchange='slipChange' current="{{active}}">
+  <swiper-item wx:for="{{stores}}" wx:key="index" wx:for-item="store">
+    <scroll-view scroll-y='true' bindscroll="loadImages" bindscrolltoupper="onPullDownRefresh">
+      <view class="item" wx:for="{{goods_list[store.store_id].goods_list}}" data-store_id="{{store.store_id}}" wx:key="goods_id" bindtap="showDetail" data-index="{{index}}" data-id="{{item.goods_id}}" data-src="{{item.original_img}}" mode="scaleToFill">
+          <image src="{{item.original_img}}"></image>
+        <view class="desc">
+          <view class="title">{{item.goods_name}}</view>
+          <view class="descbox">
+            <view class="count">
+              <view class="desc-browse">浏览  {{item.click_count}}</view>
+              <view class="desc-perce">￥{{item.shop_price}}/{{item.custom_unit}}</view>
+            </view>
+            <view class="add">
+              <image src="/images/add.png" hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCart'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+      <view class="class_item_end" wx:if="{{goods_list[store.store_id]&&goods_list[store.store_id].empty&&goods_list[store.store_id].goods_list.length>0}}">
+        ·就这么多·
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
+
+
+<!-- 商品展示 -->
+<!-- <swiper style='height:{{height}};' class='swiper' bindchange='slipChange' current="{{active}}">
   <swiper-item wx:for="{{stores}}" wx:key="index" wx:for-item="store">
     <scroll-view scroll-y='true' bindscroll="loadImages" bindscrolltoupper="onPullDownRefresh">
       <view class='nav one' wx:for="{{goods_list[store.store_id].goods_list}}" data-store_id="{{store.store_id}}" wx:key="goods_id" bindtap="showDetail" data-index="{{index}}" data-id="{{item.goods_id}}" data-src="{{item.original_img}}">
@@ -46,17 +98,17 @@
               <view class='goods_list_price_text'>￥{{item.shop_price}}</view>
               <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
             </view>
-          </view>
+          </view> -->
           <!-- <view class='goods_list_shop'>
             <image class='goods_list_logo' mode='aspectFill' src='{{item.store_logo}}'></image>
             <view class='goods_list_shopname'>{{item.store_name}}</view>
             <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
           </view> -->
-        </view>
+        <!-- </view>
       </view>
       <view class="class_item_end" wx:if="{{goods_list[store.store_id]&&goods_list[store.store_id].empty&&goods_list[store.store_id].goods_list.length>0}}">
         ·就这么多·
       </view>
     </scroll-view>
   </swiper-item>
-</swiper>
+</swiper> -->

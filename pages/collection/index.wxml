@@ -6,7 +6,7 @@
     收藏的店铺
   </view>
 </view>
-<swiper class="tab-content" current="{{active}}" duration="300" bindchange="onChange" style="height:{{winHeight}}px;">
+<swiper class="tab-content" current="{{active}}" duration="300" bindchange="onChange" style="height:{{winHeight+200}}px;">
   <swiper-item style=' background-color:#eee;'>
     <!-- for -->
     <scroll-view wx:if="{{goods_list.length>0}}" scroll-with-animation="{{true}}" bindscroll="colletion_scroll" class='mp' scroll-y="true">

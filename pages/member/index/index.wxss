@@ -249,9 +249,9 @@ button::after {
   justify-content: space-between;
   height: 100rpx;
   margin-bottom: 100rpx;
-  margin-top: 6rpx;
-  margin-left: 116rpx;
-  margin-right:35rpx;
+  margin-top: 40rpx;
+  margin-left: 70rpx;
+  margin-right:70rpx;
 }
 
 .bnk {

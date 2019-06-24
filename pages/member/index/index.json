@@ -1,7 +1,7 @@
 {
-    "navigationBarBackgroundColor":"#de7c21",
+    "navigationBarBackgroundColor":"#fff",
       "navigationBarTitleText": "我的",
-      "navigationBarTextStyle": "white",
+      "navigationBarTextStyle": "black",
       "usingComponents": {
         "wxc-list": "../../../dist/packages/@minui/wxc-list/dist/index"
       },

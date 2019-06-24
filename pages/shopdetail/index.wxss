@@ -5,7 +5,7 @@
 }
 
 page {
-  background-color: #EEEEEE;
+  background-color: #E7E9EE;
 }
 
 scroll-view {
@@ -244,4 +244,86 @@ scroll-view {
 
 .swiper {
   position: relative;
+}
+
+
+/* //new css */
+.item {
+  display: flex;
+  flex-direction: row;
+  margin: 6px;
+  /* position: flexd; */
+  background-color: #fff;
+  border-radius: 20rpx;
+
+}
+
+.item image {
+  width: 220rpx;
+  height: 220rpx;
+    border-radius: 20rpx 0 0 20rpx;
+}
+
+.desc {
+  margin-left: 12px;
+  /* line-height: 30px; */
+  margin-top: 20rpx;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 26rpx;
+}
+
+.descbox {
+  /* display: flex;
+  flex-direction: row; */
+  width: 65%;
+  position: absolute;
+}
+
+.count {
+  /* display: flex;
+  flex-direction: column; */
+  line-height: 50rpx;
+  top: 50rpx;
+  position: absolute;
+}
+
+.count image {
+  margin-left: 10px;
+  margin-top: 7px;
+}
+
+.desc-browse {
+  /* bottom: 10rpx; */
+  color: #666;
+  font-size: 24rpx;
+}
+
+.desc-perce {
+  color: #d03e3f;
+  font-size: 32rpx;
+  margin-left: -5rpx;
+}
+.price-small{
+  font-size: 20rpx；
+}
+.add {
+  /* display: flex;
+  flex-direction: row-reverse; */
+  right: 30rpx;
+  position: absolute;
+  bottom: -155rpx;
+}
+
+.add image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.hr {
+  height: 1px;
+  background-color: #ccc;
+  opacity: 0.5;
 }

@@ -90,7 +90,7 @@
 .goods_list_liulan {
   display: inline-block;
   position: absolute;
-  font-size: 12px;
+  font-size: 25rpx;
   /* height: 35rpx; *//* line-height: 38rpx; */
   margin-right: 13rpx;
   color: rgb(22, 22, 22);
@@ -100,7 +100,7 @@
   background: rgb(255, 248, 0);
   padding-left: 10rpx;
   padding-right: 10rpx;
-  padding-bottom: 2rpx;
+  /* padding-bottom: 2rpx; */
 }
 
 .goods_list_liulan:after {

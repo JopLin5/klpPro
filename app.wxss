@@ -38,7 +38,7 @@ image {
   justify-content: center;
   /* display:inline-block; */
   position: relative;
-  width: 352rpx;
+  width: 364rpx;
   height: 555rpx;
   float: left;
   box-sizing: border-box;
@@ -46,9 +46,9 @@ image {
   background-color: #eee;
   /* border-left: 20rpx solid #eee; */
   z-index: 100;
-  margin-left: 2%;
+  margin-left: 1%;
   margin-bottom: 1%;
-  margin-top: 1%;
+  /* margin-top: 1%; */
 }
 
 .nav:nth-of-type(even) {
@@ -118,7 +118,7 @@ image {
 
 .dhf {
   position: fixed;
-  height: 60rpx;
+  height: 62rpx;
   line-height: 60rpx;
   background-color: #d03e3f;
   border-bottom-left-radius: 44rpx;
@@ -248,7 +248,14 @@ page {
   height: 2rpx;
   line-height: 2rpx;
   background: #eee;
-  margin-top: 10rpx;
+  margin-top: 1rpx;
+}
+.class-line-weight {
+  width: 100%;
+  height: 10rpx;
+  line-height: 2rpx;
+  background: #eee;
+  margin-top: 1rpx;
 }
 
 .class-small {
@@ -402,6 +409,6 @@ page {
 .bdomage {
   width: 100%;
   z-index: 1000;
-  background-color: #de7c21;
+  background-color: #fff;
   /* background: rgba(0, 0, 0, 0.5);  实现背景半透明化 */
 }
