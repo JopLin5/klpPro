@@ -18,7 +18,7 @@ navigator {
 
 .view-empty {
   width: 750rpx;
-  height: 750rpx;
+  height: 1000rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +32,7 @@ navigator {
 
 .hint {
   padding-top: 3rpx;
-  font-size: 40rpx;
+  font-size: 33rpx;
   color: #999;
   text-align: center;
   line-height: 60rpx;
@@ -52,13 +52,24 @@ navigator {
 .carts-list {
   display: flex;
   flex-direction: column;
+	background-color: #fff;
+	margin: 15rpx;
+	border-radius: 20rpx;
 }
 
 /*每行单元格*/
+.carts-item-head{
+	display: flex;
+	flex-direction: row;
+	margin-top: 20rpx;
+	margin-left: 20rpx;
+}
 
 .carts-item-title {
-  display: table;
-  margin-bottom: 21rpx;
+  /* display: table; */
+	display: flex;
+  /* margin-bottom: 21rpx; */
+	margin-top: -3rpx;
 }
 
 .container:last-child {
@@ -68,8 +79,9 @@ navigator {
 .carts-item-title .text {
   display: inline;
   font-size: 25rpx;
-  color: #000;
+  color: #303132;
   padding-left: 10rpx;
+	padding-top: 10rpx;
   font-weight: bold;
 }
 
@@ -80,26 +92,28 @@ navigator {
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
-  height: 170rpx;
+  height: 100%;
   /*width属性解决标题文字太短而缩略图偏移*/
-  width: 97%;
-  margin-left: 5rpx;
-  border-bottom: 2rpx solid #eee;
+  width: 94%;
+  margin-left: 13rpx;
+  /* border-bottom: 2rpx solid #eee; */
+	padding: 20rpx 0;
 }
 
 /*左部图片*/
 
 .carts-image {
-  width: 150rpx;
-  height: 150rpx;
+  width: 190rpx;
+  height: 190rpx;
   box-sizing: border-box;
+	border-radius: 5%; 
 }
 
 /*右部描述*/
 
 .carts-text {
-  margin-left: 15rpx;
-  width: 274rpx;
+  margin-left: 20rpx;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -107,17 +121,17 @@ navigator {
 
 .carts-right {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 240rpx;
+  flex-direction: row;
+  justify-content: space-between; 
+  /* align-items: flex-start; */
+  /* width: 166rpx; */
 }
 
 /*右上部分标题*/
 
 .carts-title {
   font-size: 28rpx;
-  color: #444;
+  color: #303132;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -145,7 +159,7 @@ navigator {
 /*价格*/
 
 .carts-price {
-  color: red;
+  color: #D03E3F;
   font-size: 14px;
   line-height: 22px;
 }
@@ -155,13 +169,19 @@ navigator {
 /*stepper容器*/
 
 .stepper {
-  border: 1px solid #ccc;
-  width: 80px;
+	display: flex;
+  /* border: 1px solid #ccc; */
+  width: 180rpx;
   height: 23px;
   margin: 0 auto;
 }
 
 /*加号与减号*/
+
+.stepper image{
+	width: 45rpx;
+	height: 45rpx;
+}
 
 .stepper text {
   width: 19px;
@@ -176,12 +196,12 @@ navigator {
   color: black;
   float: left;
   margin: 0 auto;
-  width: 40px;
+  width: 60rpx;
   height: 23px;
   text-align: center;
   font-size: 12px;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  /* border-left: 1px solid #ccc; */
+  /* border-right: 1px solid #ccc; */
   margin-top: 0rpx;
 }
 
@@ -189,6 +209,11 @@ navigator {
 
 .stepper .normal {
   color: black;
+}
+
+/* 垃圾桶 */
+.delete{
+	margin-bottom: 0;
 }
 
 /*禁用样式*/
@@ -199,10 +224,20 @@ navigator {
 
 /*复选框样式*/
 
-.carts-list icon {
-  margin-top: 60rpx;
-  margin-right: 10rpx;
+.carts-item-head icon {
+  /* margin-top: 60rpx; */
+	display: flex;
+  margin-right: 20rpx;
   color: red;
+	/* margin-top: 15rpx; */
+	/* margin-left: 5rpx; */
+}
+.carts-item-icon {
+  /* margin-top: 60rpx; */
+  margin-right: 25rpx;
+  color: red;
+	margin-top: 70rpx; 
+	margin-left: 7rpx;
 }
 
 /*底部按钮*/
@@ -232,6 +267,7 @@ navigator {
 
 .carts-footer text {
   margin-left: 8rpx;
+	color: #8E8E93;
 }
 
 /*立即结算按钮*/
@@ -244,6 +280,7 @@ navigator {
   background-color: #d03e3f;
   color: white;
   font-size: 36rpx;
+	border-radius: 100rpx;
 }
 
 .carts-footer-left {
@@ -277,9 +314,9 @@ navigator {
 }
 
 .image-delete {
-  width: 40rpx;
-  height: 40rpx;
-  margin-bottom: 20rpx;
+  width: 45rpx;
+  height: 50rpx;
+  /* margin-bottom: 20rpx; */
 }
 
 .cart_t {
@@ -511,8 +548,8 @@ navigator {
 }
 
 .cartlogo {
-  width: 37rpx;
-  height: 37rpx;
+  width: 48rpx;
+  height: 48rpx;
   border-radius: 50%;
   border: 1rpx solid white;
   vertical-align: bottom;

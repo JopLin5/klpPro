@@ -72,6 +72,14 @@ class index{
       url: '/pages/kefu/index?url=' + url,
     })
   }
+	gotoCart = function (e) {
+		wx.switchTab({
+			url: "../cart/cart",
+			fail: function (e) {
+				console.log(e)
+			}
+		})
+	}
   get_about_shop = function(shop_id, p = 1) {
     var self = this;
     server.postJSON(

@@ -32,7 +32,7 @@ navigator {
 
 .hint {
   padding-top: 3rpx;
-  font-size: 40rpx;
+  font-size: 30rpx;
   color: #999;
 }
 
@@ -169,7 +169,7 @@ navigator {
 .center {
   width: 100%;
   text-align: center;
-  margin-top: 44%;
+  margin-top: 55%;
 }
 
 
@@ -198,8 +198,8 @@ navigator {
 }
 
 .header view.cur {
-  border-bottom: 8rpx solid #D03E3F;
-  color: #D03E3F;
+  border-bottom: 8rpx solid #de7c21;
+  color: #de7c21;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }

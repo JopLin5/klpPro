@@ -228,7 +228,7 @@ image {
 
 page {
   font-family: Microsoft YaHei;
-  background: #fff;
+  background: #E7E9EE;
 }
 
 .center {
@@ -393,6 +393,7 @@ page {
   margin-top: 20rpx;
   margin-left: 0rpx;
   margin-right: 0rpx;
+	font-size: 28rpx;
 }
 
 .logo-head {
@@ -409,6 +410,6 @@ page {
 .bdomage {
   width: 100%;
   z-index: 1000;
-  background-color: #fff;
+  background-color: #de7c21;
   /* background: rgba(0, 0, 0, 0.5);  实现背景半透明化 */
 }
