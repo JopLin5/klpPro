@@ -36,7 +36,6 @@ navigator {
   color: #999;
 }
 
-
 .logo {
   border-radius: 50%;
 }
@@ -47,15 +46,14 @@ navigator {
   height: 100%;
 }
 
- .scroll-view_H {
+.scroll-view_H {
   display: flex;
   color: #fff;
   height: 200rpx;
   border-bottom: 1rpx solid #ddd;
 }
 
-
- .item {
+.item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +62,7 @@ navigator {
   text-align: center;
 }
 
- .names {
+.names {
   font-size: 21rpx;
   color: #333;
   line-height: 21rpx;
@@ -72,26 +70,26 @@ navigator {
   font-weight: bold;
 }
 
- .names1 {
+.names1 {
   font-size: 21rpx;
   color: #333;
   line-height: 21rpx;
   height: 46rpx;
 }
 
- .avantar {
+.avantar {
   width: 80rpx;
   height: 80rpx;
 }
 
- .flicon {
+.flicon {
   width: 110rpx;
   height: 110rpx;
   border-radius: 50%;
   border: 2rpx solid #fff;
 }
 
- .flicon1 {
+.flicon1 {
   width: 110rpx;
   height: 110rpx;
 }
@@ -100,7 +98,7 @@ navigator {
   color: #de7c21;
 }
 
- .navv {
+.navv {
   position: relative;
   width: 375rpx;
   height: 615rpx;
@@ -114,37 +112,38 @@ navigator {
   border-radius: 10rpx;
 }
 
- .navv:nth-of-type(odd) {
+.navv:nth-of-type(odd) {
   border-left: 2rpx solid #4c3929;
 }
 
- .default {
+.default {
   height: 340rpx;
   overflow: hidden;
 }
 
- .img {
-  width: 100%;
-  height: 100%;
+.img {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 20rpx 0 0 20rpx;
   display: block;
   position: absolute;
 }
 
- .name {
+.name {
   width: 100%;
   padding-left: 10rpx;
   vertical-align: center;
   line-height: 30rpx;
 }
 
- .txt {
+.txt {
   display: table;
   width: 100%;
   margin-top: 10rpx;
   margin-left: 10rpx;
 }
 
- .name .tt {
+.name .tt {
   display: inline-block;
   background-color: red;
   color: #fff800;
@@ -156,13 +155,13 @@ navigator {
   font-weight: bold;
 }
 
- .gray {
+.gray {
   display: table-cell;
   font-size: 26rpx;
   color: #fff;
 }
 
- .price {
+.price {
   display: table-cell;
 }
 
@@ -171,8 +170,6 @@ navigator {
   text-align: center;
   margin-top: 55%;
 }
-
-
 
 .vertical_line {
   display: inline-block;
@@ -300,4 +297,78 @@ navigator {
   z-index: 1000;
 }
 
+.items {
+  display: flex;
+  flex-direction: row;
+  margin: 6px;
+  /* position: flexd; */
+  background-color: #fff;
+  border-radius: 20rpx;
+}
 
+.items image {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 20rpx 0 0 20rpx;
+}
+
+
+.desc {
+  margin-left: 12px;
+  /* line-height: 30px; */
+  margin-top: 20rpx;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 26rpx;
+}
+
+.descbox {
+  /* display: flex;
+  flex-direction: row; */
+  width: 65%;
+  position: absolute;
+}
+
+.count {
+  /* display: flex;
+  flex-direction: column; */
+  line-height: 50rpx;
+  top: 50rpx;
+  position: absolute;
+}
+
+.count image {
+  margin-left: 10px;
+  margin-top: 7px;
+}
+
+.desc-browse {
+  /* bottom: 10rpx; */
+  color: #666;
+  font-size: 24rpx;
+}
+
+.desc-perce {
+  color: #d03e3f;
+  font-size: 32rpx;
+  margin-left: -5rpx;
+}
+
+.price-small {
+  font-size: 20rpx；;
+}
+
+.add {
+  /* display: flex;
+  flex-direction: row-reverse; */
+  right: 30rpx;
+  position: absolute;
+  bottom: -155rpx;
+}
+
+.add image {
+  width: 45rpx;
+  height: 45rpx;
+}

@@ -52,13 +52,15 @@
 <swiper style='height:{{height}};' class='swiper' bindchange='slipChange' current="{{active}}">
   <swiper-item wx:for="{{stores}}" wx:key="index" wx:for-item="store">
     <scroll-view scroll-y='true' bindscroll="loadImages" bindscrolltoupper="onPullDownRefresh">
+
+		
       <view class="item" wx:for="{{goods_list[store.store_id].goods_list}}" data-store_id="{{store.store_id}}" wx:key="goods_id" bindtap="showDetail" data-index="{{index}}" data-id="{{item.goods_id}}" data-src="{{item.original_img}}" mode="scaleToFill">
-          <image src="{{item.original_img}}"></image>
+        <image src="{{item.original_img}}"></image>
         <view class="desc">
           <view class="title">{{item.goods_name}}</view>
           <view class="descbox">
             <view class="count">
-              <view class="desc-browse">浏览  {{item.click_count}}</view>
+              <view class="desc-browse">浏览 {{item.click_count}}</view>
               <view class="desc-perce">￥{{item.shop_price}}/{{item.custom_unit}}</view>
             </view>
             <view class="add">
@@ -99,12 +101,12 @@
               <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
             </view>
           </view> -->
-          <!-- <view class='goods_list_shop'>
+<!-- <view class='goods_list_shop'>
             <image class='goods_list_logo' mode='aspectFill' src='{{item.store_logo}}'></image>
             <view class='goods_list_shopname'>{{item.store_name}}</view>
             <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
           </view> -->
-        <!-- </view>
+<!-- </view>
       </view>
       <view class="class_item_end" wx:if="{{goods_list[store.store_id]&&goods_list[store.store_id].empty&&goods_list[store.store_id].goods_list.length>0}}">
         ·就这么多·
