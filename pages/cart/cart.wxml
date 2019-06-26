@@ -12,6 +12,7 @@
       <navigator class="carts-item-title" url="/pages/shopdetail/index?id={{item.store_id}}">
         <image class='cartlogo' src="{{item.store_logo?item.store_logo:'/images/icon_store.png'}}"></image>
         <view class='text'>{{item.store_name}}</view>
+        <image class="cartgo" src="/images/go.png" ></image>
       </navigator>
     </view>
     <view wx:for="{{item.goods}}" wx:key="id" wx:for-index="index" wx:for-item="good">

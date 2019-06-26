@@ -52,6 +52,15 @@ navigator {
   height: 200rpx;
   border-bottom: 1rpx solid #ddd;
 }
+/* new2
+.scroll-view_H {
+  display: flex;
+  background-color: #fff;
+  height: 100rpx;
+  border-bottom: 1rpx solid #ddd;
+  margin: 10rpx;
+  border-radius: 20rpx;
+} */
 
 .item {
   display: flex;
@@ -61,6 +70,16 @@ navigator {
   width: 33.333333333333333333%;
   text-align: center;
 }
+/* new2
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  /* width: 33.333333333333333333%; */
+  /* text-align: center;
+	margin-left: 15rpx;
+} */ 
 
 .names {
   font-size: 21rpx;
@@ -69,6 +88,13 @@ navigator {
   height: 46rpx;
   font-weight: bold;
 }
+/* new2
+.names {
+  font-size: 30rpx;
+  color: #303132;
+  font-weight: bold;
+	margin-left: 30rpx;
+} */
 
 .names1 {
   font-size: 21rpx;
@@ -88,6 +114,13 @@ navigator {
   border-radius: 50%;
   border: 2rpx solid #fff;
 }
+/* new2
+.flicon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+} */
 
 .flicon1 {
   width: 110rpx;
@@ -311,7 +344,6 @@ navigator {
   height: 220rpx;
   border-radius: 20rpx 0 0 20rpx;
 }
-
 
 .desc {
   margin-left: 12px;
