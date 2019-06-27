@@ -14,8 +14,8 @@ image {
 
 .row_tip {
   position: fixed;
-  top: 40rpx;
-  left: 10rpx;
+  /* top: 40rpx; */
+  right: 0;
   z-index: 100;
 }
 

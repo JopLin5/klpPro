@@ -88,7 +88,7 @@ class cart{
       this.shop_list('');
     }
   }
-  
+
   // 店铺详情跳转
   detail = function (e) {
     this.$route('../shopdetail/index', e.currentTarget.dataset);

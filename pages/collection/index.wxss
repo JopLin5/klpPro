@@ -48,9 +48,13 @@ navigator {
 
 .scroll-view_H {
   display: flex;
-  color: #fff;
-  height: 200rpx;
-  border-bottom: 1rpx solid #ddd;
+  /* color: #fff; */
+  height: 222rpx;
+	margin: 12rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+	/* margin-top: 15rpx; */
+  /* border-bottom: 1rpx solid #ddd; */
 }
 /* new2
 .scroll-view_H {
@@ -99,7 +103,7 @@ navigator {
 .names1 {
   font-size: 21rpx;
   color: #333;
-  line-height: 21rpx;
+  line-height: 30rpx;
   height: 46rpx;
 }
 
@@ -109,8 +113,8 @@ navigator {
 }
 
 .flicon {
-  width: 110rpx;
-  height: 110rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
   border: 2rpx solid #fff;
 }
@@ -123,8 +127,8 @@ navigator {
 } */
 
 .flicon1 {
-  width: 110rpx;
-  height: 110rpx;
+  width: 120rpx;
+  height: 120rpx;
 }
 
 .main_color {
@@ -342,7 +346,7 @@ navigator {
 .items image {
   width: 220rpx;
   height: 220rpx;
-  border-radius: 20rpx 0 0 20rpx;
+  /* border-radius: 20rpx 0 0 20rpx; */
 }
 
 .desc {

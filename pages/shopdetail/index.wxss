@@ -260,7 +260,7 @@ scroll-view {
 .item image {
   width: 220rpx;
   height: 220rpx;
-  border-radius: 20rpx 0 0 20rpx;
+  /* border-radius: 20rpx 0 0 20rpx; */
 }
 
 .desc {

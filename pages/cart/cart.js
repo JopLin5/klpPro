@@ -241,6 +241,7 @@ class cart {
       total: total.toFixed(2)
     });
   };
+	//删除商品
   deleteCart= function (e) {
     if (!server.check_login()) {
       return;
@@ -257,7 +258,11 @@ class cart {
       }
       that.setData({ carts: that.data.carts});
     });
-
+		wx.showToast({
+			title: '删除成功',
+			icon: 'success',//当icon：'none'时，没有图标 只有文字
+			duration:500
+		})
   };
   // 店铺详情跳转
   detail = function (e) {

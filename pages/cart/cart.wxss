@@ -84,6 +84,7 @@ navigator {
   padding-left: 25rpx;
   padding-top: 6rpx;
   font-weight: bold;
+	line-height: 40rpx;
 }
 
 /*每行单元格*/
@@ -107,7 +108,7 @@ navigator {
   width: 190rpx;
   height: 190rpx;
   box-sizing: border-box;
-  border-radius: 5%;
+  /* border-radius: 5%; */
 }
 
 /*右部描述*/
@@ -559,7 +560,7 @@ navigator {
 
 .cartgo {
   width: 20rpx;
-  height: 30rpx;
+  height: 32rpx;
 	margin-left: 26rpx;
 	margin-top: 11rpx;
 }

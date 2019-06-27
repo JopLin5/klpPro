@@ -1,13 +1,18 @@
 <!-- 顶部标签样式 -->
-<view class="NavBar-holder bdomage" style="height:{{statusBarHeight/4*3}}px"></view>
-<!-- 轮播导航条 -->
-<!-- <scroll-view scroll-x="true" scroll-y="false" scroll-left="{{scrollLeft}}" class='tabBox'>
-  <view class="tab-item {{_num==0?'active':''}}" data-current="0" bindtap="swichNav">优选食材</view>
-  <view class="tab-item {{_num==1?'active':''}}" data-current="1" bindtap="swichNav">休闲美食</view>
-  <view class="tab-item {{_num==2?'active':''}}" data-current="2" bindtap="swichNav">功能食品</view>
-</scroll-view> -->
+<view class="NavBar-holder bdomage" style="height:{{statusBarHeight/4*3+2}}px">
+<image class="nor" src="/images/nor.png"></image>
+</view>
+<!-- 搜索框 -->
+<view class="pinConDet">
+  <view class='tuitip' catchtap="gotolist" style='top:{{statusBarHeight+2}}px'>
+    <view class='seach'>
+      <image src='/images/search3.png'></image>
+    </view>
+    <text class='icon_tip'>搜索商品，分类筛选</text>
+  </view>
+</view>
 <!-- 轮播数据 -->
-<swiper style="height:{{screenHeight}}px;margin-top:{{statusBarHeight/4*3+2}}px" class="tab-content" current="{{_num}}" duration="300" bindchange="tabb">
+<swiper style="height:{{screenHeight}}px;margin-top:{{statusBarHeight/4*3+4}}px" class="tab-content" current="{{_num}}" duration="300" bindchange="tabb">
   <!-- for -->
   <swiper-item>
     <scroll-view scroll-y='true' scroll-with-animation="{{true}}" class='scoll' bindscroll="loadImages">
@@ -113,21 +118,6 @@
     </scroll-view>
   </swiper-item>
 </swiper>
-
-<!-- 悬浮按钮：搜索框 -->
-<view class="pinConDet">
-  <view class='tuitip' catchtap="gotolist" style='top:{{statusBarHeight+2}}px'>
-    <view class='seach'>
-      <image src='/images/search3.png'></image>
-    </view>
-    <!-- <text class='icon_tip'>搜索商品，分类筛选</text> -->
-    <!-- <view class='icon_tip' wx:if="{{_num==0}}">优 选 食 材</view>
-      <view class='icon_tip' wx:if="{{_num==1}}">休 闲 美 食</view>
-      <view class='icon_tip' wx:if="{{_num==2}}">功 能 食 品</view> 
-      <view class='icon_tip' wx:if="{{_num==3}}">品 尝 接 龙</view>
-      <view class='icon_tip' wx:if="{{_num==4}}">美 食 专 栏</view> -->
-  </view>
-</view>
 
 <!-- 悬浮按钮:品友 -->
 <view class='dhf'>

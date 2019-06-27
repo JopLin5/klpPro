@@ -554,6 +554,7 @@ class detail {
     });
     return
   }
+	//加入购物车
   addCart = function (e) {
     let self = this;
     app.check_login_AND_register(e).then(function () {
@@ -590,12 +591,19 @@ class detail {
       goods_num: goods_num
     }, function (res) {
       if (res.data.status == 1) {
-        server.Toast_error("已加入购物车")
+        // server.Toast_error("已加入购物车")
+				wx.showToast({
+					title: '加入购物车成功',
+					icon: 'success',//当icon：'none'时，没有图标 只有文字
+					duration: 2000
+				})
       } else {
         server.Toast_error(res.data.msg)
       }
     })
   }
+
+	
   getshareInfo = function (goods_id = 0) {
     let self = this;
     server.postJSON("/Rebase/rebase_relation", {

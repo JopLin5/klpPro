@@ -38,7 +38,7 @@ image {
   justify-content: center;
   /* display:inline-block; */
   position: relative;
-  width: 364rpx;
+  width: 370rpx;
   height: 555rpx;
   float: left;
   box-sizing: border-box;
@@ -46,8 +46,8 @@ image {
   background-color: #eee;
   /* border-left: 20rpx solid #eee; */
   z-index: 100;
-  margin-left: 1%;
-  margin-bottom: 1%;
+  margin-left: 0.5%;
+  margin-bottom: 0.5%;
   /* margin-top: 1%; */
 }
 
@@ -409,7 +409,7 @@ page {
 
 .bdomage {
   width: 100%;
-  z-index: 1000;
-  background-color: #de7c21;
+  /* z-index: 1000; */
+  /* background-color: #de7c21; */
   /* background: rgba(0, 0, 0, 0.5);  实现背景半透明化 */
 }

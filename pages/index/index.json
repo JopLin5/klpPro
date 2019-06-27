@@ -1,4 +1,5 @@
 {
-  "backgroundTextStyle": "dark",
-  "navigationStyle": "custom"
+	"backgroundTextStyle": "light",
+	"navigationBarTextStyle": "white",
+	"navigationStyle": "custom"
 }
