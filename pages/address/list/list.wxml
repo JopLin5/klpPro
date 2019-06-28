@@ -3,11 +3,11 @@
 	<view class="item"  data-manage="{{manage}}" wx:for="{{addressObjects}}" data-id="{{item.address_id}}" wx:key="">
 		<!-- first row -->
     <view  bindtap='selectAddr' data-id="{{item.address_id}}">
-		<view class="header">
-			<text style="width:100px" class="realname">姓名:{{item.consignee}}</text>
-			<text  class="mobile">电话:{{item.mobile}}</text>
-		</view>
 		<!-- second row -->
+		<view class="header">
+			<text style="width:100rpx" class="realname">{{item.consignee}}</text>
+			<text  class="mobile">{{item.mobile}}</text>
+		</view>
 		<view class="summary">{{item.address}}</view>
     </view>
 		<!-- third row -->
@@ -29,6 +29,6 @@
 	</view>
 </view>
 <view class='address_op' >
-<button bindtap="manage" data-manage='{{manage}}'  class="touming address-left border-left border-right ">{{manage?'关闭管理':'管理'}}</button>
-<button bindtap="add"  class="touming address-right border-right ">添加</button>
+<button bindtap="manage" data-manage='{{manage}}'  class="touming address-left border-left border-right ">{{manage?'关闭管理':'管理地址'}}</button>
+<button bindtap="add"  class="touming address-right border-right ">添加地址</button>
 </view>

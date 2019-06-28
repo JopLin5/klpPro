@@ -1,111 +1,130 @@
 /*page background*/
-page {
-	background: #eee;
-}
-.address_op{
-display: flex;
 
+page {
+  background: #eee;
+}
+
+.address_op {
+  display: flex;
 }
 
 /*that means a record*/
+
 .item {
-	margin-bottom: 20rpx;
-	background: #fff;
-	padding: 10rpx 20rpx 10rpx 20rpx;
+  /* margin-bottom: 20rpx; */
+  background: #fff;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  margin: 20rpx;
+  border-radius: 20rpx;
 }
+
 /*姓名与手机号码*/
+
 .item .header {
-	font-size: 30rpx;
-	color: #333;
-	line-height: 72rpx;
-	display: flex;
-	flex-direction: column;
+  font-size: 30rpx;
+  color: #83878b;
+  line-height: 70rpx;
+  display: flex;
+  flex-direction: row;
 }
+
 .border-right {
-border-right:1px solid #fff;
-
+  border-right: 1px solid #fff;
 }
+
 .border-left {
-border-left:1px solid #fff;
-
+  border-left: 1px solid #fff;
 }
+
 .item .header text {
-	margin-left: 0;
-	
+  margin-left: 0;
+}
+
+.mobile {
+  margin-left: 10rpx;
 }
 
 .item .summary {
-	color: #999;
-	font-size: 29rpx;
-	line-height: 50rpx;
+  color: #000;
+  font-size: 29rpx;
+  line-height: 60rpx;
 }
 
 .item .footer {
-	border-top: 1px solid #ccc;
-	font-size: 30rpx;
-	color: #999;
-	padding-left: 10rpx;
-	padding-top: 10rpx;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  border-top: 1px solid #ccc;
+  font-size: 30rpx;
+  color: #999;
+  padding-left: 10rpx;
+  padding-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /*设为默认地址*/
+
 .set-default {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
+  margin-left: -12rpx;
 }
 
 .set-default text {
-	font-size: 27rpx;
-	margin-left: 6rpx;
+  font-size: 27rpx;
+  margin-left: 6rpx;
 }
 
 /*编辑与删除操作*/
+
 .item .footer .operation {
-	width: 280rpx;
-	display: flex;
+  /* width: 290rpx; */
+  display: flex;
 }
 
 .item .footer .operation .container {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
 }
 
 .item .footer .operation .container image {
-	width: 60rpx;
-	height: 60rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 
 .item .footer .operation .container text {
-	margin-left: 6rpx;
-	font-size: 27rpx;
+  /* margin-left: 6rpx; */
+  font-size: 27rpx;
 }
 
 /*地址列表包装容器*/
+
 .address-list {
-	margin-bottom: 56px;
+  margin-bottom: 56px;
 }
 
 /*添加地址按钮*/
+
 .address-left {
-	position: fixed;
-	bottom: 0;
+  position: fixed;
+  bottom: 10rpx;
+  left: 10rpx;
   height: 90rpx;
-	width: 50%;
-	color: #ffffff;
-	background: #de7c21;
-   border-radius:0;
+  width: 48%;
+  color: #fff;
+  background: #d03e3f;
+  border-radius: 100rpx;
 }
+
 /*添加地址按钮*/
 .address-right {
   height: 90rpx;
-  margin-left:50%;
-	position: fixed;
-	bottom: 0;
-	width: 50%;
-	color: #ffffff;
-	background: #de7c21;
- border-radius:0; 
+  margin-left: 50%;
+  position: fixed;
+  bottom: 10rpx;
+  right: 10rpx;
+  width: 48%;
+  color: #fff;
+  background: #d03e3f;
+  border-radius: 100rpx;
 }

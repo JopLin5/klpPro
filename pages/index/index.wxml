@@ -8,7 +8,7 @@
     <view class='seach'>
       <image src='/images/search3.png'></image>
     </view>
-    <text class='icon_tip'>搜索商品，分类筛选</text>
+    <text class='icon_tip'>输入商品名称或店铺名称</text>
   </view>
 </view>
 <!-- 轮播数据 -->

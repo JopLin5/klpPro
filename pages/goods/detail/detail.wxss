@@ -53,7 +53,7 @@ button::after {
 }
 
 .gbb {
-  background-color: #D03E3F;
+  background-color: #d03e3f;
   color: #fff;
   font-weight: bold;
   padding-left: 24rpx;
@@ -61,16 +61,19 @@ button::after {
   padding-top: 5rpx;
   padding-bottom: 8rpx;
 }
-.gbb2{
- margin-left: 40rpx; 
- font-weight: normal;
-} 
-.gbb3{
- margin-left: 3.5%; 
- color: #D03E3F;
- vertical-align: 15rpx;
-} 
-.goodsimg{
+
+.gbb2 {
+  margin-left: 40rpx;
+  font-weight: normal;
+}
+
+.gbb3 {
+  margin-left: 3.5%;
+  color: #d03e3f;
+  vertical-align: 15rpx;
+}
+
+.goodsimg {
   width: 145rpx;
   height: 45rpx;
   margin-top: 5rpx;
@@ -170,7 +173,7 @@ button::after {
   border: 2rpx solid #fff;
   /* margin-left: 2rpx; */
   vertical-align: middle;
-	margin: 5rpx;
+  margin: 5rpx;
 }
 
 .tuishop {
@@ -223,10 +226,7 @@ button::after {
 .pre-people navigator {
   /* display: inline-block; */
   display: inherit;
-  /* width: 375rpx; */
-  /* height: 34rpx; */
-  /* line-height: 40rpx; */
-  /* vertical-align: middle; */
+  /* width: 375rpx; *//* height: 34rpx; *//* line-height: 40rpx; *//* vertical-align: middle; */
   margin-left: 26rpx;
   background-color: #fff;
 }
@@ -237,8 +237,8 @@ button::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-	height: 78rpx;
-	margin-left: 5rpx;
+  height: 78rpx;
+  margin-left: 5rpx;
 }
 
 .midimg .txt {
@@ -418,6 +418,7 @@ button::after {
   display: inline-block;
   vertical-align: middle;
 }
+
 .kficonbuy {
   width: 138rpx;
   height: 128rpx;
@@ -504,7 +505,7 @@ button::after {
   top: 280rpx;
   right: 20rpx;
   position: fixed;
-	z-index: 100;
+  z-index: 100;
 }
 
 .arrow {
@@ -571,10 +572,10 @@ page .wx-swiper-dot-active::before {
   width: 750rpx;
   overflow: hidden;
   position: fixed;
-  bottom: 450rpx;
+  bottom: 0;
   left: 0;
   background: #fff;
-  z-index: 1000;
+  z-index: 1050;
 }
 
 .detail {
@@ -599,8 +600,8 @@ page .wx-swiper-dot-active::before {
   font-size: 30rpx;
   height: 92rpx;
   line-height: 92rpx;
-  color: #5e5e5e;
-  margin-left: 20rpx;
+  color: #8E8E93;
+  margin-left: 35rpx;
   display: inline-block;
 }
 
@@ -659,12 +660,12 @@ page .wx-swiper-dot-active::before {
 /*stepper容器*/
 
 .stepper {
-  border: 1px solid #ccc;
-  width: 80px;
-  height: 26px;
+  /* border: 1px solid #ccc; */
+  /* width: 80px; */
+  /* height: 26px; */
   margin-left: 20rpx;
   display: flex;
-  margin-top: 19rpx;
+  /* margin-top: 19rpx; */
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
@@ -697,11 +698,12 @@ page .wx-swiper-dot-active::before {
 
 .stepper .normal {
   color: black;
-  width: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 
 .number {
-  width: 70rpx;
+  width: 88rpx;
   text-align: center;
 }
 
@@ -714,13 +716,15 @@ page .wx-swiper-dot-active::before {
 .knowBtn {
   width: 94%;
   background: #d03e3f;
-  margin-bottom: 20rpx;
+  /* margin-bottom: 20rpx;
   margin-left: 20rpx;
-  margin-top: 20rpx;
+  margin-top: 20rpx; */
   text-align: center;
   height: 70rpx;
   line-height: 70rpx;
   color: white;
+  margin: 23rpx;
+  border-radius: 100rpx;
 }
 
 .commodity_screen {
@@ -841,7 +845,7 @@ page .wx-swiper-dot-active::before {
   z-index: 100;
   position: fixed;
   bottom: 38rpx;
-	left: 22rpx;
+  left: 22rpx;
   /* right: 20rpx; */
 }
 
@@ -874,20 +878,16 @@ page .wx-swiper-dot-active::before {
   position: fixed;
   bottom: 126rpx;
   left: 20rpx;
-
 }
 
 .text-price-red-price {
   font-size: 19px;
-  color: #FFFFFF;
-  background-color: #D03E3F;
-  /* font-weight: bold; */
-  /* height: 52rpx; */
-  /* line-height: 52rpx; */
-	/* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
-	padding-left: 10rpx;
+  color: #fff;
+  background-color: #d03e3f;
+  /* font-weight: bold; *//* height: 52rpx; *//* line-height: 52rpx; *//* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
+  padding-left: 10rpx;
   padding-right: 13rpx;
-	padding-bottom: 6rpx;
+  padding-bottom: 6rpx;
 }
 
 .shopname {
@@ -911,7 +911,7 @@ page .wx-swiper-dot-active::before {
 }
 
 .price {
-  color: #ff4c44;
+  color: #D03E3F;
 }
 
 .common-intro .shoptext {
@@ -955,7 +955,7 @@ page .wx-swiper-dot-active::before {
   color: #fff;
   font-size: 12px;
   width: 206rpx;
-	margin-left: 2rpx;
+  margin-left: 2rpx;
 }
 
 .border {
@@ -1018,10 +1018,10 @@ page .wx-swiper-dot-active::before {
   /* margin-right: 20rpx; */
 }
 
-.fastbuynow{
+.fastbuynow {
   bottom: 65rpx;
-	margin-left: 40rpx;
-	height: 180rpx;
+  margin-left: 40rpx;
+  height: 180rpx;
 }
 
 .fshare::after {
@@ -1039,15 +1039,15 @@ page .wx-swiper-dot-active::before {
 .class-tip .ttip {
   font-size: 12px;
   /* padding: 0 10rpx; */
-  color: #2F2F2F;
+  color: #2f2f2f;
   display: inline-block;
-  background: #FFFB18;
-	/* text-shadow: 0 0 10px #FFFB18, 0 0 20px #FFFB18, 0 0 30px #FFFB18, 0 0 40px #FFFB18, 0 0 70px #FFFB18, 0 0 80px #FFFB18; */
-	padding-left: 16rpx;
-	padding-right: 16rpx;
-	padding-top: 3rpx;
-	padding-bottom: 6rpx;
-	/* font-weight: bold; */
+  background: #fffb18;
+  /* text-shadow: 0 0 10px #FFFB18, 0 0 20px #FFFB18, 0 0 30px #FFFB18, 0 0 40px #FFFB18, 0 0 70px #FFFB18, 0 0 80px #FFFB18; */
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  padding-top: 3rpx;
+  padding-bottom: 6rpx;
+  /* font-weight: bold; */
 }
 
 .pre-people {
@@ -1067,8 +1067,7 @@ page .wx-swiper-dot-active::before {
   vertical-align: middle;
   height: 60rpx;
   margin-top: 10rpx;
-  }
-
+}
 
 .scoll {
   white-space: nowrap;
@@ -1238,19 +1237,18 @@ button::after {
   /* font-weight: bold; */
   position: fixed;
   color: #fff800;
-  background-color: #D03E3F;
+  background-color: #d03e3f;
   text-indent: 4rpx;
-  /* height: 70rpx; */
-  /* line-height: 66rpx; */
+  /* height: 70rpx; *//* line-height: 66rpx; */
   width: auto;
   left: 20rpx;
   bottom: 175rpx;
   z-index: 25;
   font-size: 18px;
-	/* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
-	padding-left: 10rpx;
+  /* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
+  padding-left: 10rpx;
   padding-right: 13rpx;
-	padding-top: 6rpx;
+  padding-top: 6rpx;
 }
 
 .one-scene {
@@ -1285,7 +1283,7 @@ button::after {
   z-index: 1000;
 }
 
-.buyimg{
-	width: 190rpx;
+.buyimg {
+  width: 190rpx;
   height: 177rpx;
 }

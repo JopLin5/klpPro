@@ -14,7 +14,7 @@
         <view class='text'>{{item.store_name}}</view>
         <image class="cartgo" src="/images/go.png" ></image>
       </navigator>
-    </view>
+    </view> 
     <view wx:for="{{item.goods}}" wx:key="id" wx:for-index="index" wx:for-item="good">
       <view class="carts-item">
         <!-- 复选框图标 -->

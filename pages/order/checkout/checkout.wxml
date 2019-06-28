@@ -4,7 +4,7 @@
     <view class="address-box">
       <view class="show-address" data-address_id='{{address_id}}' bindtap="addaddress">
         <input hidden='true' name='address_id' bindchange='addresschange' value='{{address_id}}'></input>
-        <view class="name-tel">名字：{{address.consignee}} 手机： {{address.mobile}}</view>
+        <view class="name-tel">{{address.consignee}}   {{address.mobile}}</view>
         <view class="addr-text">{{address.address}}</view>
       </view>
     </view>

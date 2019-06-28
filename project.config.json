@@ -47,7 +47,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 9,
 			"list": [
 				{
 					"id": 0,
@@ -101,6 +101,20 @@
 					"id": -1,
 					"name": "收货地址",
 					"pathName": "pages/address/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "pages/order/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/orderpay/payment",
+					"pathName": "pages/order/orderpay/payment",
 					"scene": null
 				}
 			]

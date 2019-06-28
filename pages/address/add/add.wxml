@@ -6,38 +6,38 @@
     <input  name='consignee' style='float: left;width: 90%;'  placeholder-class="input-placeholder" placeholder="必填" />
   </view>
 
-  <view class="class-line"></view>
+  <!-- <view class="class-line"></view> -->
 
   <view class="view-row" bindtap="cascadePopup" >
-    <text>地区</text>
-    <input   disabled="true" style='float: left;width: 90%;'  value="{{areaSelectedStr}}" placeholder-class="input-placeholder" placeholder="必选" />
+    <text>收货地区</text>
+    <input   disabled="true" style='float: left;width: 90%; margin-right:20rpx'  value="{{areaSelectedStr}}" placeholder-class="input-placeholder" placeholder="必选" />
     
   </view>
 
-  <view class="class-line"></view>
+  <!-- <view class="class-line"></view> -->
 
   <view class="view-row">
     <text>详细地址</text>
-    <input name='address' style='float: left;width: 90%;'   placeholder-class="input-placeholder" placeholder="必填" />
+    <input name='address' style='float: left;width: 90%; margin-right:20rpx'   placeholder-class="input-placeholder" placeholder="必填" />
   </view>
 
-  <view class="class-line"></view>
+  <!-- <view class="class-line"></view> -->
 
   <view class="view-row">
-    <text>手机</text>
+    <text>手机号码</text>
     <input name="mobile" style='float: left;width: 90%;'  type='number' placeholder-class="input-placeholder" placeholder="必填" />
   </view>
 
-  <view class="class-line"></view>
+  <!-- <view class="class-line"></view> -->
 
   <view class="view-row">
     <text>邮政编号</text>
     <input name="zipcode" style='float: left;width: 90%;'  placeholder-class="input-placeholder" placeholder="选填" />
   </view>
-  <view class="class-line"></view>
+  <!-- <view class="class-line"></view> -->
   <button  class="text-save touming" form-type='submit'>保存并使用该地址</button>
+  <!-- <button  class="text-save touming" form-type='submit'>微信导入地址</button> -->
 </form>
-
 </view>
 
 <view class="modal">

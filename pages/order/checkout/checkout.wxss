@@ -8,6 +8,7 @@
     background: url(http://static.klpfood.com/arrow-right.png) no-repeat 705rpx center ,
                 url(http://static.klpfood.com/addr-line.png) no-repeat center bottom;
     background-size: 16rpx auto,750rpx auto;
+		margin: 10rpx 0;
     background-color: #fff;
 }
 .add-addres{
@@ -24,8 +25,8 @@
 .show-address{
     width: 664rpx;
     box-sizing: border-box;
-    padding-left: 100rpx;
-    background: url(http://static.klpfood.com/118.png) no-repeat left center;
+    /* padding-left: 100rpx;	 */
+    /* background: url(http://static.klpfood.com/118.png) no-repeat left center; */
     background-size: 64rpx auto;
     margin-left:13rpx;
 }

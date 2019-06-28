@@ -68,6 +68,15 @@ button::after {
   color: white;
 }
 
+.callName{
+	display: table-row;
+	position: absolute;
+	color: #8E8E93;
+	font-size: 30rpx;
+	margin-left: 24rpx;
+	bottom: 0;
+}
+
 .login {
   background: none;
   line-height: 30rpx;
@@ -75,7 +84,9 @@ button::after {
   display: table-row;
   position: absolute;
   bottom: 0px;
-  padding-left:14px;
+  /* padding-left:14px; */
+	right: 50rpx;
+	color:#8E8E93;
 }
 
 .userinfo {
@@ -133,6 +144,7 @@ button::after {
   background: white;
   display: flex;
   align-items: center;
+	height: 100rpx;
 }
 
 .border {
@@ -312,4 +324,8 @@ button{
   z-index: 1000;
   background-color: #fff;
    background-image:none;
+}
+.join{
+	width: 100%;
+	height: 230rpx;
 }
