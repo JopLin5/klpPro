@@ -6,9 +6,9 @@
   color: transparent;
 }
 
-image {
-  /* border-radius: 10rpx; */
-}
+/* image {
+  border-radius: 10rpx;
+} */
 
 .blur {
   -webkit-filter: blur(10px); /* Chrome, Opera */

@@ -3,7 +3,7 @@ var tool = require('../../../utils/util');
 var event = require('../../../utils/event.js');
 var timeout = null
 var exit=0;
-Page({
+Page({ 
   data: {
     amount: 0,
     hasAddress: false,

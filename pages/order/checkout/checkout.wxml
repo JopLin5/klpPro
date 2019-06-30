@@ -1,19 +1,18 @@
-
 <view class="container">
   <form bindsubmit="createOrder" report-submit="true">
     <view class="address-box">
       <view class="show-address" data-address_id='{{address_id}}' bindtap="addaddress">
         <input hidden='true' name='address_id' bindchange='addresschange' value='{{address_id}}'></input>
-        <view class="name-tel">{{address.consignee}}   {{address.mobile}}</view>
+        <view class="name-tel">{{address.consignee}} {{address.mobile}}</view>
         <view class="addr-text">{{address.address}}</view>
       </view>
     </view>
     <block wx:for="{{orders.cartList}}" wx:for-item="items">
       <view class="goods-list">
         <view class="list-title">
-          <image class='logo'src="{{items.store_logo?items.store_logo:'/images/icon_store.png'}}" style='width:21px;height:21px'></image>
-         <text class='shopname'> {{items.store_name}}</text>
-          </view>
+          <image class='logo' src="{{items.store_logo?items.store_logo:'/images/icon_store.png'}}" style='width:21px;height:21px'></image>
+          <text class='shopname'> {{items.store_name}}</text>
+        </view>
         <view class="row-box">
           <view class="a-goods" wx:for="{{items.goods}}" wx:for-item="item" wx:key="{{index}}">
             <view class="img-box">
@@ -33,35 +32,36 @@
           </view>
         </view>
       </view>
-      <view class='line_samll'></view>
-      <view class="goods-info">
-        <view class="row-box">
-          <view class="row-label">商品金额</view>
-          <view class="right-text">¥ {{items.total}}</view>
-        </view>
-   
-        <view class="row-box">
-          <view class="row-label">小计</view>
-          <view class="right-text red">¥ {{items.total}}</view>
-        </view>
-      </view>
-      <view class='line_samll'></view>
+      <!-- <view class='line_samll'></view> -->
       <view class="peisong-way">
         <view class="row-box">
-          <view class="row-label1">买家留言</view>
+          <view class="row-label1">订单备注</view>
           <view class="right-text">
-            <input bindchange="liuyanChange" placeholder-class="place-holder" data-store="{{items.store_id}}" type="text" class="liuyan" placeholder="如需备注请输入" />
+            <input bindchange="liuyanChange" placeholder-class="place-holder" data-store="{{items.store_id}}" type="text" class="liuyan" placeholder="选填，请先和商家协商一致" />
           </view>
         </view>
       </view>
- <view class='line_big'></view>
+      <!-- <view class='line_samll'></view> -->
+      <view class="goods-info">
+        <!-- <view class="row-box">
+          <view class="row-label">商品金额</view>
+          <view class="right-text">¥ {{items.total}}</view>
+        </view> -->
+        <view class="row-box">
+        <view class="row-num">共{{items.goodnum}}件</view>
+          <view class="row-label">小计:</view>
+          <view class="right-text red">¥ {{items.total}}</view>
+        </view>
+      </view>
+      <view class='line_big'></view>
     </block>
- 
-      <view class="jiesuan-box">
+
+    <view class="jiesuan-box">
       <view class="left-price">
+      <view class="num">共{{orders.totalPrice.num}}件</view>
         <view class="total">合计：¥ {{ all_total }}</view>
       </view>
       <button class="to-pay-btn border-right " formType="submit">提交订单</button>
     </view>
-     </form>
+  </form>
 </view>
