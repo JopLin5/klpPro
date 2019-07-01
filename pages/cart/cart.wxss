@@ -257,12 +257,13 @@ navigator {
   z-index: 10000;
   box-sizing: content-box;
 	color: #8e8e93;
+	font-size: 31rpx;
 }
 
 /*复选框*/
 
 .carts-footer icon {
-  margin-left: 14rpx;
+  margin-left: 32rpx;
 }
 
 /*全选字样*/

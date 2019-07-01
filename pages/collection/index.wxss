@@ -401,10 +401,10 @@ navigator {
   flex-direction: row-reverse; */
   right: 30rpx;
   position: absolute;
-  bottom: -155rpx;
+  bottom: -150rpx;
 }
 
 .add image {
-  width: 45rpx;
+  width: 52rpx;
   height: 45rpx;
 }

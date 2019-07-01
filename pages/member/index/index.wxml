@@ -53,17 +53,17 @@
 
   <view>
     <view class="class-line-weight"></view>
+    <!--店长隐藏-->
+    <navigator class="wxcolor" url="/pages/shopregister/index" hover-class="navigator-hover">
+      <wxc-list  arrow="{{false}}" dot="{{memhot.notify>0}}" mode='none' src="/images/shop.png" title="我要开店"></wxc-list>
+    </navigator>
+    <view class="class-line"></view>
     <navigator url="/pages/shopregister/index" hover-class="navigator-hover">
       <wxc-list arrow="{{false}}" mode='none' src="/images/shoporder.png" title="店铺订单"></wxc-list>
     </navigator>
     <view class="class-line"></view>
     <navigator url="/pages/shopregister/index" hover-class="navigator-hover">
       <wxc-list arrow="{{false}}" mode='none' src="/images/myshop.png" title="我的店铺"></wxc-list>
-    </navigator>
-    <view class="class-line"></view>
-    <navigator url="/pages/shopregister/index" hover-class="navigator-hover">
-      <wxc-list arrow="{{false}}" dot="{{memhot.notify>0}}" mode='none' src="/images/shop.png" title="我要开店"></wxc-list>
-      <!--店长隐藏-->
     </navigator>
     <view class="class-line"></view>
     <navigator url="/pages/member/business/play" hover-class="navigator-hover">

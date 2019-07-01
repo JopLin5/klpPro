@@ -28,8 +28,8 @@
 
 .goods_list_tt {
   /* display: inline-block; */
-  background-color: #d03e3f;
-  color: #fffb18;
+  background-color: #FFFB18;
+  color: #000;
   font-size: 14px;
   /* height: 30rpx; */
   /* line-height: 20rpx; */
@@ -53,7 +53,7 @@
 .goods_list_price_text {
   color: #fff;
   /* line-height: 40rpx; */
-  background-color: #d03e3f;
+  background-color: #DE7C21;
   font-size: 14px;
   display: inline-block;
   /* padding: 5rpx; *//* text-shadow: 0px 0px 8px #ff0000; *//* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
@@ -97,7 +97,7 @@
   bottom: 0;
   right: 10rpx;
   /* text-shadow: 0px 0px 8px #FAF700; *//* text-shadow: 0 0 10px #FFFB18, 0 0 20px #FFFB18, 0 0 30px #FFFB18, 0 0 40px #FFFB18, 0 0 70px #FFFB18, 0 0 80px #FFFB18; */
-  background: rgb(255, 248, 0);
+  background: #07752B;
   padding-left: 10rpx;
   padding-right: 10rpx;
   /* padding-bottom: 2rpx; */

@@ -32,7 +32,7 @@
               <image src="/images/add.png" hover-class="none" open-type='getUserInfo'></image>
             </view> -->
             <view class='add' hover-class="none" open-type='getUserInfo' catchtap='addCart'>
-              <image src='/images/add.png'></image>
+              <image src='/images/addincart.png'></image>
             </view>
           </view>
         </view>

@@ -64,7 +64,7 @@
               <view class="desc-perce">￥{{item.shop_price}}/{{item.custom_unit}}</view>
             </view>
             <view class="add">
-              <image src="/images/add.png" hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCart'></image>
+              <image src="/images/addincart.png" hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCart'></image>
             </view>
           </view>
         </view>

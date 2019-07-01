@@ -403,9 +403,9 @@ button::after {
 .rightbtn {
   display: flex;
   justify-content: flex-end; /* 右对齐 */
+  flex-direction: column;
   position: fixed;
-  height: 100rpx;
-  width: 100%;
+  /* height: 100rpx; *//* width: 100%; */
   bottom: 8rpx;
   /* top: 46rpx; */
   right: 20rpx;
@@ -600,7 +600,7 @@ page .wx-swiper-dot-active::before {
   font-size: 30rpx;
   height: 92rpx;
   line-height: 92rpx;
-  color: #8E8E93;
+  color: #8e8e93;
   margin-left: 35rpx;
   display: inline-block;
 }
@@ -660,9 +660,7 @@ page .wx-swiper-dot-active::before {
 /*stepper容器*/
 
 .stepper {
-  /* border: 1px solid #ccc; */
-  /* width: 80px; */
-  /* height: 26px; */
+  /* border: 1px solid #ccc; *//* width: 80px; *//* height: 26px; */
   margin-left: 20rpx;
   display: flex;
   /* margin-top: 19rpx; */
@@ -844,9 +842,7 @@ page .wx-swiper-dot-active::before {
   display: inline-block;
   z-index: 100;
   position: fixed;
-  bottom: 38rpx;
-  left: 22rpx;
-  /* right: 20rpx; */
+  bottom: 177rpx;
 }
 
 .row {
@@ -876,8 +872,13 @@ page .wx-swiper-dot-active::before {
   display: block;
   /* margin-top: 14rpx; */
   position: fixed;
-  bottom: 126rpx;
-  left: 20rpx;
+  bottom: 0;
+  color: #fff;
+  background-color: #d97e23;
+  width: 60%;
+  height: 90rpx;
+  line-height: 60rpx;
+  padding-left: 15rpx;
 }
 
 .text-price-red-price {
@@ -911,7 +912,7 @@ page .wx-swiper-dot-active::before {
 }
 
 .price {
-  color: #D03E3F;
+  color: #d03e3f;
 }
 
 .common-intro .shoptext {
@@ -1022,6 +1023,12 @@ page .wx-swiper-dot-active::before {
   bottom: 65rpx;
   margin-left: 40rpx;
   height: 180rpx;
+}
+
+.buynow {
+  color: #fff;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .fshare::after {
@@ -1212,17 +1219,8 @@ button::after {
   padding-top: 13rpx;
 }
 
-.buy image {
-  width: 100%;
-  height: 100%;
-  z-index: 2000;
-}
 
-.buynow {
-  color: #fff;
-  height: 100%;
-  vertical-align: middle;
-}
+
 
 .btn .image {
   width: 258rpx;
@@ -1238,17 +1236,15 @@ button::after {
   position: fixed;
   color: #fff800;
   background-color: #d03e3f;
-  text-indent: 4rpx;
-  /* height: 70rpx; *//* line-height: 66rpx; */
-  width: auto;
-  left: 20rpx;
-  bottom: 175rpx;
+  /* text-indent: 4rpx; *//* height: 70rpx; *//* line-height: 66rpx; *//* width: auto; *//* left: 20rpx; */
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+  bottom: 90rpx;
   z-index: 25;
   font-size: 18px;
   /* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
-  padding-left: 10rpx;
-  padding-right: 13rpx;
-  padding-top: 6rpx;
+  padding-left: 15rpx;
 }
 
 .one-scene {
@@ -1275,11 +1271,11 @@ button::after {
 
 .fastbuy {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   position: fixed;
   width: 100%;
   bottom: 230rpx;
-  right: 2rpx;
+  left: 10rpx;
   z-index: 1000;
 }
 

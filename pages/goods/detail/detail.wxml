@@ -159,22 +159,6 @@
 </view>
 <!--弹窗规格赛选结束-->
 
-
-<!-- 品友 -->
-<view class='dhf'>
-  <navigator class='dhs pr' style='margin-left:24rpx;' url="/pages/shopregister/register/index">
-    <view class='kftxts'>品友{{the_goods.msg.content}}</view>
-  </navigator>
-</view>
-<!-- 分享 -->
-<view class='fshare2'>
-  <button class='fshare' catchtap='pre_share' hover-class="none" hidden='{{!userShareInfo.user_id==0}}' wx:if="{{userShareInfo.user_id==0}}">
-    <image class='kficon' src='../../../images/share.png'></image>
-  </button>
-</view>
-
-
-
 <view class='header' style="top:{{statusBarHeight}}px">
   <!-- 返回按钮 -->
   <view bindtap='back' class='ofback'>
@@ -193,31 +177,60 @@
   </view>
   <!-- 收藏店铺 -->
 </view>
-
-<!-- 商品名称 -->
-<view class='goods_name' bindtap='totip'>{{the_goods.goods_name}}</view>
-<view class='text-price-red ' bindtap='totip'>
-  <text class='text-price-red-price'>{{the_goods.shop_price}} {{the_goods.custom_unit}}</text>
+<!-- 品友 -->
+<view class='dhf'>
+  <navigator class='dhs pr' style='margin-left:24rpx;' url="/pages/shopregister/register/index">
+    <view class='kftxts'>品友{{the_goods.msg.content}}</view>
+  </navigator>
 </view>
-<!-- 浏览 -->
-<view class="class-tip" bindtap='totip'>
-  <view class='row'>
+<!-- 分享 -->
+<view class='fshare2'>
+  <!--hidden='{{!userShareInfo.user_id==0}}' wx:if="{{userShareInfo.user_id==0}}"-->
+  <button class='fshare' catchtap='pre_share' hover-class="none">
+    <image class='kficon' src='../../../images/share.png'></image>
+  </button>
+</view>
+<!-- 分享弹窗 -->
+<view class='boot'></view>
+<model show="{{pre_show}}" height='60%'>
+  <view slot="content">
+    品友可见奖金额，分享成功即获奖
+  </view>
+  <button slot="btn" class='cancel-btn' open-type='share'>继续分享</button>
+  <view slot="btn" class='confirm-btn' bindtap='regi_pinyou'>成为品友</view>
+</model>
+
+<view class="footer">
+  <!-- 底部限时购 -->
+  <view class='fastbuy'>
+    <view>
+      <!--hidden='{{!userShareInfo.user_id==0}}' wx:if="{{userShareInfo.user_id==0}}"-->
+      <button class='#' catchtap='#' hover-class="none">
+        <image class='buyimg' src='../../../images/qianggou.png'></image>
+      </button>
+    </view>
+  </view>
+  <!-- 产品信息悬浮置底 -->
+  <view class="class-tip" bindtap='totip'>
     <view class='ttip'>{{the_goods.click_count}}浏览</view>
+  </view>
+  <view class='goods_name' bindtap='totip'>{{the_goods.goods_name}}</view>
+  <view class='text-price-red ' bindtap='totip'>{{the_goods.shop_price}} {{the_goods.custom_unit}}</view>
+  <!-- 立即购买 -->
+  <view class="fastbuynow">
+    <button class='buynow' hover-class="none" open-type='getUserInfo' bindgetuserinfo='showModal'>立即购买</button>
   </view>
 </view>
 
-<view class='fastbuy'>
-  <!-- 限时购 -->
-  <button class='#' catchtap='#' hover-class="none" hidden='{{!userShareInfo.user_id==0}}' wx:if="{{userShareInfo.user_id==0}}">
-    <image class='buyimg' src='../../../images/qianggou.png'></image>
-  </button>
-  <!-- 左边三按钮客服按钮 -->
-  <!-- <view> -->
-  <!-- <button class="fshare" bindtap='gotokefu' data-store_name='{{the_goods.store.store_name}}'>
+
+
+<!-- 左边三按钮客服按钮 -->
+<!-- <view> -->
+<!-- <button class="fshare" bindtap='gotokefu' data-store_name='{{the_goods.store.store_name}}'>
     <image class='kficon' src='/images/tab_icon_customer_service@3x1.png'></image>
   </button> -->
-  <!-- </view> -->
-</view>
+<!-- </view> -->
+
 <!-- 右三个按钮 立即购买 -->
 <view class='rightbtn'>
   <!-- 收藏按钮 -->
@@ -233,22 +246,11 @@
     <image class='kficon' src='../../../images/addcart.png'></image>
   </button>
   <!-- 立即购买 -->
-  <button class='fastbuynow' hover-class="none" open-type='getUserInfo' bindgetuserinfo='showModal'>
-    <image class='kficonbuy' src='../../../images/buynow.png'></image>
+  <button class='fshare' hover-class="none" open-type='getUserInfo' bindgetuserinfo='showModal'>
+    <image class='kficon' src='../../../images/serch2.png'></image>
   </button>
   <!-- 分享按钮 -->
   <!-- <button class='fshare' catchtap='pre_share' hover-class="none" hidden='{{!userShareInfo.user_id==0}}' wx:if="{{userShareInfo.user_id==0}}">
     <image class='kficon' src='../../../images/share.png'></image>
   </button> -->
 </view>
-
-
-<!-- 分享弹窗 -->
-<view class='boot'></view>
-<model show="{{pre_show}}" height='60%'>
-  <view slot="content">
-    品友可见奖金额，分享成功即获奖
-  </view>
-  <button slot="btn" class='cancel-btn' open-type='share'>继续分享</button>
-  <view slot="btn" class='confirm-btn' bindtap='regi_pinyou'>成为品友</view>
-</model>

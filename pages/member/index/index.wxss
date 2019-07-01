@@ -327,5 +327,9 @@ button{
 }
 .join{
 	width: 100%;
-	height: 230rpx;
+	height: 160rpx;
+}
+
+.wxcolor{
+	color: #F9DED5;
 }
