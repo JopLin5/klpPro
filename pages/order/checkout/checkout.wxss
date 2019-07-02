@@ -141,7 +141,7 @@ form {
 }
 
 .peisong-way .row-box {
-  width: 97%;
+  width: 100%;
   height: 90rpx;
   display: flex;
   justify-content: space-between;
@@ -153,7 +153,7 @@ form {
 }
 
 .row-num {
-  padding-top: 20rpx;
+  /* padding-top: 20rpx; */
   padding-right: 30rpx;
   color: #b6b6bf;
 }
@@ -170,7 +170,7 @@ form {
 }
 
 .peisong-way .liuyan {
-  width: 510rpx;
+  width: 533rpx;
   font-size: 27rpx;
   z-index: -10;
 }

@@ -69,7 +69,7 @@ page {
 	font-size: 27rpx;
 	line-height: 50rpx;
 	color: #fff;
-	background: #de7c21;
+	background: #D03E3F;
 	align-self: flex-end;
 
 	margin-left: 20rpx;
@@ -177,10 +177,10 @@ page {
 .text-select{
 	width: 150rpx;
 	font-size: 30rpx;
-	color: #de7c21;
+	color: #D03E3F;
 	line-height:90rpx;
 	height: 82rpx;
-	border-bottom:8rpx solid #de7c21;
+	border-bottom:8rpx solid #D03E3F;
 	text-align: center;
 }
 .text-normal{

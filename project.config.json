@@ -47,7 +47,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 10,
 			"list": [
 				{
 					"id": 0,
@@ -115,6 +115,13 @@
 					"id": -1,
 					"name": "pages/order/orderpay/payment",
 					"pathName": "pages/order/orderpay/payment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/buynow/checkout",
+					"pathName": "pages/order/buynow/checkout",
 					"scene": null
 				}
 			]

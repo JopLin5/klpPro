@@ -57,34 +57,38 @@
             </block>
           </view>
         </view>
-        <view class="class-line"></view>
-        <!-- 物流 -->
-        <view class='people_tip text' style='padding-left:10rpx;'>
-          <view space='emsp' class='gbb'>物流说明
+        <view class="goodsdecs">
+          <view class="class-line"></view>
+          <!-- 物流 -->
+          <view class='people_tip text' style='padding-left:10rpx;'>
+            <!-- <view space='emsp' class='gbb'> -->
+            <image class='goodsimg' src='../../../images/emsp.png'></image>
             <text class='gbb2'>{{goods.shippinginfo}}</text>
           </view>
+          <!-- </view> -->
+          <view class="class-line"></view>
+          <!-- 分类 -->
+          <view class='people_tip text' style='padding-left:10rpx;'>
+            <!-- <text space='emsp' class='gbb2'>商品类别</text> {{goods.cat_name}}</view> -->
+            <image class='goodsimg' src='../../../images/goodstype.png'></image>
+            <text class='gbb3'>{{goods.cat_name}}</text>
+          </view>
+          <view class="class-line"></view>
+          <!-- 下单 -->
+          <view class='pre-people'>
+            <!-- <view class='people_tip text gbb3'>最新下单</view> -->
+            <image class='goodsimg' src='../../../images/neworder.png' style="vertical-align:25rpx;"></image>
+            <navigator url='/pages/goods/detail/person/index?id={{goods.goods_id}}' class='pre-people-img'>
+              <scroll-view scroll-x="true" class='scoll'>
+                <block wx:for="{{goods.person}}" wx:key='user_id'>
+                  <image class='people' src="{{item.head_pic}}"></image>
+									<text class="redtop">88</text>
+                </block>
+              </scroll-view>
+            </navigator>
+          </view>
+          <view class="class-line"></view>
         </view>
-        <view class="class-line"></view>
-        <!-- 分类 -->
-        <view class='people_tip text' style='padding-left:10rpx;'>
-          <!-- <text space='emsp' class='gbb2'>商品类别</text> {{goods.cat_name}}</view> -->
-          <image class='goodsimg' src='../../../images/goodstype.png'></image>
-          <text class='gbb3'>{{goods.cat_name}}</text>
-        </view>
-        <view class="class-line"></view>
-        <!-- 下单 -->
-        <view class='pre-people'>
-          <!-- <view class='people_tip text gbb3'>最新下单</view> -->
-          <image class='goodsimg' src='../../../images/neworder.png'></image>
-          <navigator url='/pages/goods/detail/person/index?id={{goods.goods_id}}' class=''>
-            <scroll-view scroll-x="true" class='scoll'>
-              <block wx:for="{{goods.person}}" wx:key='user_id'>
-                <image class='people' src="{{item.head_pic}}"></image>
-              </block>
-            </scroll-view>
-          </navigator>
-        </view>
-        <view class="class-line"></view>
         <!--     
     <view class='mid'>
       <view class='midimg'>
@@ -237,16 +241,16 @@
   <button class='fshare' hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCollect' data-id="{{the_goods.goods_id}}" data-ctype="{{the_goods.is_collect}}">
     <image class='kficon' src="{{the_goods.is_collect>0?'../../../images/coll_s.png':'../../../images/coll.png'}}"></image>
   </button>
-  <!-- 购物车按钮 -->
-  <button class="fshare" bindtap="gotoCart">
-    <image class='kficon' src='/images/nav_shoppingcar.png'></image>
-  </button>
   <!-- 加入购物车 -->
   <button class='fshare' hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCart'>
     <image class='kficon' src='../../../images/addcart.png'></image>
   </button>
-  <!-- 立即购买 -->
-  <button class='fshare' hover-class="none" open-type='getUserInfo' bindgetuserinfo='showModal'>
+  <!-- 购物车按钮 -->
+  <button class="fshare" bindtap="gotoCart">
+    <image class='kficon' src='/images/nav_shoppingcar.png'></image>
+  </button>
+  <!-- 搜索 -->
+  <button class='fshare' hover-class="none" open-type='getUserInfo' catchtap="gotolist">
     <image class='kficon' src='../../../images/serch2.png'></image>
   </button>
   <!-- 分享按钮 -->
