@@ -49,7 +49,7 @@ button {
   text-align: center;
   font-size: 36rpx;
   color: #fff;
-  background: #de7c21;
+  background: #D03E3F;
   margin: 0 auto;
 }
 
@@ -116,7 +116,7 @@ button {
 
 .sum {
   display: table-cell;
-  color: #fd7a40;
+  color: #D03E3F;
   font-size: 36rpx;
   text-align: right;
 }
@@ -166,7 +166,7 @@ button {
 }
 
 .btns {
-  background: #ffb21a;
+  background: #D03E3F;
   font-size: 28rpx;
   color: #fff;
   position: absolute;
@@ -200,7 +200,7 @@ button {
 }
 
 .yzc {
-  background: #de7c21;
+  background: #D03E3F;
   font-size: 26rpx;
   color: #fff;
   right: 20rpx;
@@ -215,8 +215,8 @@ button {
 }
 
 .header view.cur {
-  border-bottom: 8rpx solid #de7c21;
-  color: #de7c21;
+  border-bottom: 8rpx solid #D03E3F;
+  color: #D03E3F;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
@@ -238,7 +238,7 @@ button {
 .status2 {
   float: right;
   font-size: 28rpx;
-  color: #ff9b00;
+  color: #D03E3F;
 }
 
 .statusname {
@@ -274,7 +274,7 @@ button {
 .log {
   float: right;
   font-size: 28rpx;
-  color: #fe4342;
+  color: #D03E3F;
 }
 
 .fix {
@@ -364,8 +364,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #d5d5d5;
-  color: #de7c21;
+  border: 1px solid #D03E3F;
+  color: #D03E3F;
 }
 
 .tab-content {

@@ -1,202 +1,241 @@
 ::-webkit-scrollbar {
   display: none;
   overflow: hidden;
-   width: 0;
+  width: 0;
   height: 0;
   color: transparent;
 }
+
 page {
-	background: #ffffff;
+  background: #fff;
 }
 
 .order-item {
-	background: #fff;
+  background: #fff;
 }
 
 .order-item:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .order-footer {
-  padding:6rpx 0;
-  display:flex;
-  flex-direction:row;
-  justify-content:flex-end;
-  height:60rpx;
-  align-items:center;
+  padding: 6rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 60rpx;
+  align-items: center;
 }
 
 .order-footer text {
-	font-size: 28rpx;
-	
-	
+  font-size: 30rpx;
 }
-.first{
-  margin-top: 10rpx
+
+.first {
+  margin-top: 10rpx;
 }
+
 /*每行单元格*/
+
 .carts-item {
-	display: flex;
-	flex-direction: row;
-	height:150rpx;
-	/*width属性解决标题文字太短而缩略图偏移*/
-	width:720rpx;
-	padding: 10rpx 0 10rpx 30rpx
+  display: flex;
+  flex-direction: row;
+  height: 150rpx;
+  /*width属性解决标题文字太短而缩略图偏移*/
+  width: 720rpx;
+  padding: 10rpx 0 10rpx 20rpx;
 }
 
 /*左部图片*/
+
 .carts-image {
-	width:150rpx;
-	height:150rpx;
-  overflow:hidden;
+  width: 150rpx;
+  height: 150rpx;
+  overflow: hidden;
 }
 
 /*右部描述*/
+
 .carts-text {
-	margin-left: 10rpx;
-	width: 400rpx;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-
+  margin-left: 15rpx;
+  width: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.btn-pay{
-	margin-bottom: 10rpx;
-	height: 50rpx;
-	padding-left: 30rpx;
-	padding-right: 30rpx;
-	font-size: 27rpx;
-	line-height: 50rpx;
-	color: #fff;
-	background: #D03E3F;
-	align-self: flex-end;
-
-	margin-left: 20rpx;
-  margin-right:20rpx;
+.btn-pay {
+  margin-bottom: 10rpx;
+  height: 50rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  font-size: 27rpx;
+  line-height: 50rpx;
+  color: #fff;
+  background: #d03e3f;
+  align-self: flex-end;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
 }
 
-.btn-cancel{
-	margin-bottom: 10rpx;
-	height: 50rpx;
-	padding-left: 30rpx;
-	padding-right: 30rpx;
-	font-size: 27rpx;
-	line-height: 50rpx;
-	color: gray;
-	border-color: gray;
-	border-width: 1rpx;
-	border-style: solid;
-	background: #ffffff;
-	align-self: flex-end;
-  margin-right:20rpx;
+.btn-cancel {
+  margin-bottom: 10rpx;
+  height: 50rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  font-size: 27rpx;
+  line-height: 50rpx;
+  color: gray;
+  border-color: gray;
+  border-width: 1rpx;
+  border-style: solid;
+  background: #fff;
+  align-self: flex-end;
+  margin-right: 20rpx;
 }
-
 
 /*右上部分标题*/
+
 .carts-title {
-  white-space:nowrap;
-	font-size: 28rpx;
-	color: #444;
-	line-height: 38rpx;
-   overflow:hidden; 
-    text-overflow:ellipsis;
-	
+  white-space: nowrap;
+  font-size: 28rpx;
+  color: #444;
+  line-height: 38rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*右下部分价格与数量*/
+
 .carts-subtitle {
-	margin-top: 20rpx;
-	font-size: 25rpx;
-	color:darkgray;
-	padding: 0 0rpx;
-	display: flex;
-	flex-direction: row;
-	justify-content:space-between;
+  margin-top: 70rpx;
+  font-size: 25rpx;
+  color: darkgray;
+  padding: 0 0rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /*价格*/
+
 .carts-price {
-	color: #383838;
-	font-size:27rpx;
-	line-height: 22px;
+  color: #383838;
+  font-size: 27rpx;
+  line-height: 22px;
 }
 
 .carts-num {
-	color: #383838;
-	font-size:28rpx;
-	line-height: 22px;
+  color: #383838;
+  font-size: 28rpx;
+  line-height: 22px;
 }
 
-.carts-right{
-	width: 140rpx;
-	display: flex;
-	height: 120rpx;
-	justify-content: space-around;
-	flex-direction: column;
-	align-items: flex-end;
-    margin-right: 20rpx;
-}
-
-.view-title{
-	height: 68rpx;
-	display: flex;
-	flex-direction: row;
-	
-	align-items: center;
-	border-bottom: 1px solid #eee;
-}
-
-.view-title image {
-	margin-left: 20rpx;
-	width: 40rpx;
-	height:40rpx;
-}
-
-.view-title text {
-	font-size: 28rpx;
-	color: #383838;
-	margin-left: 15rpx;
-}
-
-.class-tab{
+.carts-right {
+  width: 140rpx;
   display: flex;
-	flex-direction: row;
-	margin-top: 0rpx;
-	justify-content: center;
-	background: #ffffff;
-	width: 100%;
-	border-bottom: 8rpx solid #eee;
+  height: 120rpx;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 20rpx;
+}
+
+.carts-spread {
+  font-size: 25rpx;
+  color: darkgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.carts-spread image {
+  width: 40rpx;
+  height: 40rpx;
+	border-radius: 100rpx;
+}
+
+.carts-spread text {
+  font-size: 28rpx;
+  color: #8E8E93;
+  margin-left: 10rpx;
+}
+
+.view-title {
+  height: 68rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.view-title-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.view-title-left image {
+  margin-left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.view-title-left text {
+  font-size: 28rpx;
+  color: #383838;
+  margin-left: 10rpx;
+}
+
+.view-title-right {
+  display: flex;
+  font-size: 28rpx;
+  color: #d03e3f;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+
+.class-tab {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0rpx;
+  justify-content: center;
+  background: #fff;
+  width: 100%;
+  border-bottom: 8rpx solid #eee;
   height: 89rpx;
   line-height: 90rpx;
   position: fixed;
   z-index: 1000;
-
 }
 
-.text-select{
-	width: 150rpx;
-	font-size: 30rpx;
-	color: #D03E3F;
-	line-height:90rpx;
-	height: 82rpx;
-	border-bottom:8rpx solid #D03E3F;
-	text-align: center;
+.text-select {
+  width: 150rpx;
+  font-size: 30rpx;
+  color: #d03e3f;
+  line-height: 90rpx;
+  height: 82rpx;
+  border-bottom: 8rpx solid #d03e3f;
+  text-align: center;
 }
-.text-normal{
-	width: 150rpx;
-	font-size: 30rpx;
-	color: #4D4D4D;
-	height: 82rpx;
-	line-height:90rpx;
-	border-bottom-width: 0;
-	border-color: red;
-	border-style: solid;
-	text-align: center;
-	border-top-width: 0;
-	border-left-width: 0;
-	border-right-width: 0;
+
+.text-normal {
+  width: 150rpx;
+  font-size: 30rpx;
+  color: #4d4d4d;
+  height: 82rpx;
+  line-height: 90rpx;
+  border-bottom-width: 0;
+  border-color: red;
+  border-style: solid;
+  text-align: center;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
 }
-.swi{
+
+.swi {
   margin-top: 90rpx;
 }

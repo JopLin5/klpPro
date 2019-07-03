@@ -1,6 +1,3 @@
 {
-"navigationBarTitleText":"订单详情",
-"usingComponents": {
-  "my-date": "/components/date/date"
-}
+"navigationBarTitleText":"订单详情"
 }

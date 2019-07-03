@@ -206,9 +206,9 @@
   padding-right: 10rpx;
 }
 
-.touming {
+/* .touming {
   opacity: 0.85;
-}
+} */
 
 .tuan {
   position: absolute;

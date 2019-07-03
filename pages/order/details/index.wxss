@@ -4,22 +4,34 @@
   display: none;
 }
 
-.view-order {
+.order-status {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   width: 100%;
-  background: #de7c21;
+  background: #d03e3f;
+  color: #fff;
+  font-size: 35rpx;
+  height: 150rpx;
+}
+
+.order-status text {
+  margin-left: 15rpx;
+}
+
+.view-order {
+  background: #fff;
+  padding: 20rpx 10rpx 200rpx;
 }
 
 .liuyan {
   font-size: 12rpx;
 }
 
-page {
+/* page {
   background-color: white;
-}
+} */
 
 .view-orderstatus {
   display: flex;
@@ -38,7 +50,7 @@ page {
 
 .view-orderstatus-info {
   display: flex;
-  width: 500rpx;
+  width: 100%;
   flex-direction: column;
   margin-left: 20rpx;
   justify-content: space-around;
@@ -47,7 +59,7 @@ page {
 
 .view-orderstatus-info text {
   font-size: 29rpx;
-  color: white;
+  /* color: white; */
 }
 
 .view-address {
@@ -56,9 +68,10 @@ page {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 150rpx;
+  height: 160rpx;
   background: white;
   border-bottom: 1px solid #eee;
+	line-height: 55rpx;
 }
 
 .view-addressleft {
@@ -76,21 +89,28 @@ page {
 }
 
 .view-addressleft-info {
-  display: flex;
-  flex-direction: column;
+  display: block;
   margin-left: 10rpx;
-  justify-content: space-around;
-  align-items: flex-start;
 }
 
 .text-order {
   font-size: 29rpx;
-  color: #fff;
+  color: #b6b6bf;
 }
 
 .text-user {
+  font-size: 32rpx;
+  color: #444;
+}
+.text-num {
   font-size: 29rpx;
   color: #444;
+	margin-left: 250rpx;
+}
+.text-add {
+  font-size: 29rpx;
+  color: #444;
+	display: block;
 }
 
 .text-invoice_no {
@@ -132,20 +152,20 @@ page {
 .view-title image {
   width: 50rpx;
   height: 50rpx;
+  border-radius: 100rpx;
 }
 
 .view-title text {
   font-size: 29rpx;
-  color: black;
+  color: #303132;
   margin-left: 10rpx;
   font-weight: bold;
 }
 
 .class-line {
-  width: 710rpx;
-  margin-left: 20rpx;
-  height: 2rpx;
-  background: #f4f4f4;
+  /* width: 710rpx;
+  margin-left: 20rpx; */
+  height: 10rpx;
 }
 
 /*外部容器*/
@@ -227,13 +247,34 @@ page {
   width: 150rpx;
   height: 150rpx;
   overflow: hidden;
-  border-radius: 10rpx;
+  /* border-radius: 10rpx; */
 }
 
 .carts-num {
   color: #383838;
   font-size: 28rpx;
   line-height: 22px;
+}
+
+.carts-spread {
+  font-size: 25rpx;
+  color: darkgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 75rpx;
+}
+
+.carts-spread image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100rpx;
+}
+
+.carts-spread text {
+  font-size: 28rpx;
+  color: #8e8e93;
+  margin-left: 10rpx;
 }
 
 /*右部描述*/
@@ -403,19 +444,27 @@ page {
   float: right;
 }
 
-.com {
-  font-size: 36rpx;
+.com0 {
+  font-size: 30rpx;
   margin-right: 20rpx;
   display: block;
   float: right;
-  color: red;
+}
+
+.com {
+  font-size: 35rpx;
+  margin-right: 20rpx;
+  display: block;
+  float: right;
+  color: #d03e3f;
 }
 
 .liuyan {
-  font-size: 36rpx;
+  font-size: 28rpx;
   margin-right: 20rpx;
   display: block;
   color: grey;
+  padding-left: 125rpx;
 }
 
 .image-delete {
@@ -434,19 +483,23 @@ page {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
+  background: rgba(255, 255, 255, 1);
+  opacity: 0.8;
+  padding-left: 5px;
 }
 
 .view-price1 {
-  margin-top: 22rpx;
+  margin: 30rpx 0 30rpx 0;
   align-items: center;
-  width: 96.4%;
+  width: 100%;
   position: relative;
 }
 
 .text-price1 {
-  font-size: 34rpx;
-  color: grey;
+  font-size: 28rpx;
+  /* color: grey; */
   float: left;
+  width: 24%;
 }
 
 .text-save {
@@ -468,6 +521,10 @@ page {
   width: 100%;
 }
 
+.shop-desc {
+  background-color: #fff;
+}
+
 .shop_info {
   display: flex;
   flex-direction: row;
@@ -479,12 +536,12 @@ page {
 .kfinfo {
   display: flex;
   flex-direction: column;
- margin-right:10rpx;
+  margin-right: 20rpx;
   font-size: 14rpx;
   align-items: center;
 }
 
 .kf {
-  width:50rpx;
-  height:50rpx;
+  width: 50rpx;
+  height: 50rpx;
 }

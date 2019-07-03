@@ -153,7 +153,7 @@ form {
 }
 
 .row-num {
-  /* padding-top: 20rpx; */
+  padding-top: 20rpx;
   padding-right: 30rpx;
   color: #b6b6bf;
 }
