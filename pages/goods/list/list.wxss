@@ -1,4 +1,5 @@
 @import "../../../goods_list.wxss";
+
 ::-webkit-scrollbar {
   display: none;
   overflow-x: hidden;
@@ -162,8 +163,6 @@ scroll-view {
   text-align: right;
 }
 
-
-
 .loadings {
   height: 70rpx;
   padding: 10rpx;
@@ -229,19 +228,22 @@ input {
   background: #f2f2f2;
   font-size: 30rpx;
   color: #333;
-  padding: 0 45rpx;
+  /* padding: 0 45rpx; */
   margin: 16rpx 16rpx 16rpx 20rpx;
   z-index: -10;
+  border-radius: 100rpx;
+  padding-left: 70rpx;
+  padding-top: 5rpx;
 }
 
-.icons {
+/* .icons {
   position: absolute;
   top: 30rpx;
   left: 60rpx;
   width: 30rpx;
   height: 30rpx;
   background-size: 100% 100%;
-}
+} */
 
 .delicon {
   position: absolute;
@@ -264,7 +266,7 @@ input {
   text-align: center;
   font-size: 28rpx;
   float: left;
-  margin-top: -2rpx;
+  color: #d03e3f;
 }
 
 .null {
@@ -309,10 +311,10 @@ input {
 
 .icons {
   position: absolute;
-  top: 31rpx;
-  left: 28rpx;
-  width: 30rpx;
-  height: 30rpx;
+  top: 22rpx;
+  left: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
   background-size: 100% 100%;
 }
 
@@ -431,7 +433,7 @@ input {
 .btn {
   display: table-cell;
   margin: 0 auto;
-  background: #de7c21;
+  background: #d03e3f;
   color: #fff;
   text-align: center;
   height: 90rpx;
@@ -440,9 +442,9 @@ input {
   box-sizing: border-box;
 }
 
-.border-right {
+/* .border-right {
   border-right: 1rpx solid #eee;
-}
+} */
 
 .border-left {
   border-left: 1rpx solid #eee;
@@ -450,7 +452,7 @@ input {
 }
 
 .active {
-  color: #de7c21;
+  color: #d03e3f;
 }
 
 .nav_right {
@@ -480,20 +482,20 @@ input {
   /*浮动向左*/
   float: left; /*每个item设置宽度是33.33%*/
   width: 32.33%;
-  height: 64rpx;
-  line-height: 65rpx;
+  /* height: 150rpx; */
+  line-height: 50rpx;
   text-align: center;
   background-color: #fff;
   border-bottom: 1px #edeceb solid;
   border-right: 1px #edeceb solid;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 .nav_right .nav_right_items image {
   /*被图片设置宽高*/
-  width: 60px;
-  height: 60px;
-  margin-top: 15px;
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 12rpx;
 }
 
 .nav_right .nav_right_items text {
@@ -503,8 +505,8 @@ input {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  float: left;
-  margin-left: 20rpx;
+  /* float: left;
+  margin-left: 20rpx; */
 }
 
 .classtwo {
@@ -561,7 +563,7 @@ input {
 
 .input {
   font-size: 10px;
-  border: 2px solid #de7c21;
+  border: 2px solid #d03e3f;
   text-align: center;
   border-radius: 10px;
   height: 34px;
@@ -690,7 +692,6 @@ input {
   margin-top: 50px;
 }
 
-
 .img {
   max-width: 100%;
   min-height: 100%;
@@ -699,7 +700,7 @@ input {
 }
 
 .zc {
-  background: #ffb21a;
+  background: #d03e3f;
   font-size: 28rpx;
   color: #fff;
   position: absolute;
@@ -767,8 +768,8 @@ input {
 }
 
 .header view.cur {
-  border-bottom: 8rpx solid #de7c21;
-  color: #de7c21;
+  border-bottom: 8rpx solid #d03e3f;
+  color: #d03e3f;
   font-weight: bold;
   height: 100%;
   box-sizing: border-box;
@@ -834,13 +835,13 @@ page {
   z-index: 50;
   left: 0rpx;
   right: 0rpx;
-  top:20rpx;
+  top: 20rpx;
   text-align: center;
 }
 
 .icon_tip {
   font-size: 30rpx;
-  color: #de7c21;
+  color: #d03e3f;
   line-height: 50rpx;
   height: 50rpx;
   display: inline-block;
@@ -848,8 +849,8 @@ page {
   font-weight: bold;
   background-color: #fff;
   border-bottom-left-radius: 50rpx;
-  border-top-left-radius:50rpx;
-  border-bottom-right-radius:50rpx;
-  border-top-right-radius:50rpx;
+  border-top-left-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+  border-top-right-radius: 50rpx;
   border: 2rpx solid #666;
 }

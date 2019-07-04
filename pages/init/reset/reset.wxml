@@ -7,12 +7,13 @@
   </view>
   <view class='phone'> {{title?'绑定电话：'+title:''}}</view>
   <view class='content'>
-    <input class="input" name="code" placeholder="微信接收验证码"  value='{{code}}' maxlength="6" bindinput="codeInput" />
+    <input class="input" name="code" placeholder="请输入验证码" placeholder-class="plinput"  value='{{code}}' maxlength="6" bindinput="codeInput" />
 
     <form name='pushMsgFm' class="btn-area"report-submit='true' bindsubmit='getFormID'>
       <button  class="btn-ad" open-type="getPhoneNumber" disabled="{{can}}" bindgetphonenumber="getPhoneNumber" form-type="submit">获取验证码{{countDownNum}}s</button>
     </form>
 
   </view>
+	<text class="tip">请到“微信”消息查收验证码</text>
   <input cursor-spacing='100rpx' name="password" value='{{Value}}' password="{{true}}" class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus"></input>
 </modal>

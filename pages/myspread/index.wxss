@@ -134,7 +134,8 @@ button {
   justify-content: flex-start;
   align-items: center;
   padding-left: 20rpx;
-  padding-top: 20rpx;
+  padding-top: 10rpx;
+	padding-bottom: 10rpx;
   position: relative;
   height: 124rpx;
   border-bottom: 2rpx solid #ebebeb;
@@ -193,6 +194,8 @@ button {
 
 .wt94 {
   width: 94rpx;
+	background-color: #B6B6BF;
+	color: #FFFFFF;
 }
 
 .wt154 {
@@ -200,9 +203,9 @@ button {
 }
 
 .yzc {
-  background: #D03E3F;
+  /* background: #D03E3F; */
   font-size: 26rpx;
-  color: #fff;
+  /* color: #303132; */
   right: 20rpx;
   height: 40rpx;
   line-height: 40rpx;
@@ -211,7 +214,7 @@ button {
 }
 
 .yzc-left {
-  margin-right:32rpx;
+  margin-right:20rpx;
 }
 
 .header view.cur {

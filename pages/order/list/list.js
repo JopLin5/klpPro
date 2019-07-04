@@ -8,25 +8,25 @@ var pay_orders_Page = 0;
 var send_orders_Page = 0;
 var finish_orders_Page = 0;
 
-var receive_orders_empty=false;
+var receive_orders_empty = false;
 var pay_orders_empty = false;
 var send_orders_empty = false;
 var finish_orders_empty = false;
 var all_orders_empty = false;
 var ctype = "NO";
-var types = ["NO", "WAITRECEIVE", "WAITPAY", "WAITSEND", "FINISH"];
-class list{
+var types = ["NO", "WAITPAY", "WAITSEND", "WAITRECEIVE", "FINISH"];
+class list {
   data = {
-    all_orders:[],
-    receive_orders:[],
-    pay_orders:[],
-    send_orders:[],
-    finish_orders:[],
+    all_orders: [],
+    receive_orders: [],
+    pay_orders: [],
+    send_orders: [],
+    finish_orders: [],
     tab: 0,
-    winHeight:''
+    winHeight: ''
   };
   tabClick = function(e) {
-    let self=this;
+    let self = this;
     var index = e.currentTarget.dataset.index || e.detail.current;
     this.setData({
       tab: index
@@ -34,40 +34,42 @@ class list{
     switch (types[index]) {
       case 'NO':
         if (this.data.all_orders.length < 1) {
-        this.getOrderLists(types[index], ++all_orders_Page,0);
+          this.getOrderLists(types[index], ++all_orders_Page, 0);
+        }
+        break;
+      case 'WAITPAY':
+        if (this.data.pay_orders.length < 1) {
+          this.getOrderLists(types[index], ++pay_orders_Page, 1);
+        }
+        break;
+      case 'WAITSEND':
+        if (this.data.send_orders.length < 1) {
+          this.getOrderLists(types[index], ++send_orders_Page, 2);
         }
         break;
       case 'WAITRECEIVE':
         if (this.data.receive_orders.length < 1) {
-          this.getOrderLists(types[index], ++receive_orders_Page,1);
-        }
-        break;
-      case 'WAITPAY':
-        if (this.data.pay_orders.length<1){
-          this.getOrderLists(types[index], ++pay_orders_Page,2);
-      }
-        break;
-      case 'WAITSEND':
-        if (this.data.send_orders.length < 1) {
-          this.getOrderLists(types[index], ++send_orders_Page,3);
+          this.getOrderLists(types[index], ++receive_orders_Page, 3);
         }
         break;
       case 'FINISH':
-        if(this.data.finish_orders.length<1){
-          this.getOrderLists(types[index], ++finish_orders_Page,4);
+        if (this.data.finish_orders.length < 1) {
+          this.getOrderLists(types[index], ++finish_orders_Page, 4);
         }
         break;
       default:
 
-    } 
-    this.get_wxml('#' + index,function(re){
-      if(re==null)return;
-      self.setData({ winHeight: Math.max(re.height, app.globalData.screenHeight)});
+    }
+    this.get_wxml('#' + index, function(re) {
+      if (re == null) return;
+      self.setData({
+        winHeight: Math.max(re.height, app.globalData.screenHeight)
+      });
     });
   };
 
 
-//全部待付款
+  //全部待付款
   pay = function(e) {
     var index = e.currentTarget.dataset.index;
     var order = this.data.all_orders[index];
@@ -79,8 +81,8 @@ class list{
     });
   };
 
-//带支付
-  waitpay = function (e) {
+  //带支付
+  waitpay = function(e) {
     var index = e.currentTarget.dataset.index;
     var order = this.data.pay_orders[index];
     order["order_id"] = "order_id:" + order["order_id"];
@@ -101,16 +103,15 @@ class list{
       success: function(res) {
         if (res.confirm) {
           server.postJSON(
-            "/User/orderConfirm/",
-            {
+            "/User/orderConfirm/", {
               order_id: order["order_id"]
             },
             function(res) {
               res = res.data;
               if (res.status > 0) {
                 var ms = that.data.receive_orders;
-                 ms.splice(index, 1);
-                var all_orders= that.change_order_status(that.data.all_orders, order["order_id"],4);
+                ms.splice(index, 1);
+                var all_orders = that.change_order_status(that.data.all_orders, order["order_id"], 4);
                 that.setData({
                   receive_orders: ms,
                   all_orders: all_orders
@@ -124,7 +125,7 @@ class list{
       }
     });
   };
-  allconfirm = function (e) {
+  allconfirm = function(e) {
     var index = e.currentTarget.dataset.index;
     var order = this.data.all_orders[index];
     var that = this;
@@ -132,18 +133,17 @@ class list{
       title: "提示",
       showCancel: true,
       content: "确定收货吗？",
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           server.postJSON(
-            "/User/orderConfirm/",
-            {
+            "/User/orderConfirm/", {
               order_id: order["order_id"]
             },
-            function (res) {
+            function(res) {
               res = res.data;
               if (res.status > 0) {
                 var ms = that.data.all_orders;
-                ms[index]['order_status']=4;
+                ms[index]['order_status'] = 4;
                 var receive_orders = that.remove_order_item(that.data.receive_orders, order["order_id"]);
                 that.setData({
                   receive_orders: receive_orders,
@@ -158,20 +158,20 @@ class list{
       }
     });
   };
-  change_order_status=function(orders,order_id,status){
-    orders =orders||[];
+  change_order_status = function(orders, order_id, status) {
+    orders = orders || [];
     for (let i = 0; i < orders.length; i++) {
-      if (orders[i]['order_id'] == order_id){
+      if (orders[i]['order_id'] == order_id) {
         orders[i].order_status = status;
       }
     }
     return orders;
   }
-  remove_order_item = function (orders, order_id){
+  remove_order_item = function(orders, order_id) {
     orders = orders || [];
     for (let i = 0; i < orders.length; i++) {
       if (orders[i]['order_id'] == order_id) {
-        orders.splice(i,1);
+        orders.splice(i, 1);
       }
     }
     return orders;
@@ -188,8 +188,7 @@ class list{
       success: function(res) {
         if (res.confirm) {
           server.postJSON(
-            "/User/cancelOrder/",
-            {
+            "/User/cancelOrder/", {
               order_id: order["order_id"]
             },
 
@@ -197,7 +196,7 @@ class list{
               res = res.data;
               if (res.status > 0) {
                 var ms = that.data.all_orders;
-                  ms[index]["order_status"] = 3; 
+                ms[index]["order_status"] = 3;
                 var pay_orders = that.remove_order_item(that.data.pay_orders, order["order_id"]);
                 that.setData({
                   all_orders: ms,
@@ -212,8 +211,8 @@ class list{
       }
     });
   };
-//取消贷付款
-  cancelpay = function (e) {
+  //取消贷付款
+  cancelpay = function(e) {
     var index = e.currentTarget.dataset.index;
     var order = this.data.pay_orders[index];
     var that = this;
@@ -221,19 +220,18 @@ class list{
       title: "提示",
       showCancel: true,
       content: "确定取消订单吗？",
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           server.postJSON(
-            "/User/cancelOrder/",
-            {
+            "/User/cancelOrder/", {
               order_id: order["order_id"]
             },
 
-            function (res) {
+            function(res) {
               res = res.data;
               if (res.status > 0) {
                 var ms = that.data.pay_orders;
-                var all_orders = that.change_order_status(that.data.all_orders, order["order_id"],3);
+                var all_orders = that.change_order_status(that.data.all_orders, order["order_id"], 3);
                 ms.splice(index, 1);
                 that.setData({
                   pay_orders: ms,
@@ -258,19 +256,19 @@ class list{
     var index = this.data.tab;
     switch (types[index]) {
       case 'NO':
-        this.getOrderLists(types[index], ++all_orders_Page,0);
+        this.getOrderLists(types[index], ++all_orders_Page, 0);
         break;
       case 'WAITRECEIVE':
-          this.getOrderLists(types[index], ++receive_orders_Page,1);
+        this.getOrderLists(types[index], ++receive_orders_Page, 1);
         break;
       case 'WAITPAY':
-          this.getOrderLists(types[index], ++pay_orders_Page,2);
+        this.getOrderLists(types[index], ++pay_orders_Page, 2);
         break;
       case 'WAITSEND':
-          this.getOrderLists(types[index], ++send_orders_Page,3);
+        this.getOrderLists(types[index], ++send_orders_Page, 3);
         break;
       case 'FINISH':
-          this.getOrderLists(types[index], ++finish_orders_Page,4);
+        this.getOrderLists(types[index], ++finish_orders_Page, 4);
         break;
       default:
 
@@ -278,27 +276,27 @@ class list{
   };
   onPullDownRefresh = function() {
     var index = this.data.tab;
-   
+
     switch (types[index]) {
       case 'NO':
         all_orders_Page = 0;
-        this.getOrderLists(types[index], ++all_orders_Page,0);
+        this.getOrderLists(types[index], ++all_orders_Page, 0);
         break;
       case 'WAITRECEIVE':
         receive_orders_Page = 0;
-        this.getOrderLists(types[index], ++receive_orders_Page,1);
+        this.getOrderLists(types[index], ++receive_orders_Page, 1);
         break;
       case 'WAITPAY':
         pay_orders_Page = 0;
-        this.getOrderLists(types[index], ++pay_orders_Page,2);
+        this.getOrderLists(types[index], ++pay_orders_Page, 2);
         break;
       case 'WAITSEND':
         send_orders_Page = 0;
-        this.getOrderLists(types[index], ++send_orders_Page,3);
+        this.getOrderLists(types[index], ++send_orders_Page, 3);
         break;
       case 'FINISH':
         finish_orders_Page = 0;
-        this.getOrderLists(types[index], ++finish_orders_Page,4);
+        this.getOrderLists(types[index], ++finish_orders_Page, 4);
         break;
       default:
 
@@ -306,50 +304,70 @@ class list{
 
   };
 
-  getOrderLists = function(ctype, page,index=0) {
+  getOrderLists = function(ctype, page, index = 0) {
     var that = this;
     let rloading = server.loadv2(this, '.J_loading');
-    return new Promise(function(succ,error){
+    return new Promise(function(succ, error) {
       server.getJSON(
         "/User/getOrderList/type/" + ctype + "/page/" + page,
-        function (res) {
+        function(res) {
           rloading['load'].hidev2();
           var datas = res.data.result;
           if (res.data.status < 1) {
             switch (ctype) {
               case 'NO':
                 if (page == 1) {
-                  that.setData({ all_orders: [] });
+                  that.setData({
+                    all_orders: []
+                  });
                 }
-                that.setData({ all_orders_empty: true });
+                that.setData({
+                  all_orders_empty: true
+                });
                 --all_orders_Page;
                 break;
               case 'WAITRECEIVE':
                 if (page == 1) {
-                  that.setData({ receive_orders: [] });
+                  that.setData({
+                    receive_orders: []
+                  });
                 }
-                that.setData({ receive_orders_empty: true });
+                that.setData({
+                  receive_orders_empty: true
+                });
                 --receive_orders_Page;
                 break;
               case 'WAITPAY':
                 if (page == 1) {
-                  that.setData({ pay_orders: [] });
+                  that.setData({
+                    pay_orders: []
+                  });
                 }
-                that.setData({ pay_orders_empty: true });
+                that.setData({
+                  pay_orders_empty: true
+                });
                 --pay_orders_Page;
                 break;
               case 'WAITSEND':
                 if (page == 1) {
-                  that.setData({ send_orders: [] });
+                  that.setData({
+                    send_orders: []
+                  });
                 }
-                that.setData({ send_orders_empty: true });
+                that.setData({
+                  send_orders_empty: true
+                });
                 --send_orders_Page;
                 break;
               case 'FINISH':
                 if (page == 1) {
-                  that.setData({ finish_orders: [] });
+                  that.setData({
+                    finish_orders: []
+                  });
                 }
-                that.setData({ finish_orders_empty: true });
+                that.setData({
+                  finish_orders_empty: true
+                });
                 --finish_orders_Page;
                 break;
               default:
@@ -386,33 +404,45 @@ class list{
 
           switch (ctype) {
             case 'NO':
-              that.setData({ all_orders: ms });
+              that.setData({
+                all_orders: ms
+              });
               break;
             case 'WAITRECEIVE':
-              that.setData({ receive_orders: ms });
+              that.setData({
+                receive_orders: ms
+              });
               break;
             case 'WAITPAY':
-              that.setData({ pay_orders: ms });
+              that.setData({
+                pay_orders: ms
+              });
               break;
             case 'WAITSEND':
-              that.setData({ send_orders: ms });
+              that.setData({
+                send_orders: ms
+              });
               break;
             case 'FINISH':
-              that.setData({ finish_orders: ms });
+              that.setData({
+                finish_orders: ms
+              });
               break;
             default:
           }
           succ(index)
         }
       );
-    }).then(function (index){
+    }).then(function(index) {
       let yy = '#tt' + index;
-      that.get_wxml(yy, function (re) {
+      that.get_wxml(yy, function(re) {
         if (re == null) return;
-        that.setData({ winHeight: Math.max(re.height, app.globalData.screenHeight) });
+        that.setData({
+          winHeight: Math.max(re.height, app.globalData.screenHeight)
+        });
       });
     });
-  
+
   };
   onShow = function() {};
   onLoad = function() {
@@ -422,8 +452,8 @@ class list{
     send_orders_Page = 0;
     finish_orders_Page = 0;
     this.data.orders = [];
-    let self=this;
-    this.getOrderLists(ctype, ++all_orders_Page,0);
+    let self = this;
+    this.getOrderLists(ctype, ++all_orders_Page, 0);
 
   };
 }

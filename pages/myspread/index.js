@@ -5,37 +5,37 @@ var app = getApp();
 var pp = 0;
 var logp = 0;
 var moneyp = 0;
-var leaderedp =0;
+var leaderedp = 0;
 var leaderingdp = 0;
-class index{
+class index {
   data = {
     active: 0,
     shops: [],
     logs: [],
     cashlog: [],
-    leadered:[],//已推广员申请
-    leadering:[],//推广经理列表申请
+    leadered: [], //已推广员申请
+    leadering: [], //推广经理列表申请
     money: 0,
     scrollTop: 0,
     scrollHeight: 0,
     winHeight: 0,
-    people_id :0,
-    moneyp_empty:false,
-    my_push_leadered_empty:false,
-    my_push_leadering_empty:false,
-    my_shop:{},
-    me:{}
-    
+    people_id: 0,
+    moneyp_empty: false,
+    my_push_leadered_empty: false,
+    my_push_leadering_empty: false,
+    my_shop: {},
+    me: {}
+
   }
   //管理员
-  gotoadmin=function(e){
+  gotoadmin = function(e) {
     console.log(e);
     let query = server.urlEncode(this.data.shops[e.currentTarget.dataset.index]);
     wx.navigateTo({
       url: "./admin/index?" + query
-    }); 
+    });
   }
-  getsite=function(){
+  getsite = function() {
     wx.setClipboardData({
       data: 'www.klpfood.com',
       success(res) {
@@ -43,32 +43,32 @@ class index{
       }
     })
   }
-  seegoods=function(e) {
-  var id = e.currentTarget.dataset.id;
-  var money = e.currentTarget.dataset.money;
+  seegoods = function(e) {
+    var id = e.currentTarget.dataset.id;
+    var money = e.currentTarget.dataset.money;
     wx.navigateTo({
-    url: 'goods/index?id=' + id + '&money=' + money,
-    success: function (res) { },
-    fail: function (res) { },
-    complete: function (res) { },
-  })
-};
+      url: 'goods/index?id=' + id + '&money=' + money,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  };
 
-  getinfo=function(e){
+  getinfo = function(e) {
     console.log(e);
     let type = e.currentTarget.dataset.ty;
     let index = e.currentTarget.dataset.index;
-    let info={};
-    switch (type){
+    let info = {};
+    switch (type) {
       case 'leadered':
         info = this.data.leadered[index];
         info._index = index;
-        info.from=0;
+        info.from = 0;
         break;
       case 'leadering':
         info = this.data.leadering[index];
         info._index = index;
-        info.from =1;
+        info.from = 1;
         break;
     }
     let query = server.urlEncode(info);;
@@ -79,8 +79,8 @@ class index{
   };
   // 滚动切换标签样式
   switchTab = function(e) {
-    let self=this;
-    let index = e.detail.current > -1 ? e.detail.current:e.target.dataset.num;
+    let self = this;
+    let index = e.detail.current > -1 ? e.detail.current : e.target.dataset.num;
     this.setData({
       active: index,
       bottomHeightFlag: true,
@@ -91,32 +91,44 @@ class index{
         pp = 0
         this.getTuiGUanf(++pp);
       }
-      this.get_wxml('#shop',function(re){
-        self.setData({ winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px' });
+      this.get_wxml('#shop', function(re) {
+        self.setData({
+          winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px'
+        });
       });
     }
+
+
     if (this.data.active == 1) {
       logp = 0
       this.getTuiGuanLog(++logp);
     }
-    if (this.data.active ==2) {
+
+
+    if (this.data.active == 2) {
       this.getCash();
       moneyp = 0;
       this.getCashlog(++moneyp);
-      this.get_wxml('#money', function (re) {
-        self.setData({ winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px' });
+      this.get_wxml('#money', function(re) {
+        self.setData({
+          winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px'
+        });
       });
     }
+
+
   };
+
+
   //我是店主
-  gotomyshop=function(){
-    let query=server.urlEncode(this.data.shops[0]);
+  gotomyshop = function() {
+    let query = server.urlEncode(this.data.shops[0]);
     wx.navigateTo({
-      url: "./shop/index?"+query
+      url: "./shop/index?" + query
     });
   }
   //我是经理
-  gotomanage = function (e) {
+  gotomanage = function(e) {
     let index = e.currentTarget.dataset.index;
     let query = server.urlEncode(this.data.shops[index]);
     wx.navigateTo({
@@ -124,8 +136,8 @@ class index{
     });
   }
   //我是推广员
-  gotoem = function (e) {
-    let index=e.currentTarget.dataset.index;
+  gotoem = function(e) {
+    let index = e.currentTarget.dataset.index;
     let query = server.urlEncode(this.data.shops[index]);
     wx.navigateTo({
       url: "./em/index?" + query
@@ -133,7 +145,7 @@ class index{
   }
   onGotoshop = function(e) {
     var shopId = e.currentTarget.dataset.shopid;
-    if (shopId<1){
+    if (shopId < 1) {
       return;
     }
     var userinfo = wx.getStorageSync('userinfo');
@@ -142,20 +154,20 @@ class index{
     });
   }
   onPullDownRefresh = function() {
-  
-    if (this.data.active == 0) {//推广店铺
+
+    if (this.data.active == 0) { //推广店铺
       pp = 0;
       this.getTuiGUanf(++pp);
     }
-    if (this.data.active ==1) {
+    if (this.data.active == 1) {
       logp = 0;
       this.getTuiGuanLog(++logp);
     }
-    if (this.data.active == 2) {//钱包
+    if (this.data.active == 2) { //钱包
       this.getCash();
       moneyp = 0;
       this.getCashlog(++moneyp);
-    } 
+    }
   }
 
   /**
@@ -168,23 +180,27 @@ class index{
       height: app.globalData.screenHeight,
       me: user_info
     });
-    event.on('tgy',this,function(index){
-      let ii=this.data.leadered;
-      ii.splice(index,1);
-      this.setData({ leadered: ii});
+    event.on('tgy', this, function(index) {
+      let ii = this.data.leadered;
+      ii.splice(index, 1);
+      this.setData({
+        leadered: ii
+      });
     });
     //经理
-    event.on('tgjl', this, function (index) {
+    event.on('tgjl', this, function(index) {
       let ii = this.data.leadering;
       ii.splice(index, 1);
-      this.setData({ leadering: ii });
+      this.setData({
+        leadering: ii
+      });
     });
     pp = 0;
     logp = 0;
     moneyp = 0;
     this.getTuiGUanf(++pp);
   }
-  getTuiGUanf = function(p = 1) {//推广店铺
+  getTuiGUanf = function(p = 1) { //推广店铺
     if (!server.check_login()) {
       return;
     }
@@ -210,23 +226,25 @@ class index{
               shops: shops,
             });
           }
-       
+
         } else {
-          if(p==1){
+          if (p == 1) {
             self.setData({
               shops: [],
             });
           }
           --pp;
         }
-        self.get_wxml('#shop', function (re) {
-          self.setData({ winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px' });
+        self.get_wxml('#shop', function(re) {
+          self.setData({
+            winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px'
+          });
         });
       }
     );
   }
 
-  getTuiGuanLog = function(p = 1) {//推广记录
+  getTuiGuanLog = function(p = 1) { //推广记录
     if (!server.check_login()) {
       return;
     }
@@ -244,7 +262,7 @@ class index{
             logs = res.data.result;
             self.setData({
               logs: logs,
-              my_push_log_empty:false
+              my_push_log_empty: false
             });
           } else {
             logs = self.data.logs;
@@ -254,15 +272,17 @@ class index{
               my_push_log_empty: false
             });
           }
- 
+
         } else {
           self.setData({
             my_push_log_empty: true
           });
           --logp;
         }
-        self.get_wxml('#log', function (re) {
-          self.setData({ winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px' });
+        self.get_wxml('#log', function(re) {
+          self.setData({
+            winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px'
+          });
         });
       }
     );
@@ -272,14 +292,14 @@ class index{
     if (!server.check_login()) {
       return;
     }
-   
+
     if (this.data.active == 0) {
       this.getTuiGUanf(++pp);
     }
     if (this.data.active == 1) {
       this.getTuiGuanLog(++logp);
     }
-    if(this.data.active ==2){
+    if (this.data.active == 2) {
       this.getCashlog(++moneyp)
     }
   }
@@ -314,12 +334,12 @@ class index{
     var self = this;
     console.log(e);
     var log_id = e.currentTarget.dataset.id || 0;
-    var index = e.currentTarget.dataset.index || 0; 
-    var from = e.currentTarget.dataset.from || 0; 
-    let url = from > 0 ? '/Store/cancel_user_rebate/' :'/Store/cancel_e/';
+    var index = e.currentTarget.dataset.index || 0;
+    var from = e.currentTarget.dataset.from || 0;
+    let url = from > 0 ? '/Store/cancel_user_rebate/' : '/Store/cancel_e/';
     wx.showModal({
       title: '确定注销吗?',
-      content: from > 0 ? '确定注销品友身份吗？' :'确定注销超级品友身份吗？',
+      content: from > 0 ? '确定注销品友身份吗？' : '确定注销超级品友身份吗？',
       success(res) {
         if (res.confirm) {
           let rloading = server.loadv2(this, '.J_loading');
@@ -327,7 +347,7 @@ class index{
             url, {
               log_id: log_id
             },
-            function (re) {
+            function(re) {
               rloading['load'].hidev2();
               if (re.data.status > 0) {
                 let shops = self.data.shops;
@@ -347,7 +367,7 @@ class index{
     });
 
   }
-  getCashlog = function(p = 1) {//钱包流水
+  getCashlog = function(p = 1) { //钱包流水
     if (!server.check_login()) {
       return;
     }
@@ -373,7 +393,7 @@ class index{
               moneyp_empty: false
             });
           }
-  
+
         } else {
           self.setData({
             moneyp_empty: true
@@ -381,8 +401,10 @@ class index{
           --moneyp;
 
         }
-        self.get_wxml('#money', function (re) {
-          self.setData({ winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px' });
+        self.get_wxml('#money', function(re) {
+          self.setData({
+            winHeight: (re.height > app.globalData.screenHeight ? re.height : app.globalData.screenHeight) + 'px'
+          });
         });
       }
     );

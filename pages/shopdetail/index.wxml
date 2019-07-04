@@ -53,7 +53,6 @@
   <swiper-item wx:for="{{stores}}" wx:key="index" wx:for-item="store">
     <scroll-view scroll-y='true' bindscroll="loadImages" bindscrolltoupper="onPullDownRefresh">
 
-		
       <view class="item" wx:for="{{goods_list[store.store_id].goods_list}}" data-store_id="{{store.store_id}}" wx:key="goods_id" bindtap="showDetail" data-index="{{index}}" data-id="{{item.goods_id}}" data-src="{{item.original_img}}" mode="scaleToFill">
         <image src="{{item.original_img}}"></image>
         <view class="desc">
@@ -68,7 +67,7 @@
             </view>
           </view>
         </view>
-      </view>
+      </view> 
 
 
       <view class="class_item_end" wx:if="{{goods_list[store.store_id]&&goods_list[store.store_id].empty&&goods_list[store.store_id].goods_list.length>0}}">

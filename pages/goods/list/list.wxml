@@ -1,13 +1,13 @@
 <!-- 遮罩 -->
-<view class='tuitip'  hidden='{{cats[active].name?false:true}}'>
+<view class='tuitip' hidden='{{cats[active].name?false:true}}'>
   <view class='icon_tip'> {{cats[active].name}}</view>
 </view>
 
 <view class='search fix' wx:if='{{typeshow}}'>
   <view class='searchtxt'>
     <!-- <image class="ttop" mode='widthFix' src='/images/bg.png'></image> -->
-    <image src='/images/SearchIcon@3x.png' class=" icons"></image>
-    <input placeholder='请输入关键字' value='{{keyWord}}' disabled="true" bindinput="onchage" bindtap="listenerPhoneInput"></input>
+    <image src='/images/search3.png' class=" icons"></image>
+    <input placeholder='请输入关键字' confirm-type="search" value='{{keyWord}}' disabled="true" bindinput="onchage" bindtap="listenerPhoneInput" bindconfirm="listenerPhoneInput"></input>
     <image wx:if="{{keyWord}}" src='/images/edit.png' class="delicon" bindtap='del'></image>
   </view>
   <view class='lie1'>
@@ -19,8 +19,8 @@
   <view class='ht100'>
     <view class='search'>
       <view class='searchtxt'>
-        <image src='/images/SearchIcon@3x.png' class="icons"></image>
-        <input placeholder='请输入关键字' value='{{keyWord}}' bindinput="onchage"></input>
+        <image src='/images/search3.png' class="icons"></image>
+        <input placeholder='请输入关键字' confirm-type="search" value='{{keyWord}}' bindinput="onchage" bindconfirm="search"></input>
         <image wx:if="{{keyWord}}" src='/images/edit.png' class="delicon" bindtap='del'></image>
       </view>
       <view class='lie1'>
@@ -42,10 +42,12 @@
     </view>
     <view class="class-line"></view>
     <swiper id='swiper_cat' style='height:{{height}};margin-top:{{totalTopHeight}}px"' bindchange="tabb" current='{{_num}}'>
+      <!-- 优 选 食 材 -->
       <swiper-item>
         <scroll-view scroll-y="true" class='w20'>
           <view class="fllie {{mset.mi.state==type.id?'active':''}}" wx:for="{{mset.mi.cat}}" wx:key="index" wx:for-item="type" data-key='{{type.id}}' data-class='1' data-index="{{index}}" bindtap="selecttype" data-name="{{type.name}}">{{type.name}}</view>
         </scroll-view>
+
         <scroll-view scroll-y="true" class="nav_right">
           <!--如果有数据，才遍历项-->
           <block wx:for="{{mset.mi.two.optoins}}" wx:key="id" wx:for-item="next">
@@ -70,7 +72,7 @@
           </block>
         </scroll-view>
       </swiper-item>
-
+      <!-- 休 闲 美 食 -->
       <swiper-item>
         <scroll-view scroll-y="true" class='w20'>
           <view class="fllie {{mset.food.state==type.id?'active':''}}" wx:for="{{mset.food.cat}}" wx:key="index" wx:for-item="type" data-key='{{type.id}}' data-index="{{index}}" data-class='1' bindtap="selecttype" data-name="{{type.name}}">{{type.name}}</view>
@@ -101,6 +103,7 @@
 
         </scroll-view>
       </swiper-item>
+      <!-- 功 能 食 品 -->
       <swiper-item>
         <scroll-view scroll-y="true" class='w20'>
           <view class="fllie {{mset.rest.state==type.id?'active':''}}" wx:for="{{mset.rest.cat}}" wx:key="index" wx:for-item="type" data-key='{{type.id}}' data-class='1' data-index="{{index}}" bindtap="selecttype" data-name="{{type.name}}">{{type.name}}</view>
@@ -132,23 +135,24 @@
         </scroll-view>
 
       </swiper-item>
-
     </swiper>
+
     <view id='cat_2' class='line23'>
-      <view class='border-left btn border-right ' bindtap='sure'>筛选</view>
       <view class=' btn border-right ' bindtap='showt'>返回</view>
+      <view class='border-left btn border-right ' bindtap='sure'>筛选</view>
     </view>
   </view>
 </view>
 
+
 <swiper style='height:1460rpx' current='{{active}}' bindchange="changePage">
   <block wx:for="{{cats}}" wx:key='index' wx:for-item="cat">
     <swiper-item>
-
+      <!-- 筛选结果展示：无结果 -->
       <view wx:if="{{(goods_list[index].empty&&goods_list[index].list.length==0)}}" class="view-empty">
         <text class="hint">没有搜到此分类的商品</text>
       </view>
-
+      <!-- 筛选结果展示：结果 -->
       <scroll-view scroll-y='true' lower-threshold="30" bindscroll="loadImages" wx:else>
         <!-- for -->
         <view class='nav' wx:for="{{goods_list[index]['list']}}" wx:for-index="idx" wx:key="goods_id" bindtap="showDetail" data-index="{{index}}" data-goods-id="{{item.goods_id}}" data-idx='{{idx}}' data-goods-src="{{item.original_img}}">
@@ -166,19 +170,19 @@
 
             <view class='goods_list_txt'>
               <view class='goods_list_price'>
-              <view class='goods_list_price_text'>￥{{item.shop_price}}</view>
-              <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
-            </view>
+                <view class='goods_list_price_text'>￥{{item.shop_price}}</view>
+                <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
+              </view>
             </view>
           </view>
 
         </view>
+
         <!-- end -->
         <view class="class_item class_item_end" style='margin-bottom:160rpx;' wx:if="{{goods_list[active].empty&&goods_list[active]['list'].length>0}}">
           ·左右看看·
         </view>
       </scroll-view>
-
     </swiper-item>
   </block>
 </swiper>

@@ -3,14 +3,16 @@
   width: 90%;
   float: left;
 }
+
 .icons {
   position: absolute;
-  top: 30rpx;
+  top: 22rpx;
   left: 30rpx;
-  width: 30rpx;
-  height: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
   background-size: 100% 100%;
 }
+
 .delicon {
   position: absolute;
   top: 30rpx;
@@ -20,20 +22,22 @@
   background-size: 100% 100%;
   z-index: 3;
 }
-.line23{
+
+.line23 {
   display: table;
-  width:100%;
-  height:90rpx;
-  line-height:90rpx;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
   background-color: #eee;
-  border:0;
+  border: 0;
   bottom: 0;
   position: fixed;
 }
+
 .btn {
-  display:table-cell;
-  margin:0 auto;
-  background: #de7c21;
+  display: table-cell;
+  margin: 0 auto;
+  background: #d03e3f;
   color: #fff;
   text-align: center;
   height: 90rpx;
@@ -41,72 +45,92 @@
   font-size: 36rpx;
   box-sizing: border-box;
 }
-.border-right{
-  border-right:1rpx solid #eee;
+
+.border-right {
+  border-right: 1rpx solid #eee;
 }
-.border-left{
-  border-left:1rpx solid #eee;
+
+.border-left {
+  border-left: 1rpx solid #eee;
 }
+
 .lie1 {
   width: 10%;
   float: left;
   padding-top: 28rpx;
 }
+
 .find {
   width: 80%;
   text-align: center;
   font-size: 28rpx;
   float: left;
-  margin-top: -2rpx;
+  color: #d03e3f;
 }
+
 .search {
-  height:90rpx;
+  height: 90rpx;
   background: #fff;
   z-index: 6;
-  top:0;
+  top: 0;
   width: 100%;
   background: #fff;
   box-sizing: border-box;
 }
-.fix{
+
+.fix {
   position: fixed;
 }
+
 input {
   height: 58rpx;
   border: 0;
   background: #f2f2f2;
   font-size: 30rpx;
   color: #333;
-  padding: 0 45rpx;
+  /* padding: 0 45rpx; */
   margin: 16rpx 16rpx 16rpx 20rpx;
-  z-index: -10
+  z-index: -10;
+  border-radius: 100rpx;
+  padding-left: 70rpx;
+  padding-top: 5rpx;
 }
-navigator{
-  display:inline;
+
+navigator {
+  display: inline;
 }
-.list{
-  margin-top:76rpx;
+
+.list {
+  margin-top: 100rpx;
   margin-bottom: 90rpx;
 }
- 
-.list .list_item{
-  padding:20rpx;
-  height:110rpx;
 
-  border-bottom:2rpx solid #eee;
+.list .list_item {
+	display: flex;
+  margin: 15rpx;
+  background-color: #fff;
+  height: 220rpx;
 }
-.list .list_item .img{
-  float:left;
-  width:110rpx;
-  height:110rpx;
+.items {
+	display: flex;
+  margin: 15rpx;
+  background-color: #fff;
+  height: 220rpx;
 }
-.list .list_item .img image{
+
+.items .img{
+  float: left;
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.items .img image{
    width:100%;
    height:100%;
 }
- 
-.list .list_item .info{
-  width:84%;
+
+.items .info{
+  width:70%;
   float:right;
   height:110rpx;
   position:relative;
@@ -114,7 +138,7 @@ navigator{
    flex-direction: column;
      justify-content: center;
 }
-.list .list_item .info .title{
+.items.info .title{
   color:#333;
   margin-left:20rpx;
   font-size: 30rpx;
@@ -124,7 +148,7 @@ navigator{
   overflow: hidden;
 }
  
-.list .list_item .info .price{
+.items .info .price{
   color:#FF2727;
   margin-left:20rpx;
   margin-top:20rpx;
@@ -135,16 +159,100 @@ navigator{
   justify-content:space-between;
   align-items:baseline;
 }
- 
-.list .list_item .info .num{
+.info .num {
   position: absolute;
-  left:0px;
-  bottom:20rpx;
-  color:#747474;
-  margin-left:20rpx;
-  font-size:30rpx;
+  left: 0px;
+  bottom: 20rpx;
+  color: #747474;
+  margin-left: 20rpx;
+  font-size: 30rpx;
 }
+
+.iofo-desc {
+  width: 65%;
+  position: absolute;
+}
+
 .view-empty {
-margin:60% auto;
-text-align: center;
+  margin: 60% auto;
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  /* margin: 6px; *//* position: flexd; */
+  background-color: #fff;
+  /* border-radius: 20rpx; */
+}
+
+.item-img {
+  width: 220rpx;
+  height: 220rpx;
+  /* border-radius: 20rpx 0 0 20rpx; */
+}
+
+.item-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.desc {
+  margin-left: 12px;
+  /* line-height: 30px; */
+  margin-top: 20rpx;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 26rpx;
+}
+
+.descbox {
+  /* display: flex;
+  flex-direction: row; */
+  width: 65%;
+  position: absolute;
+}
+
+.count {
+  /* display: flex;
+  flex-direction: column; */
+  line-height: 50rpx;
+  top: 50rpx;
+  position: absolute;
+}
+
+.count image {
+  margin-left: 10px;
+  margin-top: 7px;
+}
+
+.desc-browse {
+  /* bottom: 10rpx; */
+  color: #666;
+  font-size: 24rpx;
+}
+
+.desc-perce {
+  color: #d03e3f;
+  font-size: 32rpx;
+  margin-left: -5rpx;
+}
+
+.price-small {
+  font-size: 20rpx；;
+}
+
+.add {
+  /* display: flex;
+  flex-direction: row-reverse; */
+  right: 30rpx;
+  position: absolute;
+  bottom: -148rpx;
+}
+
+.add image {
+  width: 52rpx;
+  height: 45rpx;
 }

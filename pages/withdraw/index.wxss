@@ -33,7 +33,7 @@ page {
 }
 
 .tip{
-  border:1rpx solid #de7c21;
+  border:1rpx solid #D03E3F;
   margin: 15rpx;
   padding:3rpx;
 }
@@ -44,13 +44,19 @@ page {
   text-align: center;
   font-size: 36rpx;
   color: #fff;
-  background: #de7c21;
+  background:#D03E3F;
   line-height: 88rpx;
   margin: 0 auto;
 }
 
 .btn {
   text-align: center;
+	line-height: 80rpx;
+}
+
+.btn text{
+	color: #6D7278;
+	font-size: 28rpx;
 }
 
 .error {
