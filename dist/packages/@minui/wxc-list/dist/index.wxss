@@ -12,9 +12,9 @@
     color: #333;
     background: white;
 }
-.list__none {
+/* .list__none {
     border: none
-}
+} */
 .list__image {
     width: 60rpx;
     height: 60rpx;

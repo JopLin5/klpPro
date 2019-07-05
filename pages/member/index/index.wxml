@@ -36,7 +36,7 @@
     <!-- 品友身份显示 -->
     <!--wx:if="{{is_distribut==1||is_shop>0}}"-->
     <view class="class-line-weight"></view>
-    <navigator hover-class="navigator-hover" url="/pages/shopregister/register/index">
+    <navigator hover-class="navigator-hover" url="/pages/shopregister/register/index" wx:if="{{is_distribut==1||is_shop>0}}">
       <wxc-list src="/images/invite.png" arrow="{{false}}" mode='none' title="品友邀请"></wxc-list>
     </navigator>
     <view class="class-line"></view>
@@ -54,25 +54,28 @@
   <view>
     <view class="class-line-weight"></view>
     <!--店长隐藏-->
-    <navigator class="wxcolor" url="/pages/shopregister/index" hover-class="navigator-hover">
-      <wxc-list  arrow="{{false}}" dot="{{memhot.notify>0}}" mode='none' src="/images/shop.png" title="我要开店"></wxc-list>
-    </navigator>
-    <view class="class-line"></view>
-    <navigator url="/pages/shopregister/index" hover-class="navigator-hover">
-      <wxc-list arrow="{{false}}" mode='none' src="/images/shoporder.png" title="店铺订单"></wxc-list>
-    </navigator>
-    <view class="class-line"></view>
-    <navigator url="/pages/shopregister/index" hover-class="navigator-hover">
-      <wxc-list arrow="{{false}}" mode='none' src="/images/myshop.png" title="我的店铺"></wxc-list>
-    </navigator>
-    <view class="class-line"></view>
-    <navigator url="/pages/member/business/play" hover-class="navigator-hover">
-      <wxc-list arrow="{{false}}" dot="{{memhot.notify>0}}" mode='none' src="/images/cooperate.png" title="合作加盟"></wxc-list>
-    </navigator>
+    <view class="backcolor">
+      <navigator url="/pages/shopregister/index" hover-class="navigator-hover">
+        <wxc-list arrow="{{false}}" dot="{{memhot.notify>0}}" mode='none' src="/images/shop.png" title="我要开店"></wxc-list>
+      </navigator>
+      <view class="class-line"></view>
+      <navigator url="/pages/shopregister/index" hover-class="navigator-hover">
+        <wxc-list arrow="{{false}}" mode='none' src="/images/shoporder.png" title="店铺订单"></wxc-list>
+      </navigator>
+      <view class="class-line"></view>
+      <navigator url="/pages/shopregister/index" hover-class="navigator-hover">
+        <wxc-list arrow="{{false}}" mode='none' src="/images/myshop.png" title="我的店铺"></wxc-list>
+      </navigator>
+      <view class="class-line"></view>
+      <navigator url="/pages/member/business/play" hover-class="navigator-hover">
+        <wxc-list arrow="{{false}}" dot="{{memhot.notify>0}}" mode='none' src="/images/cooperate.png" title="合作加盟"></wxc-list>
+      </navigator>
+    </view>
     <view class="class-line"></view>
     <navigator hover-class="none" url="/pages/shopregister/register/index">
       <image class="join" src="/images/join.png"></image>
     </navigator>
+
   </view>
 
   <!-- 

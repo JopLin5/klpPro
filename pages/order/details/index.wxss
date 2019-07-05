@@ -71,7 +71,7 @@
   height: 160rpx;
   background: white;
   border-bottom: 1px solid #eee;
-	line-height: 55rpx;
+  line-height: 60rpx;
 }
 
 .view-addressleft {
@@ -100,17 +100,19 @@
 
 .text-user {
   font-size: 32rpx;
-  color: #444;
+  color: #303132;
 }
+
 .text-num {
   font-size: 29rpx;
-  color: #444;
-	margin-left: 250rpx;
+  color: #6d7278;
+  margin-left: 230rpx;
 }
+
 .text-add {
   font-size: 29rpx;
-  color: #444;
-	display: block;
+  color: #303132;
+  display: block;
 }
 
 .text-invoice_no {
@@ -121,6 +123,12 @@
 .text-shipping_name {
   font-size: 29rpx;
   color: #444;
+}
+
+.text-shipping_name-text {
+  font-size: 29rpx;
+  color: #444;
+  margin-left: 10rpx;
 }
 
 .view-addressright {
@@ -483,8 +491,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-  background: rgba(255, 255, 255, 1);
-  opacity: 0.8;
+  background: #fff;
   padding-left: 5px;
 }
 
@@ -499,7 +506,7 @@
   font-size: 28rpx;
   /* color: grey; */
   float: left;
-  width: 24%;
+  /* width: 24%; */
 }
 
 .text-save {

@@ -6,9 +6,9 @@
 
   <view class="view-address">
     <view class="view-addressleft-info">
-      <text class="text-shipping_name">物流公司:{{result.shipping_name}}</text>
+      <view class="text-shipping_name">物流公司:<text class="text-shipping_name-text">{{result.shipping_name}}</text></view>
       <view class="text-shipping_name">快递单号:
-        <text class="text-invoice_no" bindtap='seeKuaidi' data-id='{{result.order_id}}' data-no='{{result.invoice_no}}' style='color:#388bff;'>{{result.invoice_no?result.invoice_no+' 复制':'暂无'}}</text>
+        <text class="text-invoice_no" bindtap='seeKuaidi' data-id='{{result.order_id}}' data-no='{{result.invoice_no}}' style='color:#388bff;'>{{result.invoice_no?result.invoice_no+'复制':'暂无'}}</text>
       </view>
     </view>
   </view>
@@ -16,7 +16,7 @@
   <view class="view-address">
     <view class="view-addressleft-info">
       <text class="text-user">收货人:{{result.consignee}}</text>
-      <text class="text-num">联系方式:{{result.mobile}}</text>
+      <text class="text-num">电话号码:{{result.mobile}}</text>
       <text class="text-add">收货地址:{{result.address}}</text>
     </view>
   </view>
@@ -60,11 +60,7 @@
 
   <view class="view-price">
     <view class="view-price1">
-      <text class="text-price1">物流说明:</text>
-      <text class="liuyan">{{result.user_note}}</text>
-    </view>
-    <view class="view-price1">
-      <text class="text-price1">订单备注:</text>
+      <text class="text-price1">订单备注:</text>	
       <text class="liuyan">{{result.user_note}}</text>
     </view>
     <!-- <view class="view-price1">
@@ -86,13 +82,13 @@
           <!-- <text selectable="{{true}}">{{result.order_id}}</text> -->
         </view>
         <view class="text-order">下单时间:
-          <my-date time="{{result.add_time}}">2019-01-01 12：00：00</my-date>
+          <my-date time="{{result.add_time}}"></my-date>
         </view>
         <view class="text-order">支付时间:
-          <my-date time="{{result.pay_time}}">2019-01-01 12：00：00</my-date>
+          <my-date time="{{result.pay_time}}"></my-date>
         </view>
         <view class="text-order">发货时间:
-          <my-date time="{{result.shipping_time}}">2019-01-01 12：00：00</my-date>
+          <my-date time="{{result.shipping_time}}"></my-date>
         </view>
       <!-- </view>
     </view> -->

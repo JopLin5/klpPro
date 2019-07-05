@@ -3,7 +3,6 @@
   bottom: -1rpx;
   height: 95rpx;
   width: 100%;
-  /* border-radius: 0 0 18rpx 18rpx; *//* background: rgba(206, 205, 205, 0.2);   *//* 实现背景半透明化 */
 }
 
 .goods_list_name {
@@ -27,19 +26,14 @@
 }
 
 .goods_list_tt {
-  /* display: inline-block; */
-  background-color: #FFFB18;
+  background-color: #fffb18;
   color: #000;
   font-size: 14px;
-  /* height: 30rpx; */
-  /* line-height: 20rpx; */
-  /* padding: 5rpx; */
   font-weight: bold;
-  /* text-shadow: 0px 0px 8px #ff0000; *//* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
   padding-left: 10rpx;
   padding-right: 10rpx;
-  padding-bottom: 10rpx;
-	padding-top: 5rpx;
+  padding-bottom: 8rpx;
+  padding-top: 5rpx;
 }
 
 .goods_list_shop {
@@ -52,11 +46,9 @@
 
 .goods_list_price_text {
   color: #fff;
-  /* line-height: 40rpx; */
-  background-color: #DE7C21;
+  background-color: #de7c21;
   font-size: 14px;
   display: inline-block;
-  /* padding: 5rpx; *//* text-shadow: 0px 0px 8px #ff0000; *//* text-shadow: 0 0 10px #D03E3F, 0 0 20px #D03E3F, 0 0 30px #D03E3F, 0 0 40px #D03E3F, 0 0 70px #D03E3F, 0 0 80px #D03E3F; */
   padding-left: 5rpx;
   padding-right: 10rpx;
 }
@@ -91,16 +83,15 @@
   display: inline-block;
   position: absolute;
   font-size: 25rpx;
-  /* height: 35rpx; *//* line-height: 38rpx; */
-  margin-right: 13rpx;
+  margin-right: 15rpx;
   color: rgb(22, 22, 22);
   bottom: 0;
-  right: 10rpx;
-  /* text-shadow: 0px 0px 8px #FAF700; *//* text-shadow: 0 0 10px #FFFB18, 0 0 20px #FFFB18, 0 0 30px #FFFB18, 0 0 40px #FFFB18, 0 0 70px #FFFB18, 0 0 80px #FFFB18; */
-  background: #07752B;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
-  /* padding-bottom: 2rpx; */
+  right: 6rpx;
+  background: #07752b;
+  padding-left: 12rpx;
+  padding-right: 12rpx;
+  padding-top: 3rpx;
+  padding-bottom: 4rpx;
 }
 
 .goods_list_liulan:after {

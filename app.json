@@ -92,6 +92,5 @@
     "request": 20000,
     "connectSocket": 10000
   },
- "debug":true,
   "sitemapLocation": "sitemap.json"
 }

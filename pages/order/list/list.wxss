@@ -152,7 +152,7 @@ page {
 .carts-spread image {
   width: 40rpx;
   height: 40rpx;
-	border-radius: 100rpx;
+	border-radius: 20%;
 }
 
 .carts-spread text {
@@ -167,7 +167,6 @@ page {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
 }
 
 .view-title-left {

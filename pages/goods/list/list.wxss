@@ -198,7 +198,7 @@ scroll-view {
 }
 
 .search {
-  height: 90rpx;
+  height: 88rpx;
   background: #fff;
   z-index: 6;
   top: 0;
@@ -208,7 +208,7 @@ scroll-view {
 }
 
 .fix {
-  position: fixed;
+  /* position: fixed; */
 }
 
 .afix {
@@ -229,7 +229,7 @@ input {
   font-size: 30rpx;
   color: #333;
   /* padding: 0 45rpx; */
-  margin: 16rpx 16rpx 16rpx 20rpx;
+  margin: 16rpx 16rpx 0rpx 20rpx;
   z-index: -10;
   border-radius: 100rpx;
   padding-left: 70rpx;
@@ -825,18 +825,15 @@ input {
   z-index: 1000;
 }
 
-page {
+/* page {
   background-color: #4c3929;
-}
+} */
 
 .tuitip {
-  position: fixed;
-  display: inline-block;
-  z-index: 50;
-  left: 0rpx;
-  right: 0rpx;
-  top: 20rpx;
-  text-align: center;
+  background-color: #fff;
+  height: 55rpx;
+  padding-left: 5rpx;
+  line-height: 0rpx;
 }
 
 .icon_tip {
@@ -846,11 +843,89 @@ page {
   height: 50rpx;
   display: inline-block;
   padding: 0 20rpx;
-  font-weight: bold;
+  /* font-weight: bold;
   background-color: #fff;
   border-bottom-left-radius: 50rpx;
   border-top-left-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
   border-top-right-radius: 50rpx;
-  border: 2rpx solid #666;
+  border: 2rpx solid #666; */
 }
+
+/* 商品格式 */
+
+.item {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  margin: 5px;
+  width: 97%;
+  height: 220rpx;
+  justify-content: flex-start;
+}
+
+.item-img {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.item-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.desc {
+  margin-left: 12px;
+  margin-top: 20rpx;
+  height: 220rpx;
+  line-height: 50rpx;
+}
+
+.desc .title {
+  font-weight: bold;
+  font-size: 26rpx;
+}
+
+.descbox {
+  width: 65%;
+  position: absolute;
+}
+
+.count {
+  line-height: 50rpx;
+  top: 50rpx;
+  position: absolute;
+}
+
+.count image {
+  margin-left: 10px;
+  margin-top: 7px;
+}
+
+.desc-browse {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.desc-perce {
+  color: #d03e3f;
+  font-size: 32rpx;
+  margin-left: -5rpx;
+}
+
+.price-small {
+  font-size: 20rpx；;
+}
+
+.add {
+  right: 25rpx;
+  position: absolute;
+  bottom: -166rpx;
+}
+
+.add image {
+  width: 52rpx;
+  height: 45rpx;
+}
+
+/* 商品格式end */

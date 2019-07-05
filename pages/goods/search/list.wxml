@@ -11,10 +11,6 @@
 <view class='list'>
   <block wx:for='{{goods_list}}' wx:key='goods_id' wx:for-index="idx" wx:for-item="item">
 
-
-
-
-    <view class="list_item">
       <view bindtap='goto' data-cat4="{{item.store_id}}" data-index='{{idx}}' data-src="{{item.goods_img}}">
         <!-- <view class='img' style="border-radius:{{item._type==1?'':'50%'}}">
           <image src="{{item.goods_img?item.goods_img:'/images/avantar.png'}}" mode="scaleToFill" /> 
@@ -36,7 +32,6 @@
             </view>
           </view>
         </view>
-
 
         <view wx:else class='items'>
 
@@ -62,11 +57,11 @@
 
             <view wx:if="{{item._type==1}}" class='price'>
               <text>￥{{item.goods_price}}{{item.custom_unit?('/'+item.custom_unit):''}}</text>
-              <text class='gray'>{{item.click_count}}浏览</text>
+              <text class='gray'>浏览{{item.click_count}}</text>
             </view>
 
             <view class='price' wx:else>
-              <text class='gray'>{{item.click_count}}进店</text>
+              <text class='gray'>进店次数{{item.click_count}}</text>
               <text>进店  》</text>
             </view>
 
@@ -75,9 +70,9 @@
 
 
 
-      </view>
       <view class='clear'></view>
-    </view>
+      </view>
+    <!-- </view> -->
 
 
   </block>

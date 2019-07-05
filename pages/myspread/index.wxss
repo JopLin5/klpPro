@@ -26,7 +26,7 @@ button {
   height: 90rpx;
   border-bottom: 8rpx solid #ebebeb;
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
   z-index: 1000;
 }
@@ -45,11 +45,11 @@ button {
   width: 90%;
   height: 94rpx;
   line-height: 94rpx;
-  border-radius:0;
+  border-radius: 0;
   text-align: center;
   font-size: 36rpx;
   color: #fff;
-  background: #D03E3F;
+  background: #d03e3f;
   margin: 0 auto;
 }
 
@@ -79,15 +79,20 @@ button {
 
 .list {
   display: table;
-  width: 700rpx;
-  padding-left: 40rpx;
+  width: 100%;
 }
-.list:nth-of-type(even){
+
+.list:nth-of-type(even) {
   border-top: 2rpx solid #ebebeb;
 }
+
 .lie {
-  display: table-row;
-  height: 60rpx;
+  display: flex;
+  height: 55rpx;
+  justify-content: space-between;
+  margin-left: 21rpx;
+  margin-right: 20rpx;
+  align-items: center;
 }
 
 .tiptxt {
@@ -102,21 +107,21 @@ button {
   display: table-cell;
   font-size: 32rpx;
   color: #999;
-    height: 32rpx;
+  height: 32rpx;
   line-height: 32rpx;
 }
 
 .log2 {
   display: table-cell;
-  font-size: 22rpx;
-  text-align: right;
-    height: 32rpx;
+  font-size: 30rpx;
+  color: #999;
+  height: 32rpx;
   line-height: 32rpx;
 }
 
 .sum {
   display: table-cell;
-  color: #D03E3F;
+  color: #d03e3f;
   font-size: 36rpx;
   text-align: right;
 }
@@ -135,14 +140,12 @@ button {
   align-items: center;
   padding-left: 20rpx;
   padding-top: 10rpx;
-	padding-bottom: 10rpx;
+  padding-bottom: 10rpx;
   position: relative;
   height: 124rpx;
   border-bottom: 2rpx solid #ebebeb;
   background: #fff;
 }
-
-
 
 .tuilie:last-child {
   border-bottom: none;
@@ -167,7 +170,7 @@ button {
 }
 
 .btns {
-  background: #D03E3F;
+  background: #d03e3f;
   font-size: 28rpx;
   color: #fff;
   position: absolute;
@@ -194,8 +197,8 @@ button {
 
 .wt94 {
   width: 94rpx;
-	background-color: #B6B6BF;
-	color: #FFFFFF;
+  background-color: #b6b6bf;
+  color: #fff;
 }
 
 .wt154 {
@@ -209,17 +212,17 @@ button {
   right: 20rpx;
   height: 40rpx;
   line-height: 40rpx;
-  border-radius:0;
+  border-radius: 0;
   text-align: center;
 }
 
 .yzc-left {
-  margin-right:20rpx;
+  margin-right: 20rpx;
 }
 
 .header view.cur {
-  border-bottom: 8rpx solid #D03E3F;
-  color: #D03E3F;
+  border-bottom: 8rpx solid #d03e3f;
+  color: #d03e3f;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
@@ -241,7 +244,7 @@ button {
 .status2 {
   float: right;
   font-size: 28rpx;
-  color: #D03E3F;
+  color: #d03e3f;
 }
 
 .statusname {
@@ -277,7 +280,7 @@ button {
 .log {
   float: right;
   font-size: 28rpx;
-  color: #D03E3F;
+  color: #d03e3f;
 }
 
 .fix {
@@ -367,11 +370,11 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #D03E3F;
-  color: #D03E3F;
+  border: 1px solid #d03e3f;
+  color: #d03e3f;
 }
 
 .tab-content {
-  margin-top:90rpx;
-  border-top: 8rpx solid #ebebeb
+  margin-top: 90rpx;
+  border-top: 8rpx solid #ebebeb;
 }

@@ -13,7 +13,7 @@
       <view class="order-item" wx:for="{{all_orders}}" wx:key="order_id">
         <view class="view-title">
           <view class="view-title-left">
-            <image src="/images/share.png"></image>
+            <image src="/images/avantar.png"></image>
             <text>{{mapping.store_name}}店铺名称</text>
           </view>
           <view class="view-title-right">{{item.order_status_desc}}</view>
@@ -79,7 +79,7 @@
       <view class="order-item" wx:for="{{pay_orders}}" wx:key="order_id">
         <view class="view-title">
           <view class="view-title-left">
-            <image src="/images/share.png"></image>
+            <image src="/images/avantar.png"></image>
             <text>{{mapping.store_name}}店铺名称</text>
           </view>
           <view class="view-title-right">{{item.order_status_desc}}</view>
@@ -145,7 +145,7 @@
       <view class="order-item" wx:for="{{send_orders}}" wx:key="order_id">
         <view class="view-title">
           <view class="view-title-left">
-            <image src="/images/share.png"></image>
+            <image src="/images/avantar.png"></image>
             <text>{{mapping.store_name}}店铺名称</text>
           </view>
           <view class="view-title-right">{{item.order_status_desc}}</view>
@@ -210,7 +210,7 @@
       <view class="order-item" wx:for="{{receive_orders}}" wx:key="order_id">
         <view class="view-title">
           <view class="view-title-left">
-            <image src="/images/share.png"></image>
+            <image src="/images/avantar.png"></image>
             <text>{{mapping.store_name}}店铺名称</text>
           </view>
           <view class="view-title-right">{{item.order_status_desc}}</view>
@@ -276,7 +276,7 @@
       <view class="order-item" wx:for="{{finish_orders}}" wx:key="order_id">
         <view class="view-title">
           <view class="view-title-left">
-            <image src="/images/share.png"></image>
+            <image src="/images/avantar.png"></image>
             <text>{{mapping.store_name}}店铺名称</text>
           </view>
           <view class="view-title-right">{{item.order_status_desc}}</view>

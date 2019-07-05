@@ -1,20 +1,3 @@
-<!-- 遮罩 -->
-<view class='tuitip' hidden='{{cats[active].name?false:true}}'>
-  <view class='icon_tip'> {{cats[active].name}}</view>
-</view>
-
-<view class='search fix' wx:if='{{typeshow}}'>
-  <view class='searchtxt'>
-    <!-- <image class="ttop" mode='widthFix' src='/images/bg.png'></image> -->
-    <image src='/images/search3.png' class=" icons"></image>
-    <input placeholder='请输入关键字' confirm-type="search" value='{{keyWord}}' disabled="true" bindinput="onchage" bindtap="listenerPhoneInput" bindconfirm="listenerPhoneInput"></input>
-    <image wx:if="{{keyWord}}" src='/images/edit.png' class="delicon" bindtap='del'></image>
-  </view>
-  <view class='lie1'>
-    <label class='find' bindtap="listenerPhoneInput">搜索</label>
-  </view>
-</view>
-
 <view wx:if='{{typeshow}}' catchtouchmove="preventD" style='position:fixed;width:100%;height:100%;z-index:9;background:#fff;'>
   <view class='ht100'>
     <view class='search'>
@@ -144,8 +127,25 @@
   </view>
 </view>
 
+<swiper style='height:1460rpx;' current='{{active}}' bindchange="changePage">
 
-<swiper style='height:1460rpx' current='{{active}}' bindchange="changePage">
+
+  <view class='search fix'>
+    <view class='searchtxt'>
+      <!-- <image class="ttop" mode='widthFix' src='/images/bg.png'></image> -->
+      <image src='/images/search3.png' class=" icons"></image>
+      <input placeholder='请输入关键字' confirm-type="search" value='{{keyWord}}' disabled="true" bindinput="onchage" bindtap="listenerPhoneInput" bindconfirm="listenerPhoneInput"></input>
+      <image wx:if="{{keyWord}}" src='/images/edit.png' class="delicon" bindtap='del'></image>
+    </view>
+    <view class='lie1'>
+      <label class='find' bindtap="listenerPhoneInput">搜索</label>
+    </view>
+  </view>
+  <!-- 遮罩 -->
+  <view class='tuitip' hidden='{{cats[active].name?false:true}}'>
+    <view class='icon_tip'> {{cats[active].name}}</view>
+  </view>
+
   <block wx:for="{{cats}}" wx:key='index' wx:for-item="cat">
     <swiper-item>
       <!-- 筛选结果展示：无结果 -->
@@ -155,29 +155,42 @@
       <!-- 筛选结果展示：结果 -->
       <scroll-view scroll-y='true' lower-threshold="30" bindscroll="loadImages" wx:else>
         <!-- for -->
-        <view class='nav' wx:for="{{goods_list[index]['list']}}" wx:for-index="idx" wx:key="goods_id" bindtap="showDetail" data-index="{{index}}" data-goods-id="{{item.goods_id}}" data-idx='{{idx}}' data-goods-src="{{item.original_img}}">
-          <view class='tuan' wx:if="{{item.prom_type==1}}">团</view>
-          <image src="{{item.original_img}}" class='img' mode='aspectFill' lazy-load="true" />
+        <view class='item' wx:for="{{goods_list[index]['list']}}" wx:for-index="idx" wx:key="goods_id" bindtap="showDetail" data-index="{{index}}" data-goods-id="{{item.goods_id}}" data-idx='{{idx}}' data-goods-src="{{item.original_img}}">
+          <!-- <view class='tuan' wx:if="{{item.prom_type==1}}">团</view> -->
+          <view class="item-img">
+            <image src="{{item.original_img}}"></image>
+          </view>
+          <view class="desc">
+            <view class="title">{{item.goods_name}}</view>
+            <view class="descbox">
+              <view class="count">
+                <view class="desc-browse">{{item.click_count}}浏览</view>
+                <view class="desc-perce">￥{{item.shop_price}}{{item.custom_unit?('/'+item.custom_unit):''}}</view>
+              </view>
+              <view class="add">
+                <image src="/images/addincart.png" hover-class="none" open-type='getUserInfo' bindgetuserinfo='addCart'></image>
+              </view>
+            </view>
+          </view>
+
+          <!-- <image src="{{item.original_img}}" class='img' mode='aspectFill' lazy-load="true" />
           <view class='videbg' wx:if="{{item.type==1}}">
             <view class='videoflag'></view>
           </view>
-
           <view class='infobg'></view>
           <view class='goods_list_info'>
             <view class='goods_list_name'>
               <text class='goods_list_tt'>{{item.goods_name}}</text>
             </view>
-
             <view class='goods_list_txt'>
               <view class='goods_list_price'>
                 <view class='goods_list_price_text'>￥{{item.shop_price}}</view>
                 <view class='goods_list_liulan'>{{item.click_count}}浏览</view>
               </view>
             </view>
-          </view>
+          </view> -->
 
         </view>
-
         <!-- end -->
         <view class="class_item class_item_end" style='margin-bottom:160rpx;' wx:if="{{goods_list[active].empty&&goods_list[active]['list'].length>0}}">
           ·左右看看·

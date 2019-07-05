@@ -67,10 +67,10 @@ scroll-view {
 }
 
 .about-right-info-tel image {
-  width: 63rpx;
-  height: 63rpx;
+  width: 55rpx;
+  height: 55rpx;
   text-align: right;
-  margin-left: 30rpx;
+  margin-left: 50rpx;
   /* padding-right: 20rpx; */
 }
 
