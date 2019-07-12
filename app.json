@@ -42,7 +42,8 @@
     "pages/shopregister/register/index",
     "pages/member/play/play",
     "pages/member/business/play",
-    "pages/member/superMan/play"
+    "pages/member/superMan/play",
+		"pages/floatbtn/floatbtn"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

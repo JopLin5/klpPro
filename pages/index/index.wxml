@@ -125,3 +125,5 @@
     <view class='kftxts'>品友</view>
   </navigator>
 </view>
+
+<menu bindmenuItemClick="menuItemClick" mainmodel="{{mainmodel}}" menulist="{{menulist}}"></menu>
