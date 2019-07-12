@@ -54,7 +54,6 @@ navigator {
   flex-direction: column;
   background-color: #fff;
   margin: 15rpx;
-  border-radius: 20rpx;
 }
 
 /*每行单元格*/
@@ -84,7 +83,7 @@ navigator {
   padding-left: 25rpx;
   padding-top: 6rpx;
   font-weight: bold;
-	line-height: 40rpx;
+  line-height: 40rpx;
 }
 
 /*每行单元格*/
@@ -125,6 +124,7 @@ navigator {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
   /* align-items: flex-start; *//* width: 166rpx; */
 }
 
@@ -136,8 +136,8 @@ navigator {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 14px;
-  height: 18px;
+  line-height: 28rpx;
+  height: 36rpx;
   font-weight: bold;
 }
 
@@ -175,7 +175,7 @@ navigator {
   width: 180rpx;
   height: 23px;
   margin: 0 auto;
-	margin-top: 6rpx;
+  margin-top: 6rpx;
 }
 
 /*加号与减号*/
@@ -230,7 +230,7 @@ navigator {
   display: flex;
   margin-right: 20rpx;
   color: red;
-	margin-top: 5rpx;
+  margin-top: 5rpx;
 }
 
 .carts-item-icon {
@@ -256,8 +256,8 @@ navigator {
   background: white;
   z-index: 10000;
   box-sizing: content-box;
-	color: #8e8e93;
-	font-size: 31rpx;
+  color: #8e8e93;
+  font-size: 31rpx;
 }
 
 /*复选框*/
@@ -279,12 +279,11 @@ navigator {
   line-height: 80rpx;
   text-align: center;
   width: 220rpx;
-  height: 75rpx;
+  height:80rpx;
   background-color: #d03e3f;
   color: white;
   font-size: 36rpx;
-  border-radius: 100rpx;
-	margin-right: 10rpx;
+  margin-right: 10rpx;
 }
 
 .carts-footer-left {
@@ -562,8 +561,8 @@ navigator {
 .cartgo {
   width: 20rpx;
   height: 32rpx;
-	margin-left: 26rpx;
-	margin-top: 11rpx;
+  margin-left: 26rpx;
+  margin-top: 11rpx;
 }
 
 .logo {
@@ -617,4 +616,28 @@ navigator {
   position: fixed;
   top: 0;
   z-index: 1000;
+}
+
+.cancel-btn, .confirm-btn {
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  background-color: #eee;
+  color: #d03e3f;
+}
+
+.shu_line {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  background-color: #eee;
+  color: rgb(44, 43, 43);
+}
+
+.cancel-btn {
+  background-color: #eee;
+  color: #000;
 }

@@ -1,0 +1,2 @@
+<!--pages/floatbtn/floatbtn.wxml-->
+<menu bindmenuItemClick="menuItemClick" mainmodel="{{mainmodel}}" menulist="{{menulist}}"></menu>
