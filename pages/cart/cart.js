@@ -2,39 +2,41 @@ import server from '../../utils/server.js';
 import Util from '../../utils/util.js';
 import regeneratorRuntime from '../../regenerator-runtime/runtime.js';
 var app = getApp()
-var cPage=0;
+var cPage = 0;
 var sPage = 0;
 class cart {
-  loadding=false;
-  data={
+  loadding = false;
+  item=null;
+  data = {
     carts: [],
+    pre_show:false,
     goodsList: [],
     empty: false,
-    swipeable:true,
+    swipeable: true,
     minusStatuses: ['disabled', 'disabled', 'normal', 'normal', 'disabled'],
     selectedAllStatus: false,
-    total:0,
-    goods_list:[],
-    entries:[],
-    active:0,
-    winHeight:0,
-    isShow:true,
-    totalTopHeight:64
+    total: 0,
+    goods_list: [],
+    entries: [],
+    active: 0,
+    winHeight: 0,
+    isShow: true,
+    totalTopHeight: 64
   };
 
-  onLoad=function (option) {
+  onLoad = function (option) {
     var that = this;
     this.getSysyteminfo();
-    that.setData({ winHeight: app.globalData.windowHeight -(198/app.globalData.pixelRatio), active:0})
+    that.setData({ winHeight: app.globalData.windowHeight - (198 / app.globalData.pixelRatio), active: 0 })
   };
 
-  bindMinus=function (e) {
+  bindMinus = function (e) {
     var index = parseInt(e.currentTarget.dataset.index);
     var cart_id = parseInt(e.currentTarget.dataset.cartid);
     var num = this.data.carts[cart_id]['goods'][index].goods_num;
     // 如果只有1件了，就不允许再减了
     if (num <= 1) {
-       return;
+      return;
     }
     num--;
     // 只有大于一件的时候，才能normal状态，否则disable状态
@@ -55,16 +57,16 @@ class cart {
     this.saveNum(carts[cart_id]['goods'][index].id, num);
     this.sum();
   };
-  saveNum=function(cart_id,num){
-    server.postJSON('/Cart/updateNum/',{
+  saveNum = function (cart_id, num) {
+    server.postJSON('/Cart/updateNum/', {
       id: cart_id,
-      num:num
+      num: num
     }, function (res) {
 
     });
   };
 
-  bindPlus=function (e) {
+  bindPlus = function (e) {
     var index = parseInt(e.currentTarget.dataset.index);
     var idx = parseInt(e.currentTarget.dataset.cartid);
     var num = this.data.carts[idx]['goods'][index].goods_num;
@@ -86,7 +88,7 @@ class cart {
     this.saveNum(carts[idx]['goods'][index].id, num);
     this.sum();
   };
-  bindManual=function (e) {
+  bindManual = function (e) {
     var index = parseInt(e.currentTarget.dataset.index);
     var idx = parseInt(e.currentTarget.dataset.cartid);
     var carts = this.data.carts;
@@ -99,7 +101,7 @@ class cart {
     this.saveNum(carts[idx]['goods'][index].id, num);
     this.sum();
   };
-  bindCheckbox=function (e) {
+  bindCheckbox = function (e) {
     /*绑定点击事件，将checkbox样式改变为选中与非选中*/
     //拿到下标值，以在carts作遍历指示用
     var index = parseInt(e.currentTarget.dataset.index);
@@ -115,15 +117,15 @@ class cart {
     });
     this.sum();
   };
-  bindSelectAll= function () {
+  bindSelectAll = function () {
     // 环境中目前已选状态
     var selectedAllStatus = !this.data.selectedAllStatus;
     // 购物车数据，关键是处理selected值
     var carts = this.data.carts || [];
     // 遍历
     for (var i in carts) {
-      for (var y in carts[i]['goods']){
-        carts[i]['goods'][y].selected =selectedAllStatus;
+      for (var y in carts[i]['goods']) {
+        carts[i]['goods'][y].selected = selectedAllStatus;
       }
     }
     this.setData({
@@ -132,11 +134,11 @@ class cart {
     });
     this.sum();
   };
-  bindCheckout=function () {
+  bindCheckout = function () {
     // 遍历取出已勾选的cid
     // var buys = [];
     var cartIds = [];
-    var carts = this.data.carts||[];
+    var carts = this.data.carts || [];
 
     for (var i in carts) {
       for (var y in carts[i]['goods']) {
@@ -170,31 +172,31 @@ class cart {
     });
 
   };
-  getCarts=function () {
+  getCarts = function () {
     var minusStatuses = [];
     var that = this;
-   var  distribut_from = wx.getStorageSync('distribut_from') ||0;
+    var distribut_from = wx.getStorageSync('distribut_from') || 0;
     server.postJSON(
       '/Cart/cartList/',
-      {distribut_from:distribut_from},
+      { distribut_from: distribut_from },
       function (res) {
         var carts = res.data.result || [];
-        if (res.data.status<1) {
+        if (res.data.status < 1) {
           that.setData({ empty: true });
           return;
         }
         var selectedAllStatus = that.data.selectedAllStatus;
-        var goods_num=0;
-        var shop_num=0;
-        for (var i in carts){
-          shop_num = shop_num+1;
+        var goods_num = 0;
+        var shop_num = 0;
+        for (var i in carts) {
+          shop_num = shop_num + 1;
           goods_num = goods_num + carts[i].goodnum;
-          for (var y in carts[i]['goods']){
-            carts[i]['goods'][y]['selected'] =selectedAllStatus
+          for (var y in carts[i]['goods']) {
+            carts[i]['goods'][y]['selected'] = selectedAllStatus
             carts[i]['goods'][y]['goods_name'] = Util.iGetInnerText(carts[i]['goods'][y]['goods_name']);
           }
         }
-        that.setData({ carts: carts,empty:false});
+        that.setData({ carts: carts, empty: false });
         that.sum();
       }
     );
@@ -202,34 +204,34 @@ class cart {
 
   see = function (e) {
     var goodsId = e.currentTarget.dataset.id;
-    this.$route("../goods/detail/detail", { from: 2, id: e.currentTarget.dataset.id});
+    this.$route("../goods/detail/detail", { from: 2, id: e.currentTarget.dataset.id });
   };
-  onShow=function () {
-    let  user_info = wx.getStorageSync('userinfo');
-    let  self=this;
+  onShow = function () {
+    let user_info = wx.getStorageSync('userinfo');
+    let self = this;
     if (user_info == '') {
-        app.login().then(function(){
+      app.login().then(function () {
         self._onShow();
       });
-    }else{
+    } else {
       self._onShow();
     }
-   
+
 
   };
-  _onShow=function(){
+  _onShow = function () {
     this.getCarts();
     this.sum();
   }
-  sum=function () {
+  sum = function () {
     var carts = this.data.carts;
     // 计算总金额
     var total = 0;
-    var good={};
+    var good = {};
     for (var i in carts) {
-      for ( var y in carts[i]['goods']){
+      for (var y in carts[i]['goods']) {
         good = carts[i]['goods'][y];
-        var goods_price = good.goods_price*100;
+        var goods_price = good.goods_price * 100;
         total += good.selected ? good.goods_num * goods_price : 0;
       }
 
@@ -241,28 +243,35 @@ class cart {
       total: total.toFixed(2)
     });
   };
-	//删除商品
-  deleteCart= function (e) {
+  //删除商品
+  deleteCart=function(e){
     if (!server.check_login()) {
       return;
     }
+    this.item=e;
+    this.setData({ pre_show: true });
+  }
+  confirm_del=function(){
+    this._deleteCart(this.item);
+  }
+  _deleteCart = function (e) {
     var index = parseInt(e.currentTarget.dataset.index);
     var idx = parseInt(e.currentTarget.dataset.cartid);
     var id = this.data.carts[idx]['goods'][index]['id'];
     var that = this
 
     server.getJSON('/Cart/delCart/id/' + id, function (res) {
-      that.data.carts[idx]['goods'].splice(index,1);
-      if (that.data.carts[idx]['goods'].length==0){
-        that.data.carts.splice(idx,1);
+      that.data.carts[idx]['goods'].splice(index, 1);
+      if (that.data.carts[idx]['goods'].length == 0) {
+        that.data.carts.splice(idx, 1);
       }
-      that.setData({ carts: that.data.carts});
+      that.setData({ carts: that.data.carts });
     });
-		wx.showToast({
-			title: '删除成功',
-			icon: 'success',//当icon：'none'时，没有图标 只有文字
-			duration:500
-		})
+    wx.showToast({
+      title: '删除成功',
+      icon: 'success',//当icon：'none'时，没有图标 只有文字
+      duration: 500
+    })
   };
   // 店铺详情跳转
   detail = function (e) {
@@ -277,24 +286,24 @@ class cart {
     if (direction.direction > 1 && direction.left < 100) {
       this.getGoods(++cPage);
     }
-  },50, 0, function (e, direction) {
+  }, 50, 0, function (e, direction) {
     direction.left = e.detail.scrollHeight - (e.detail.scrollTop + this.data.screenHeight);
     direction.direction = e.detail.scrollTop - direction.Y;
     direction.Y = e.detail.scrollTop;
   });
 
-  getGoods = function (pageIndex=1, keyWord='', cat, reload = false) {
+  getGoods = function (pageIndex = 1, keyWord = '', cat, reload = false) {
     if (reload) {
       pageIndex = 1;
       cPage = 1;
     }
-    
+
     let that = this;
     let last_id = 0;
-    if (this.loadding==true){
+    if (this.loadding == true) {
       return;
     }
-    this.loadding=true;
+    this.loadding = true;
     server.postJSON('/User/my_collection/',
       {
         p: pageIndex,
@@ -304,11 +313,11 @@ class cart {
       }, function (res) {
         if (res.data.status != 1) {
           that.setData({
-            empty:true
+            empty: true
           });
-          if (reload){
+          if (reload) {
             that.setData({
-              goods_list:[]
+              goods_list: []
             });
           }
           if (cPage == 1) {
@@ -331,7 +340,7 @@ class cart {
           empty: false,
           goods_list: ms
         });
-      },function(){
+      }, function () {
         that.loadding = false;
       });
 

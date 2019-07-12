@@ -1,5 +1,8 @@
 {
 	"backgroundTextStyle": "light",
 	"navigationBarTextStyle": "white",
-	"navigationStyle": "custom"
+	"navigationStyle": "custom",
+		"usingComponents": {
+			"menu": "/components/menu/menu"
+		}
 }

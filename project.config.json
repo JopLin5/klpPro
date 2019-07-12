@@ -47,7 +47,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 11,
 			"list": [
 				{
 					"id": 0,
@@ -123,6 +123,12 @@
 					"name": "筛选搜索",
 					"pathName": "pages/goods/list/list",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "floatbtn",
+					"pathName": "pages/floatbtn/floatbtn",
 					"scene": null
 				}
 			]

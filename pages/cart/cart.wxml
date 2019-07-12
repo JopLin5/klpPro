@@ -2,14 +2,14 @@
   <!-- <image src="/images/empty_cart.png"></image> -->
   <text class="hint">购物车是空的哟 \n ╮(╯▽╰)╭</text>
 </view>
-<scroll-view scroll-y="true" bindscroll='' class='mp' scroll-with-animation="{{true}}" wx:else>
+<scroll-view scroll-y="true"  class='mp' scroll-with-animation="{{true}}" wx:else>
 
   <view wx:for="{{carts}}" wx:key="store_id" wx:for-index="cart_id" class="container carts-list" style="width:96%;">
     <view class="carts-item-head">
       <!-- 复选框图标 -->
-      <icon type="{{good.selected?'success_circle':'circle'}}" color="{{good.selected?'#d03e3f':''}}" size="20" bindtap="bindCheckbox" data-idx="{{cart_id}}" data-index="{{index}}" />
+      <!-- <icon type="{{good.selected?'success_circle':'circle'}}" color="{{good.selected?'#d03e3f':''}}" size="20" bindtap="bindCheckbox" data-idx="{{cart_id}}" data-index="{{index}}" /> -->
       <!-- 店铺跳转 -->
-      <navigator class="carts-item-title" url="/pages/shopdetail/index?id={{item.store_id}}">
+      <navigator class="carts-item-title" url="/pages/shopdetail/index?id={{item.store_id}}" hover-class="none">
         <image class='cartlogo' src="{{item.store_logo?item.store_logo:'/images/icon_store.png'}}"></image>
         <view class='text'>{{item.store_name}}</view>
         <image class="cartgo" src="/images/go.png" ></image>
@@ -59,9 +59,17 @@
     </view>
 
   </view>
-  <view class="class_item class_item_end" wx:if="{{carts[0].total_num>2}}">木有更多了(^o^)</view>
+  <view class="class_item class_item_end" wx:if="{{carts[0].total_num>2}}">没有更多了(^o^)</view>
 </scroll-view>
 
+<model show="{{pre_show}}" height='60%' >
+  <view slot="content">
+    确认删除该商品吗？
+  </view>
+  <view slot="btn" class='cancel-btn' bindtap='cancel'>取消</view>
+  <view slot="btn" class='shu_line' >|</view>
+  <view slot="btn" class='confirm-btn' bindtap='confirm_del'>确认</view>
+</model>
 
 <view class="carts-footer">
   <view class="carts-footer-left" bindtap="bindSelectAll">
